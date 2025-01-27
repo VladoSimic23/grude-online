@@ -1,7 +1,7 @@
 import CommentComponent from "@/app/Components/Comments/CommentComponent";
 import SinglePost from "@/app/Components/DesktopComponents/SinglePost/SinglePost";
-import MobilePopularno from "@/app/Components/MobileComponents/MobilePopularno/MobilePopularno";
-import MobilePromo from "@/app/Components/MobileComponents/MobilePromo/MobilePromo";
+//import MobilePopularno from "@/app/Components/MobileComponents/MobilePopularno/MobilePopularno";
+//import MobilePromo from "@/app/Components/MobileComponents/MobilePromo/MobilePromo";
 import MobileSinglePost from "@/app/Components/MobileComponents/MobileSinglePost/MobileSinglePost";
 import MobileSinglePostTags from "@/app/Components/MobileComponents/MobileSinglePost/MobileSinglePostTags/MobileSinglePostTags";
 import PostSharingDetails from "@/app/Components/PostSharing/PostSharingDetails";
@@ -119,7 +119,7 @@ const SingleCrnaKronika = async ({ params }: Props) => {
         </div>
       )}
 
-      {isMobile && (
+      {/* {isMobile && (
         <Suspense
           fallback={<h2 style={{ color: "white" }}>Loading Promo ...</h2>}
         >
@@ -132,7 +132,7 @@ const SingleCrnaKronika = async ({ params }: Props) => {
         >
           <MobilePopularno />
         </Suspense>
-      )}
+      )} */}
     </div>
   );
 };

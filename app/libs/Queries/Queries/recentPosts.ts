@@ -34,7 +34,7 @@ export const getRecentPostsHomepage = async (numOfPosts: number) => {
             content
             featuredImage {
               node {
-                sourceUrl(size: LARGE)
+                sourceUrl(size: MEDIUM)
               }
             }
             comments(first:500) {
