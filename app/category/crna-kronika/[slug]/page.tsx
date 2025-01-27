@@ -72,7 +72,6 @@ const SingleCrnaKronika = async ({ params }: Props) => {
   const thePost = await getSinglePost(slug, !isMobile ? "LARGE" : "MEDIUM");
 
   if (thePost.postBy === null) {
-    console.error("Missing slug parameter");
     return <NotFound />;
   }
 

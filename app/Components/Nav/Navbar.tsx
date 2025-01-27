@@ -2,11 +2,8 @@
 import React, { useEffect, useState } from "react";
 import navStyles from "./css/nav.module.css";
 import NavbarSearch from "@/app/search/SearchBar";
-//import Categoires from "../Categories/Categories";
 import dynamic from "next/dynamic";
-const Categoires = dynamic(() => import("../Categories/Categories"), {
-  ssr: false,
-});
+const Categoires = dynamic(() => import("../Categories/Categories"));
 
 const Navbar = () => {
   const [isSearch, setIsSearch] = useState(false);

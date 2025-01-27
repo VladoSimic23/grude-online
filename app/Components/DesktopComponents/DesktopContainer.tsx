@@ -12,24 +12,26 @@ const DesktopContainer = () => {
   return (
     <div>
       <NaslovneVijesti />
-      <div className="row mt-4">
-        <div className="col-md-9">
-          <GrudeOnline />
-          <OstaleVijesti />
-          <div className="row">
-            <div className="col-md-6">
-              <SportNaslovna />
+      <div className="container">
+        <div className="row mt-4">
+          <div className="col-md-9">
+            <GrudeOnline />
+            <OstaleVijesti />
+            <div className="row">
+              <div className="col-md-6">
+                <SportNaslovna />
+              </div>
+              <div className="col-md-6">
+                <GospodarstvoNaslovna />
+              </div>
             </div>
-            <div className="col-md-6">
-              <GospodarstvoNaslovna />
-            </div>
+            <LifestyleNaslovna />
+            <GalerijeNaslovna />
           </div>
-          <LifestyleNaslovna />
-          <GalerijeNaslovna />
-        </div>
-        <div className="col-md-3">
-          <Popularno />
-          <Promo />
+          <div className="col-md-3">
+            <Popularno />
+            <Promo />
+          </div>
         </div>
       </div>
     </div>
