@@ -21,9 +21,10 @@ const MobileCarousel = ({ images }: { images: string[] }) => {
                 src={src}
                 alt={`Extra ${index + 1}`}
                 width={300}
-                height={350}
+                height={450}
                 className={`d-block w-100 ${style.imageContainGallery}`}
                 style={{ position: "relative" }}
+                priority={true}
               />
               <p style={{ color: "white", textAlign: "center" }}>
                 {index + 1} / {images.length}
