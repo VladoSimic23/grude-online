@@ -28,6 +28,7 @@ const Categoires = ({ toggle }: { toggle: any }) => {
             <Link
               className={`${pathname === item.path ? navStyle.active : ""}`}
               href={item.path}
+              prefetch={false}
             >
               {item.category}
             </Link>
