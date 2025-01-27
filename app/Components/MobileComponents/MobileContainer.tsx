@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 //import MobileIzdvojeno from "./MobileHomepage/MobileIzdvojeno/MobileIzdvojeno";
 import MobileNajnovije from "./MobileHomepage/MobileNajnovije/MobileNajnovijeServer/MobileNajnovije";
 import MobileHomepageClient from "./MobileHomepage/MobileNajnovije/MobileNajnovijeClient/MobileHomepageClient";
@@ -8,13 +8,9 @@ import MobileHomepageClient from "./MobileHomepage/MobileNajnovije/MobileNajnovi
 const MobileContainer = () => {
   return (
     <>
-      <Suspense
-        fallback={<h2 style={{ color: "white" }}>Loading Najnovije ...</h2>}
-      >
-        <div className="container">
-          <MobileNajnovije />
-        </div>
-      </Suspense>
+      <div className="container">
+        <MobileNajnovije />
+      </div>
 
       <div className="container">
         <MobileHomepageClient />
