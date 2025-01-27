@@ -27,6 +27,7 @@ export async function generateStaticParams() {
 
   return nodes.map((post: AllPostsI) => ({
     slug: post?.slug,
+    fallback: "blocking",
   }));
 }
 
