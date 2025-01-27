@@ -33,6 +33,7 @@ const MobileIzdvojenoPodnaslovneVijesti = async ({
             width={150}
             height={100}
             alt={`Naslovna ${index}`}
+            fetchPriority="high"
             priority={true}
           />
 

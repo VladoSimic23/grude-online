@@ -31,6 +31,7 @@ const MobileIzdvojenoNaslovnaVijest = ({
             width={400}
             height={200}
             alt={"Naslovna 1"}
+            fetchPriority="high"
             priority={true}
             quality={50}
           />
