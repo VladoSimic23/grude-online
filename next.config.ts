@@ -17,10 +17,10 @@ const nextConfig: NextConfig = {
         source: "/:path",
         destination: "/category/crna-kronika/:path",
       },
-      {
-        source: "/tag/:slug",
-        destination: "/category/tag/:slug",
-      },
+      // {
+      //   source: "/tag/:slug",
+      //   destination: "/category/tag/:slug",
+      // },
     ];
   },
 };
