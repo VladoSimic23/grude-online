@@ -91,5 +91,9 @@ export async function getAllPostsByTagsClient(count: number, tag?: string) {
       }
     }`);
 
+  // if (!data || !tag) {
+  //   return;
+  // }
+
   return data;
 }
