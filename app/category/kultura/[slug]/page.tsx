@@ -13,6 +13,7 @@ import {
   SinglePostSourceI,
 } from "@/app/libs/Queries/Queries/singlePosts";
 import { isMobileDevice } from "@/app/libs/UserAgent/UserAgent";
+import NotFound from "@/app/not-found";
 import type { Metadata } from "next";
 import React, { Suspense } from "react";
 
@@ -23,6 +24,10 @@ export type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = (await params)?.slug;
   const post: SinglePostSourceI = await getSinglePost(slug, "LARGE");
+
+  if (post.postBy === null) {
+    return {};
+  }
 
   const {
     postBy: {
@@ -65,6 +70,12 @@ const SingleKultura = async ({ params }: Props) => {
   const isMobile = await isMobileDevice();
   const { slug } = await params;
   const thePost = await getSinglePost(slug, !isMobile ? "LARGE" : "MEDIUM");
+
+  if (thePost.postBy === null) {
+    console.error("Missing slug parameter");
+    return <NotFound />;
+  }
+
   const {
     postBy: { tags, commentStatus },
   } = thePost;
