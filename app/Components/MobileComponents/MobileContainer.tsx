@@ -7,33 +7,43 @@ import MobilePopularno from "./MobilePopularno/MobilePopularno";
 
 const MobileContainer = () => {
   return (
-    <div>
+    <>
       <Suspense
         fallback={<h2 style={{ color: "white" }}>Loading Izdvojeno ...</h2>}
       >
-        <MobileIzdvojeno />
+        <div className="container">
+          <MobileIzdvojeno />
+        </div>
       </Suspense>
 
       <Suspense
         fallback={<h2 style={{ color: "white" }}>Loading Najnovije ...</h2>}
       >
-        <MobileNajnovije />
+        <div className="container">
+          <MobileNajnovije />
+        </div>
       </Suspense>
 
-      <MobileHomepageClient />
+      <div className="container">
+        <MobileHomepageClient />
+      </div>
 
-      <Suspense
-        fallback={<h2 style={{ color: "white" }}>Loading Promo ...</h2>}
-      >
-        <MobilePromo />
-      </Suspense>
+      <div className="container">
+        <Suspense
+          fallback={<h2 style={{ color: "white" }}>Loading Promo ...</h2>}
+        >
+          <MobilePromo />
+        </Suspense>
+      </div>
 
-      <Suspense
-        fallback={<h2 style={{ color: "white" }}>Loading Popularno ...</h2>}
-      >
-        <MobilePopularno />
-      </Suspense>
-    </div>
+      <div className="container">
+        <Suspense
+          fallback={<h2 style={{ color: "white" }}>Loading Popularno ...</h2>}
+        >
+          <MobilePopularno />
+        </Suspense>
+      </div>
+    </>
   );
 };
 
