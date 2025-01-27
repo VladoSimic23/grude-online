@@ -11,6 +11,8 @@ import FooterComponent from "./Components/Footer/FooterComponent";
 import dynamic from "next/dynamic";
 import TopNavbar from "./Components/Nav/TopNavbar";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
+import MobilePromo from "./Components/MobileComponents/MobilePromo/MobilePromo";
+import MobilePopularno from "./Components/MobileComponents/MobilePopularno/MobilePopularno";
 //import Script from "next/script";
 //import DelayedScriptLoader from "./functions/scriptLoader";
 const NavWrap = dynamic(() => import("./Components/Nav/NavWarp"));
@@ -56,6 +58,29 @@ export default async function RootLayout({
         {!isMobile && <TopNavbar />}
         <NavWrap />
         {children}
+
+        {isMobile && (
+          <div className="container">
+            <Suspense
+              fallback={<h2 style={{ color: "white" }}>Loading Promo ...</h2>}
+            >
+              <MobilePromo />
+            </Suspense>
+          </div>
+        )}
+
+        {isMobile && (
+          <div className="container">
+            <Suspense
+              fallback={
+                <h2 style={{ color: "white" }}>Loading Popularno ...</h2>
+              }
+            >
+              <MobilePopularno />
+            </Suspense>
+          </div>
+        )}
+
         <Suspense
           fallback={<h2 style={{ color: "white" }}>Loading Footer ...</h2>}
         >

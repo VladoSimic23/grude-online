@@ -4,6 +4,8 @@ import MobileContainer from "./Components/MobileComponents/MobileContainer";
 import DesktopContainer from "./Components/DesktopComponents/DesktopContainer";
 import { Suspense } from "react";
 import MobileIzdvojeno from "./Components/MobileComponents/MobileHomepage/MobileIzdvojeno/MobileIzdvojeno";
+//import MobilePromo from "./Components/MobileComponents/MobilePromo/MobilePromo";
+//import MobilePopularno from "./Components/MobileComponents/MobilePopularno/MobilePopularno";
 //import dynamic from "next/dynamic";
 // const DelayedScriptLoader = dynamic(
 //   () => import("@/app/functions/scriptLoader")
