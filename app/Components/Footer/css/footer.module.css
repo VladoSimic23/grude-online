@@ -1,0 +1,134 @@
+.footerWrapper svg {
+  width: 20px;
+  height: 20px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.footerWrapper svg path {
+  color: white;
+}
+
+.footerContainer {
+  background-color: #cccccc;
+  padding: 40px 0;
+  margin-top: 60px;
+}
+.footerContainer h4 {
+  text-align: center;
+  border-bottom: 3px solid rgb(230, 229, 229);
+  padding-bottom: 15px;
+}
+
+.recentContainer {
+  margin-top: 30px;
+}
+.recentContainer span {
+  color: rgb(117, 117, 117);
+}
+.recentContainer p {
+  line-height: 1.4;
+}
+.recentContainer a {
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+.recentContainer a:hover {
+  color: #008ca1;
+}
+
+.borderBottomFooter {
+  border-bottom: 1px solid rgb(239, 239, 239);
+}
+
+.osmrtniceFooter a {
+  display: flex;
+  justify-content: center;
+}
+
+.footerLower {
+  padding: 30px 15px 10px 15px;
+  background: #313131;
+}
+.footerLower a {
+  display: flex;
+  align-items: center;
+  color: #999 !important;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+.footerLower a span {
+  margin-left: 15px;
+  font-weight: bold;
+}
+.footerLower a:hover {
+  color: #6eb48c !important;
+}
+.footerLower a:hover svg {
+  background: #6eb48c;
+  border-color: #6eb48c;
+}
+.footerLower a:hover svg path {
+  color: white;
+}
+
+.flexFooter {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #999;
+  padding-bottom: 30px;
+}
+.flexFooter a {
+  padding: 0 20px;
+}
+.flexFooter a i {
+  color: white;
+  padding: 2px 10px;
+  font-size: 24px;
+  border-radius: 10px;
+}
+
+.flexFooter a:nth-child(1) i {
+  background: #0a67ff;
+}
+
+.flexFooter a:nth-child(2) i {
+  background: radial-gradient(circle at 30% 107%, rgb(253, 244, 151) 0%, rgb(253, 244, 151) 5%, rgb(253, 89, 73) 45%, rgb(214, 36, 159) 60%, rgb(40, 90, 235) 90%);
+}
+
+.flexFooter a:nth-child(3) i {
+  background: #ff0000;
+}
+
+.copyrights {
+  margin-top: 30px;
+  text-align: center;
+  color: #999 !important;
+}
+.copyrights p {
+  font-style: italic;
+}
+.copyrights a {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .footerContainer {
+    display: none;
+  }
+  .recentContainer {
+    margin-top: auto;
+  }
+  .flexFooter a span {
+    display: none;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .flexFooter {
+    border-bottom: none;
+  }
+}/*# sourceMappingURL=footer.module.css.map */

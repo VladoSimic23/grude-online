@@ -1,0 +1,40 @@
+.desktopOverlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+.desktopOverlay:hover {
+  background: rgba(0, 0, 0, 0.0823529412);
+}
+
+.decorUnderline {
+  border-bottom: 3px solid #008ca1;
+  margin-bottom: 30px;
+}
+.decorUnderline h1 {
+  background: #008ca1;
+  color: white;
+  display: inline-block;
+  padding: 5px 15px;
+  margin-bottom: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.desktopInnerHTML iframe {
+  width: 100%;
+}
+.desktopInnerHTML div {
+  width: auto !important;
+}
+.desktopInnerHTML video {
+  width: auto;
+}
+.desktopInnerHTML img {
+  max-width: 100%;
+  margin-bottom: 20px;
+  height: auto;
+}/*# sourceMappingURL=desktop.module.css.map */

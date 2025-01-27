@@ -1,0 +1,100 @@
+.websiteBgDark {
+  background: rgba(30, 27, 27, 0.93);
+}
+
+.websiteBgWhite {
+  background: white;
+}
+
+.paragraph p {
+  font-family: "Georgia, serif";
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.imageCover {
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+
+.imageContain {
+  max-width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+}
+
+.imageContainGallery {
+  max-width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+}
+
+.orangeBorder {
+  display: inline-block;
+  border-bottom: 2px solid #ea6e00;
+  padding-bottom: 5px;
+}
+
+.h1Mobile, .h2Mobile, .h3Mobile, .h4Mobile, .h5Mobile, .h1Desktop, .h2Desktop, .h3Desktopm.h4Desktop, .h5Desktop {
+  font-weight: 600;
+}
+
+.h1Mobile {
+  font-size: 28px;
+  margin: 24px 0;
+  color: white;
+}
+
+.h2Mobile {
+  font-size: 24px;
+  margin: 20px 0;
+  color: white;
+}
+
+.h3Mobile {
+  font-size: 20px;
+  margin: 16px 0;
+  color: white;
+}
+
+.h4Mobile {
+  font-size: 16px;
+  margin: 12px 0;
+  color: white;
+}
+
+.h5Mobile {
+  font-size: 14px;
+  margin: 8px 0;
+  color: white;
+}
+
+.h1Desktop {
+  font-size: 38px;
+  margin: 32px 0;
+}
+
+.h2Desktop {
+  font-size: 30px;
+  margin: 28px 0;
+}
+
+.h3Desktop {
+  font-size: 26px;
+  margin: 24px 0;
+}
+
+.h4Desktop {
+  font-size: 22px;
+  margin: 20px 0;
+}
+
+.h5Desktop {
+  font-size: 20px;
+  margin: 16px 0;
+}/*# sourceMappingURL=style.module.css.map */

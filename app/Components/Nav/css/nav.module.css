@@ -1,0 +1,245 @@
+.topNavbar {
+  width: 100%;
+  background: black;
+}
+.topNavbar a {
+  color: white !important;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+.topNavbar a:hover {
+  color: #ea8624;
+}
+
+.topNavbarStyles {
+  padding: 5px 0 7px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.topNavbarSocialMedia {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+.topNavbarSocialMedia a {
+  margin: 0 7px 0 7px;
+}
+.topNavbarSocialMedia a svg {
+  font-size: 16px;
+  transition: all 0.2s;
+}
+.topNavbarSocialMedia a svg:hover {
+  color: #ea8624;
+}
+
+.kontakt {
+  margin-top: 2px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 12px 0;
+}
+.navbar ul {
+  padding: 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+}
+.navbar ul li a {
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #313131;
+}
+
+.navWrap {
+  border-bottom: 1px solid #ea8624;
+  border-top: 1px solid #ea8624;
+  position: relative;
+}
+.navWrap input {
+  width: 100%;
+  border: none !important;
+}
+.navWrap input:focus-visible {
+  outline: none !important;
+  border: none !important;
+}
+
+.imageContainer {
+  padding: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.imageContainer img {
+  position: relative !important;
+  height: auto !important;
+  width: auto !important;
+}
+
+.searchStyle {
+  width: 100%;
+}
+.searchStyle input {
+  padding: 18px 20px;
+  border: none;
+  width: 100%;
+}
+.searchStyle input:focus-visible {
+  outline: 1px solid #ea8624;
+}
+.searchStyle button {
+  margin-left: 10px;
+}
+
+.navMarginLeft {
+  margin-left: 100px;
+}
+.navMarginLeft svg {
+  font-size: 18px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+/* NavMenu.css */
+.navMenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: #fff;
+}
+
+.closeBarMargin {
+  margin-right: 2px;
+}
+
+.navItems {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.navItems a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.mobileMenuToggle {
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none; /* Initially hide on larger screens */
+}
+
+@media (max-width: 992px) {
+  .navbar {
+    padding: 0;
+  }
+  .navMobileWrap {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+  }
+  .navMobileWrap div {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .navMobileWrap input {
+    width: 100%;
+    border-radius: 0 !important;
+  }
+  .navMobileWrap input:focus-visible {
+    outline: 2px solid orange;
+  }
+  .navMarginLeft {
+    margin-right: 20px;
+  }
+  .navItems {
+    display: none; /* Hide items on smaller screens */
+    flex-direction: column;
+    position: absolute;
+    top: 33px; /* Adjust the top position according to your design */
+    left: 0;
+    width: 100%;
+    background-color: #403633;
+    z-index: 10;
+  }
+  .navItems ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .navItems ul li {
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .navItems ul li a {
+    color: white !important;
+  }
+  .navItems.mobileOpen {
+    display: flex;
+  }
+  .navItems.mobileOpen a {
+    padding: 10px 0;
+  }
+  .mobileMenuToggle {
+    display: block; /* Show the toggle button on smaller screens */
+    margin-right: 30px;
+  }
+  .navWrap {
+    top: 66px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    z-index: 10;
+    border-top: none;
+  }
+  .searchStyle input {
+    padding: 12px 20px;
+  }
+  .imageContainer {
+    padding: 15px 0;
+  }
+  .imageContainer img {
+    margin-left: 15px;
+  }
+}
+.gallery {
+  display: none;
+}
+
+.active {
+  color: #008ca1 !important;
+}
+
+.navLinks li a {
+  transition: all 0.2s ease-in-out;
+  position: relative;
+}
+.navLinks li a::after {
+  content: "";
+  width: 0px;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  background: #008ca1;
+  transition: all 0.2s ease-in-out;
+}
+.navLinks li a:hover {
+  color: #008ca1;
+}
+.navLinks li a:hover::after {
+  width: 100%;
+}/*# sourceMappingURL=nav.module.css.map */
