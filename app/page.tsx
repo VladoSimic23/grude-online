@@ -2,7 +2,7 @@ import { isMobileDevice } from "./libs/UserAgent/UserAgent";
 import { Metadata } from "next";
 import MobileContainer from "./Components/MobileComponents/MobileContainer";
 import DesktopContainer from "./Components/DesktopComponents/DesktopContainer";
-import { Suspense } from "react";
+//import { Suspense } from "react";
 import MobileIzdvojeno from "./Components/MobileComponents/MobileHomepage/MobileIzdvojeno/MobileIzdvojeno";
 //import MobilePromo from "./Components/MobileComponents/MobilePromo/MobilePromo";
 //import MobilePopularno from "./Components/MobileComponents/MobilePopularno/MobilePopularno";
@@ -30,13 +30,9 @@ const Home = async () => {
         delay={10000}
       /> */}
       {isMobile && (
-        <Suspense
-          fallback={<h2 style={{ color: "white" }}>Loading Izdvojeno ...</h2>}
-        >
-          <div className="container">
-            <MobileIzdvojeno />
-          </div>
-        </Suspense>
+        <div className="container">
+          <MobileIzdvojeno />
+        </div>
       )}
       {isMobile && <MobileContainer />}
       {!isMobile && <DesktopContainer />}
