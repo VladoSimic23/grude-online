@@ -26,9 +26,11 @@ const Categoires = ({ toggle }: { toggle: any }) => {
         return (
           <li key={index} onClick={toggle}>
             <Link
+              //replace
               className={`${pathname === item.path ? navStyle.active : ""}`}
               href={item.path}
               prefetch={false}
+              style={{ fontWeight: "600", fontSize: "13px" }}
             >
               {item.category}
             </Link>
@@ -36,7 +38,12 @@ const Categoires = ({ toggle }: { toggle: any }) => {
         );
       })}
       <li onClick={toggle}>
-        <Link href={"https://www.osmrtnica.ba/"}>Osmrtnice</Link>
+        <Link
+          href={"https://www.osmrtnica.ba/"}
+          style={{ fontWeight: "600", fontSize: "13px" }}
+        >
+          Osmrtnice
+        </Link>
       </li>
     </ul>
   );

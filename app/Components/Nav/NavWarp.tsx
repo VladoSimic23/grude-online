@@ -6,7 +6,7 @@ import Link from "next/link";
 //import { isMobileDevice } from "@/app/libs/UserAgent/UserAgent";
 import dynamic from "next/dynamic";
 //import Navbar from "./Navbar";
-const Navbar = dynamic(() => import("./Navbar"));
+const Navbar = dynamic(() => import("./Navbar"), { ssr: false });
 
 const NavWrap = () => {
   //const isMob = await isMobileDevice();
