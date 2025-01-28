@@ -3,7 +3,7 @@ import style from "../../../css/style.module.css";
 import MobilePromoDetails from "./MobilePromoDetails";
 
 const MobilePromo = async () => {
-  const promoNews = await getPostsByCategorySmall("sport", 4, "MEDIUM");
+  const promoNews = await getPostsByCategorySmall("sport", 4, "THUMBNAIL");
 
   const {
     posts: { nodes },

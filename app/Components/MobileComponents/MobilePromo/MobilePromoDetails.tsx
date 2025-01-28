@@ -26,7 +26,7 @@ const MobilePromoDetails = ({
   return (
     <Link href={`/${slug}`} style={{ textDecoration: "none" }}>
       <div style={{ marginBottom: "30px" }} className="row align-items-center">
-        <div className="col-6">
+        <div className="col-7">
           <h2 className={style.h4Mobile}>{title}</h2>
           <span
             className={mobileStyle.mobilePromoBanner}
@@ -39,7 +39,7 @@ const MobilePromoDetails = ({
             {theCategoryColor}
           </span>
         </div>
-        <div className="col-6">
+        <div className="col-5">
           <Image
             className={style.imageCover}
             src={sourceUrl}

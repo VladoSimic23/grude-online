@@ -159,6 +159,7 @@
 }
 .MobileInnerHTML iFrame {
   width: 100%;
+  background: white;
 }
 .MobileInnerHTML div {
   width: auto !important;
