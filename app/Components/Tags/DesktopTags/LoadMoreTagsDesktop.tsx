@@ -29,14 +29,7 @@ const LoadMoreTagsDesktop = ({ tag }: { tag: string }) => {
     <div>
       <div>
         {tags?.posts?.nodes?.slice(10)?.map((result, idx: number) => {
-          const {
-            slug,
-            title,
-            date,
-            featuredImage: {
-              node: { sourceUrl },
-            },
-          } = result;
+          const { slug, title, date, featuredImage } = result;
           return (
             <Link
               key={idx}
@@ -50,7 +43,11 @@ const LoadMoreTagsDesktop = ({ tag }: { tag: string }) => {
                 <div className="col-6">
                   <Image
                     className={style.imageCover}
-                    src={sourceUrl ? sourceUrl : defaultImage}
+                    src={
+                      featuredImage?.node?.sourceUrl
+                        ? featuredImage?.node?.sourceUrl
+                        : defaultImage
+                    }
                     alt={title}
                     width={500}
                     height={220}

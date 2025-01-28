@@ -152,6 +152,9 @@
     }
     
     @media (max-width: 992px) {
+      .navLinks {
+        padding: 10px 0 ;
+      }
       .navbar {
         padding: 0;
       }
@@ -247,7 +250,7 @@
         color: #008ca1 !important;
     }
     .navLinks {
-      padding: 10px 0;
+     
         li {
             a {
                 transition: all 0.2s ease-in-out;
