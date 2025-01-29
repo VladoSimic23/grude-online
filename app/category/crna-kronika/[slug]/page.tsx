@@ -1,4 +1,5 @@
 import CommentComponent from "@/app/Components/Comments/CommentComponent";
+import CommentForm from "@/app/Components/Comments/CommentForm";
 import SinglePost from "@/app/Components/DesktopComponents/SinglePost/SinglePost";
 //import MobilePopularno from "@/app/Components/MobileComponents/MobilePopularno/MobilePopularno";
 //import MobilePromo from "@/app/Components/MobileComponents/MobilePromo/MobilePromo";
@@ -76,7 +77,7 @@ const SingleCrnaKronika = async ({ params }: Props) => {
   }
 
   const {
-    postBy: { tags, commentStatus },
+    postBy: { tags, commentStatus, postId },
   } = thePost;
 
   return (
@@ -101,18 +102,21 @@ const SingleCrnaKronika = async ({ params }: Props) => {
 
       {isMobile && <PostSharingDetails slug={slug} />}
 
-      {/* {thePost?.commentStatus === "open" && (
-          <CommentForm slug={slug} id={thePost?.postId} />
-        )} */}
-
       {commentStatus === "open" && (
         <div className="row">
           <div className="col-md-8">
             {
-              <CommentComponent
-                post={slug}
-                color={isMobile ? "white" : "black"}
-              />
+              <>
+                <CommentComponent
+                  post={slug}
+                  color={isMobile ? "white" : "black"}
+                />
+                <CommentForm
+                  color={isMobile ? "white" : "black"}
+                  slug={slug}
+                  id={postId}
+                />
+              </>
             }
           </div>
         </div>

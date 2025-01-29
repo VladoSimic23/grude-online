@@ -1,4 +1,5 @@
 import CommentComponent from "@/app/Components/Comments/CommentComponent";
+import CommentForm from "@/app/Components/Comments/CommentForm";
 import SinglePost from "@/app/Components/DesktopComponents/SinglePost/SinglePost";
 //import MobilePopularno from "@/app/Components/MobileComponents/MobilePopularno/MobilePopularno";
 //import MobilePromo from "@/app/Components/MobileComponents/MobilePromo/MobilePromo";
@@ -77,7 +78,7 @@ const SingleIzdvojeno = async ({ params }: Props) => {
   }
 
   const {
-    postBy: { tags, commentStatus },
+    postBy: { tags, commentStatus, postId },
   } = thePost;
 
   return (
@@ -110,10 +111,17 @@ const SingleIzdvojeno = async ({ params }: Props) => {
         <div className="row">
           <div className="col-md-8">
             {
-              <CommentComponent
-                post={slug}
-                color={isMobile ? "white" : "black"}
-              />
+              <>
+                <CommentComponent
+                  post={slug}
+                  color={isMobile ? "white" : "black"}
+                />
+                <CommentForm
+                  color={isMobile ? "white" : "black"}
+                  slug={slug}
+                  id={postId}
+                />
+              </>
             }
           </div>
         </div>

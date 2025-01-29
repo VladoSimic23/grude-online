@@ -30,7 +30,7 @@ const MobileCarousel = ({ images }: { images: string[] }) => {
           left: "0",
           height: "100%",
           width: "100%",
-          background: "#2b2020f5",
+          background: "rgba(34, 32, 32, 0.96)",
           zIndex: "10000",
         }}
       >
