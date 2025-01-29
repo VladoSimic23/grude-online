@@ -25,7 +25,9 @@
 }
 
 .desktopInnerHTML iframe {
-  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  background: white;
 }
 .desktopInnerHTML div {
   width: auto !important;

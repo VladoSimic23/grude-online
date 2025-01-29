@@ -44,7 +44,7 @@ const MobileCarousel = ({ images }: { images: string[] }) => {
             {images.map((src: string, index: number) => (
               <div
                 key={index}
-                style={{ height: "100%" }}
+                style={{ height: "100%", transition: "all 0.4s ease-in-out" }}
                 className={`carousel-item  ${
                   currentIndex === index ? "active" : ""
                 }`}
@@ -98,19 +98,7 @@ const MobileCarousel = ({ images }: { images: string[] }) => {
             <span className="visually-hidden">Next</span>
           </button>
         </div>
-        {/* <span
-          onClick={() => setDisplayGaller(false)}
-          style={{
-            color: "white",
-            position: "fixed",
-            top: "0",
-            right: "0",
-            zIndex: "200000",
-            cursor: "pointer",
-          }}
-        >
-          Close
-        </span> */}
+
         <i
           onClick={() => setDisplayGaller(false)}
           style={{

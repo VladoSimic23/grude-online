@@ -158,7 +158,8 @@
   width: fit-content;
 }
 .MobileInnerHTML iFrame {
-  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
   background: white;
 }
 .MobileInnerHTML div {
