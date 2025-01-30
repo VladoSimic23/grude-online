@@ -5,7 +5,6 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import { isMobileDevice } from "./libs/UserAgent/UserAgent";
 import style from "./css/style.module.css";
 import { Suspense } from "react";
-//import NavWrap from "./Components/Nav/NavWarp";
 import BootstrapClient from "./libs/BootstrapClient/BootstrapClient";
 import FooterComponent from "./Components/Footer/FooterComponent";
 import dynamic from "next/dynamic";
@@ -16,9 +15,6 @@ import MobilePopularno from "./Components/MobileComponents/MobilePopularno/Mobil
 //import Script from "next/script";
 //import DelayedScriptLoader from "./functions/scriptLoader";
 const NavWrap = dynamic(() => import("./Components/Nav/NavWarp"));
-//import OneSignalComp from "./Components/OneSIgnal/OneSignal";
-//import MobileContainer from "./Components/MobileComponents/MobileContainer";
-//import DesktopContainer from "./Components/DesktopComponents/DesktopContainer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

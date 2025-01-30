@@ -8,15 +8,7 @@ import MobileCarousel from "./MobileCarousel/MobileCarousel";
 import defaultImage from "../../../../public/noImage.jpg";
 
 const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
-  const {
-    title,
-    content,
-    date,
-    postId,
-    // featuredImage: {
-    //   node: { sourceUrl },
-    // },
-  } = post;
+  const { title, content, date, postId } = post;
 
   const $ = cheerio.load(content);
   const images = $("img");
@@ -24,8 +16,6 @@ const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
   $("img.wp-caption, div.wp-caption").each((index, element) => {
     $(element).remove();
   });
-
-  // Return the modified HTML content
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const extraImages: any = [];
@@ -65,6 +55,7 @@ const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
         height={250}
         alt={`post image ${postId}`}
         priority={true}
+        fetchPriority="high"
       />
 
       <div

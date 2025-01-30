@@ -79,7 +79,7 @@ export interface ClientCommentsContent {
 export const fetchClientCommentsDetailed = async (contentName: string) => {
   const data = await fetchAPI<ClientCommentsDetailedI>(
     `query NewQuery {
-            comments(first:100, where: {contentName: "${contentName}"}) {
+            comments(first:500, where: {contentName: "${contentName}"}) {
               nodes {         
                 content
                 date
