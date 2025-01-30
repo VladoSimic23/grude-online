@@ -26,27 +26,31 @@ const MobilePromoDetails = ({
   return (
     <Link href={`/${slug}`} style={{ textDecoration: "none" }}>
       <div style={{ marginBottom: "30px" }} className="row align-items-center">
-        <div className="col-7">
-          <h2 className={style.h4Mobile}>{title}</h2>
-          <span
-            className={mobileStyle.mobilePromoBanner}
-            style={{
-              background: matchColors(theCategoryColor),
-              textTransform: "uppercase",
-              letterSpacing: "1px",
-            }}
-          >
-            {theCategoryColor}
-          </span>
-        </div>
-        <div className="col-5">
+        <div className="col-4">
           <Image
             className={style.imageCover}
             src={sourceUrl}
-            width={150}
-            height={100}
+            width={80}
+            height={80}
             alt={`Promo Img ${index}`}
           />
+        </div>
+        <div className="col-8">
+          <h1 className={style.h5Mobile}>{title}</h1>
+          <div>
+            <span
+              className={mobileStyle.mobilePromoBanner}
+              style={{
+                background: matchColors(theCategoryColor),
+                textTransform: "uppercase",
+                letterSpacing: "1px",
+                display: "inline",
+                padding: "3px 5px",
+              }}
+            >
+              {theCategoryColor}
+            </span>
+          </div>
         </div>
       </div>
     </Link>
