@@ -5,6 +5,7 @@
   width: 100%;
   height: 100%;
   z-index: 100;
+  background: rgba(0, 0, 0, 0.3098039216);
 }
 .desktopOverlay:hover {
   background: rgba(0, 0, 0, 0.0823529412);
@@ -39,4 +40,8 @@
   max-width: 100%;
   margin-bottom: 20px;
   height: auto;
+}
+
+.dateAndComment {
+  z-index: 1000;
 }/*# sourceMappingURL=desktop.module.css.map */

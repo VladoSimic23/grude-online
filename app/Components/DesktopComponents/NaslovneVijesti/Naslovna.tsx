@@ -30,7 +30,7 @@ const Naslovna = async () => {
             alt={"Naslovna 1."}
           />
           <div
-            className={`position-absolute bottom-0 p-3 ${desktopStyle.dateAndComment}`}
+            className={`position-absolute bottom-0 p-3  ${desktopStyle.dateAndComment}`}
           >
             <h1 className={`${style.h2Mobile}`}>{nodes[0].title}</h1>
             <div style={{ color: "white", fontSize: "14px" }}>

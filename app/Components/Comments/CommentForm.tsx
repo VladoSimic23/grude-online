@@ -2,6 +2,7 @@
 import { SetStateAction, useState } from "react";
 import commentStyles from "./commentsCss/comments.module.css";
 import { submitComment } from "@/app/libs/Queries/Queries/submitComment";
+import mobileStyle from "../MobileComponents/MobileHomepage/Css/mobileHomepage.module.css";
 
 const CommentForm = ({
   id,
@@ -64,7 +65,9 @@ const CommentForm = ({
       <br />
 
       <div>
-        <button type="submit">Objavi</button>
+        <button className={mobileStyle.mobileButtonOrange} type="submit">
+          Objavi
+        </button>
       </div>
     </form>
   );

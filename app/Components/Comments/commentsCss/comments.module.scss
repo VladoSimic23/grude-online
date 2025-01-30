@@ -32,8 +32,13 @@
     }
 }
 .commentForm {
+    h3 {
+        display: inline-block;
+        border-bottom: 2px solid rgb(27, 65, 153);
+        padding-bottom: 5px;
+    }
     textarea {
-        width: -moz-available;
+        width: 100%;
         padding: 20px;
         font-size: 16px;
         border: 1px solid rgb(216, 216, 216);
@@ -152,7 +157,8 @@
         }
     }
     .commentForm {
-        padding: 0 20px;
+        //padding: 0 20px;
+        width: 100%;
         h2 {
             font-size: 20px;
         }

@@ -49,7 +49,7 @@ const CommentComponent = ({ post, color }: { post: string; color: string }) => {
   if (theComments?.comments?.nodes?.length < 1) {
     return (
       <div className={`${commentStyles.commentsContainer}`}>
-        <h3 style={{ color: "white" }}>
+        <h3 style={{ color: "white", marginTop: "30px" }}>
           Komentari: {theComments?.comments?.nodes?.length}
         </h3>
       </div>
