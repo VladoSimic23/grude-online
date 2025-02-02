@@ -17,7 +17,7 @@ const NavWrap = () => {
         <div className={navStyles.imageContainer}>
           <Link href={"/"}>
             <Image
-              src={"/Grude_online_Logotip2.png"}
+              src={"/Grude_online_Logotip2.webp"}
               width={330}
               height={42}
               alt="Grude-Online"

@@ -4,7 +4,7 @@ import OstaleNaslovne from "./OstaleNaslovne";
 
 const NaslovneVijesti = () => {
   return (
-    <div className="container" style={{ marginTop: "30px" }}>
+    <div className="container" style={{ marginTop: "30px", padding: "0 30px" }}>
       <div className="row">
         <div className="col-lg-6 p-1">
           <Naslovna />
