@@ -223,7 +223,8 @@
 }
 
 .active {
-  color: #008ca1 !important;
+  color: #095479 !important;
+  font-weight: 700 !important;
 }
 
 .navLinks li a {
