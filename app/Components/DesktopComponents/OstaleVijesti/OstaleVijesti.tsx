@@ -42,7 +42,7 @@ const OstaleVijesti = async () => {
                   alt={`Ostale Vijsti ${index + 1}`}
                 />
                 <h1 className={`${style.h5Desktop}`}>{title}</h1>
-                <p className="text-black-50">{formatDateToCroatian(date)}</p>
+                <p className="text-black mt-2">{formatDateToCroatian(date)}</p>
               </Link>
             </div>
           );

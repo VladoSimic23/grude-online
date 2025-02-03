@@ -1,6 +1,6 @@
 import { getRecentPosts } from "@/app/libs/Queries/Queries/recentPostsFooter";
 import Link from "next/link";
-import React from "react";
+import style from "../../../css/style.module.css";
 
 const RecentPosts = async () => {
   const data = await getRecentPosts(5);
@@ -10,7 +10,7 @@ const RecentPosts = async () => {
 
   return (
     <div>
-      <h4>NOVE OBJAVE</h4>
+      <h1 className={style.h5Desktop}>NOVE OBJAVE</h1>
       <div>
         {nodes?.map((item, index: number) => {
           return (

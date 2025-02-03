@@ -14,15 +14,15 @@ const TopNavbar = () => {
               href={"https://www.facebook.com/GrudeOnline/"}
               target="_blank"
             >
-              <i className="bi bi-facebook"></i>
+              Facebook <i className="bi bi-facebook"></i>
             </Link>
             <Link href={"https://www.instagram.com/grudeonline/"}>
-              <i className="bi bi-instagram"></i>
+              Instagram <i className="bi bi-instagram"></i>
             </Link>
             <Link
               href={"https://www.youtube.com/channel/UC0tJO-t-CtXhSqIHpE7JaCg"}
             >
-              <i className="bi bi-youtube"></i>
+              Youtube <i className="bi bi-youtube"></i>
             </Link>
           </div>
         </div>

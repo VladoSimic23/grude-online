@@ -38,7 +38,7 @@ const SportNaslovna = async () => {
               alt={"Grude Online 1."}
             />
             <h1 className={`${style.h4Desktop}`}>{nodes[0]?.title}</h1>
-            <p className="text-black-50">
+            <p className="text-black mt-2">
               {formatDateToCroatian(nodes[0]?.date)}
             </p>
           </Link>
@@ -69,9 +69,9 @@ const SportNaslovna = async () => {
                       />
                     </div>
                     <div className="col-8">
-                      <p className="mb-0">{title}</p>
+                      <p className="mb-0 fw-semibold">{title}</p>
                       <div>
-                        <p className="text-black-50">
+                        <p className="text-black mt-2">
                           {formatDateToCroatian(date)}
                         </p>
                       </div>
