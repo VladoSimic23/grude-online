@@ -4,9 +4,11 @@ import Image from "next/image";
 import { decodeHTMLEntities } from "@/app/functions/decodeHtml";
 import Link from "next/link";
 import CommentCount from "../../CommentCount/CommentCount";
+import defaultImage from "../../../../public/noImage.jpg"
 
 const Popularno = async () => {
   const popular = await fetchPopularPosts();
+
   return (
     <div>
       <h1 className={styles.h4Desktop}>Popularno</h1>
@@ -22,7 +24,7 @@ const Popularno = async () => {
                 <div className="row mt-3 border-bottom">
                   <div className="col-4 mb-3">
                     <Image
-                      src={item?.featured_image.source_url}
+                      src={item?.featured_image?.source_url ? item?.featured_image?.source_url : defaultImage }
                       width={150}
                       height={80}
                       alt={`Popular Post Image ${index}`}

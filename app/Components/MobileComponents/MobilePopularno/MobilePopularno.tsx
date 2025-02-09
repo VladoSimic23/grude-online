@@ -5,6 +5,7 @@ import Image from "next/image";
 import { decodeHTMLEntities } from "@/app/functions/decodeHtml";
 import Link from "next/link";
 import CommentCount from "../../CommentCount/CommentCount";
+import defaultImage from "../../../../public/noImage.jpg"
 
 const MobilePopularno = async () => {
   const popular = await fetchPopularPosts();
@@ -22,7 +23,7 @@ const MobilePopularno = async () => {
               <Link href={`/${item?.slug}`}>
                 <div className={mobileStyle.slideTestChildWrap}>
                   <Image
-                    src={item?.featured_image.source_url}
+                    src={item?.featured_image?.source_url ? item?.featured_image?.source_url : defaultImage}
                     width={150}
                     height={100}
                     alt={`Popular Post Image ${index}`}

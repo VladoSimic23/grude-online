@@ -64,7 +64,7 @@ export default async function RootLayout({
             </Suspense>
           </div>
         )}
-
+        
         {isMobile && (
           <div className="container">
             <Suspense
