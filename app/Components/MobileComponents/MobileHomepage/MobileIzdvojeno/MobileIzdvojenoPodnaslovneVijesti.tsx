@@ -28,6 +28,7 @@ const MobileIzdvojenoPodnaslovneVijesti = async ({
       <div>
         <div style={{ position: "relative" }}>
           <Image
+            style={{ position: "absolute", zIndex: "-1" }}
             className={style.imageCover}
             src={sourceUrl}
             width={150}
@@ -35,6 +36,18 @@ const MobileIzdvojenoPodnaslovneVijesti = async ({
             alt={`Naslovna ${index}`}
             fetchPriority="high"
             priority={true}
+            quality={1}
+          />
+          <Image
+            style={{ position: "relative", zIndex: "1" }}
+            className={style.imageCover}
+            src={sourceUrl}
+            width={150}
+            height={100}
+            alt={`Naslovna ${index}`}
+            //fetchPriority="high"
+            //priority={true}
+            quality={50}
           />
 
           <span
@@ -49,6 +62,7 @@ const MobileIzdvojenoPodnaslovneVijesti = async ({
               fontSize: "12px",
               fontWeight: "600",
               letterSpacing: "1px",
+              zIndex: "10",
             }}
           >
             Izdvojeno
@@ -63,6 +77,7 @@ const MobileIzdvojenoPodnaslovneVijesti = async ({
                 background: "#4d1b97",
                 display: "inline-grid",
                 padding: "3px 5px",
+                zIndex: "10",
               }}
               className="bi bi-camera"
             ></i>
@@ -77,6 +92,7 @@ const MobileIzdvojenoPodnaslovneVijesti = async ({
                 background: "#4d1b97",
                 display: "inline-grid",
                 padding: "3px 5px",
+                zIndex: "10",
               }}
               className="bi bi-youtube"
             ></i>
