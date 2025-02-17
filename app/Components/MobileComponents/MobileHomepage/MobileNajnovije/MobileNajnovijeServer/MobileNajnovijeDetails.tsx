@@ -46,6 +46,7 @@ const MobileNajnovijeDetails = ({
               alt={title}
               priority={index < 1 ? true : false}
               fetchPriority={index < 1 ? "high" : "low"}
+              quality={1}
             />
           )}
           <Image
@@ -55,6 +56,7 @@ const MobileNajnovijeDetails = ({
             width={300}
             height={200}
             alt={title}
+            quality={50}
             //priority={index < 1 ? true : false}
             //fetchPriority={index < 1 ? "high" : "low"}
           />
