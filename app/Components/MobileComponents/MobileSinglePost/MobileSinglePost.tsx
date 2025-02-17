@@ -43,20 +43,40 @@ const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
         {formatDateToCroatian(date)}
       </h2>
 
-      <Image
-        className={`${style.imageContain} mt-4 mb-4`}
-        style={{ height: "auto" }}
-        src={
-          post?.featuredImage?.node?.sourceUrl
-            ? post?.featuredImage?.node?.sourceUrl
-            : defaultImage
-        }
-        width={500}
-        height={250}
-        alt={`post image ${postId}`}
-        priority={true}
-        fetchPriority="high"
-      />
+      <div style={{ position: "relative" }}>
+        <Image
+          className={`${style.imageContain} mt-4 mb-4`}
+          style={{ height: "auto", position: "absolute", zIndex: "-1" }}
+          src={
+            post?.featuredImage?.node?.sourceUrl
+              ? post?.featuredImage?.node?.sourceUrl
+              : defaultImage
+          }
+          width={500}
+          height={250}
+          alt={`post image ${postId}`}
+          priority={true}
+          fetchPriority="high"
+          quality={1}
+          id={`post-image-${postId}`}
+        />
+        <Image
+          className={`${style.imageContain} mt-4 mb-4`}
+          style={{ height: "auto", position: "relative", zIndex: "1" }}
+          src={
+            post?.featuredImage?.node?.sourceUrl
+              ? post?.featuredImage?.node?.sourceUrl
+              : defaultImage
+          }
+          width={500}
+          height={250}
+          alt={`post image ${postId}`}
+          priority={false}
+          //fetchPriority="high"
+          quality={75}
+          id={`post-image-${postId}`}
+        />
+      </div>
 
       <div
         className={mobileStyle.MobileInnerHTML}
