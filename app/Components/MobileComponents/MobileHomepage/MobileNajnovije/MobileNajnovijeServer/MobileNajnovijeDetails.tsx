@@ -62,13 +62,13 @@ const MobileNajnovijeDetails = ({
           />
           <div
             className={mobileStyle.mobileCategoryOverlay}
-            style={{ background: matchColors(theCategoryColor), zIndex: "10" }}
+            style={{ background: matchColors(theCategoryColor), zIndex: "5" }}
           >
             <span>{theCategoryColor}</span>
           </div>
           <div
             className={mobileStyle.mobileCommentCount}
-            style={{ background: matchColors(theCategoryColor), zIndex: "10" }}
+            style={{ background: matchColors(theCategoryColor), zIndex: "5" }}
           >
             {hasImages && <i className="bi bi-camera"></i>}
             {hasVideo || (hasIframe && <i className="bi bi-youtube"></i>)}

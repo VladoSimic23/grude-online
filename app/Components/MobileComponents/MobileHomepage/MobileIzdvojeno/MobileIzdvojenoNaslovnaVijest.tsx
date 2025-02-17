@@ -59,7 +59,7 @@ const MobileIzdvojenoNaslovnaVijest = ({
               fontSize: "14px",
               fontWeight: "600",
               letterSpacing: "1px",
-              zIndex: "10",
+              zIndex: "5",
             }}
           >
             Izdvojeno
@@ -74,7 +74,7 @@ const MobileIzdvojenoNaslovnaVijest = ({
                 background: "#4d1b97",
                 display: "inline-grid",
                 padding: "3px 5px",
-                zIndex: "10",
+                zIndex: "5",
               }}
               className="bi bi-camera"
             ></i>
@@ -90,7 +90,7 @@ const MobileIzdvojenoNaslovnaVijest = ({
                   background: "#4d1b97",
                   display: "inline-grid",
                   padding: "3px 5px",
-                  zIndex: "10",
+                  zIndex: "5",
                 }}
                 className="bi bi-youtube"
               ></i>
