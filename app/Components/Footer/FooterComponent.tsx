@@ -76,6 +76,7 @@ const FooterComponent = async () => {
                   alt="osmrtnice"
                   width={300}
                   height={100}
+                  quality={20}
                 />
               </Link>
             </div>

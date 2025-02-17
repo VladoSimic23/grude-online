@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import defaultImage from "../../public/noImage.jpg";
+import defaultImage from "../../public/loadingImage-min(1).jpg";
 import style from "../css/style.module.css";
 
 const TimedElement = () => {

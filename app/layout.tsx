@@ -4,7 +4,6 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { isMobileDevice } from "./libs/UserAgent/UserAgent";
 import style from "./css/style.module.css";
-import { Suspense } from "react";
 import BootstrapClient from "./libs/BootstrapClient/BootstrapClient";
 import FooterComponent from "./Components/Footer/FooterComponent";
 import dynamic from "next/dynamic";
@@ -57,31 +56,18 @@ export default async function RootLayout({
 
         {isMobile && (
           <div className="container">
-            <Suspense
-              fallback={<h2 style={{ color: "white" }}>Loading Promo ...</h2>}
-            >
-              <MobilePromo />
-            </Suspense>
-          </div>
-        )}
-        
-        {isMobile && (
-          <div className="container">
-            <Suspense
-              fallback={
-                <h2 style={{ color: "white" }}>Loading Popularno ...</h2>
-              }
-            >
-              <MobilePopularno />
-            </Suspense>
+            <MobilePromo />
           </div>
         )}
 
-        <Suspense
-          fallback={<h2 style={{ color: "white" }}>Loading Footer ...</h2>}
-        >
-          <FooterComponent />
-        </Suspense>
+        {isMobile && (
+          <div className="container">
+            <MobilePopularno />
+          </div>
+        )}
+
+        <FooterComponent />
+
         <BootstrapClient />
         {isMobile && <ScrollToTop />}
       </body>

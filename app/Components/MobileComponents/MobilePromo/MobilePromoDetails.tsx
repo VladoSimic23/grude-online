@@ -32,6 +32,7 @@ const MobilePromoDetails = ({
             src={sourceUrl}
             width={80}
             height={80}
+            quality={20}
             alt={`Promo Img ${index}`}
           />
         </div>
