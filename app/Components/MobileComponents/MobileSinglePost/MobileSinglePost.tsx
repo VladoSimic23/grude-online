@@ -6,7 +6,7 @@ import { formatDateToCroatian } from "@/app/functions/formatDateToCroatian";
 import * as cheerio from "cheerio";
 import MobileCarousel from "./MobileCarousel/MobileCarousel";
 import defaultImage from "../../../../public/noImage.jpg";
-import TimedElement from "@/app/libs/TimedEle";
+//import TimedElement from "@/app/libs/TimedEle";
 
 const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
   const { title, content, date, postId } = post;
@@ -45,7 +45,7 @@ const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
       </h2>
 
       <div style={{ position: "relative" }}>
-        <TimedElement />
+        {/* <TimedElement /> */}
         <Image
           className={`${style.imageContain} mt-4 mb-4`}
           style={{ height: "auto", position: "relative", zIndex: "1" }}
