@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import commentStyles from "./commentsCss/comments.module.css";
 import mobileStyle from "../MobileComponents/MobileHomepage/Css/mobileHomepage.module.css";
-
+import style from "../../css/style.module.css";
 import CommentDetails from "./CommentDetails";
 import {
   ClientCommentsDetailedI,
@@ -49,9 +49,12 @@ const CommentComponent = ({ post, color }: { post: string; color: string }) => {
   if (theComments?.comments?.nodes?.length < 1) {
     return (
       <div className={`${commentStyles.commentsContainer}`}>
-        <h3 style={{ color: "white", marginTop: "30px" }}>
+        <h1
+          className={style.h3Desktop}
+          style={{ color: "white", marginTop: "30px" }}
+        >
           Komentari: {theComments?.comments?.nodes?.length}
-        </h3>
+        </h1>
       </div>
     );
   }
@@ -62,7 +65,9 @@ const CommentComponent = ({ post, color }: { post: string; color: string }) => {
           className={commentStyles.commentsContainer}
           style={{ marginTop: "40px", color: color }}
         >
-          <h2>Komentari : {theComments?.comments?.nodes?.length}</h2>
+          <h1 className={style.h3Desktop}>
+            Komentari : {theComments?.comments?.nodes?.length}
+          </h1>
           {theComments?.comments?.nodes?.length > 0 &&
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             theComments?.comments?.nodes.map((item: any, idx: number) => {

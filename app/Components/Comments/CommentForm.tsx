@@ -3,6 +3,7 @@ import { SetStateAction, useState } from "react";
 import commentStyles from "./commentsCss/comments.module.css";
 import { submitComment } from "@/app/libs/Queries/Queries/submitComment";
 import mobileStyle from "../MobileComponents/MobileHomepage/Css/mobileHomepage.module.css";
+import style from "../../css/style.module.css";
 
 const CommentForm = ({
   id,
@@ -44,9 +45,12 @@ const CommentForm = ({
 
   return (
     <form onSubmit={handleSubmit} className={commentStyles.commentForm}>
-      <h3 style={{ color: color, marginBottom: "20px", marginTop: "50px" }}>
+      <h1
+        className={style.h3Desktop}
+        style={{ color: color, marginBottom: "20px", marginTop: "50px" }}
+      >
         Ostavi komentar
-      </h3>
+      </h1>
       <textarea
         placeholder="Tvoj komentar..."
         value={comment}
