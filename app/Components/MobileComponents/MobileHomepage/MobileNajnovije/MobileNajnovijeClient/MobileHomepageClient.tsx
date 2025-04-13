@@ -30,7 +30,10 @@ const MobileHomepageClient = () => {
         );
       })}
 
-      <button className={mobileStyle.mobileButton} onClick={handleClick}>
+      <button
+        className={`${mobileStyle.mobileButton} mt-0`}
+        onClick={handleClick}
+      >
         {isLoading ? "Loading..." : "Učitaj više vijesti ..."}
       </button>
     </div>

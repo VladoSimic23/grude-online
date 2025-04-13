@@ -2,7 +2,7 @@ import { isMobileDevice } from "./libs/UserAgent/UserAgent";
 import { Metadata } from "next";
 import MobileContainer from "./Components/MobileComponents/MobileContainer";
 import DesktopContainer from "./Components/DesktopComponents/DesktopContainer";
-import MobileIzdvojeno from "./Components/MobileComponents/MobileHomepage/MobileIzdvojeno/MobileIzdvojeno";
+//import MobileIzdvojeno from "./Components/MobileComponents/MobileHomepage/MobileIzdvojeno/MobileIzdvojeno";
 //import dynamic from "next/dynamic";
 // const DelayedScriptLoader = dynamic(
 //   () => import("@/app/functions/scriptLoader")
@@ -26,11 +26,11 @@ const Home = async () => {
         scriptUrl="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
         delay={10000}
       /> */}
-      {isMobile && (
-        <div className="container">
+      {/* {isMobile && (
+        <div className={`container px-4`}>
           <MobileIzdvojeno />
         </div>
-      )}
+      )} */}
       {isMobile && <MobileContainer />}
       {!isMobile && <DesktopContainer />}
     </>

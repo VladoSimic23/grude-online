@@ -1,11 +1,20 @@
 // _typography.scss
 
-
+.containerPadding {
+  padding: 0 10px !important;
+}
 .websiteBgDark {
   background: rgba(30, 27, 27, 0.93);
+  p, span, button {
+    font-family: sans-serif;
+  }
+
 }
 .websiteBgWhite {
   background: white;
+  img {
+    border-radius: 8px;
+  }
 }
 .paragraph {
   p {
@@ -41,11 +50,12 @@
 }
 
 /// Mobile Headings
-.h1Mobile,.h2Mobile,.h3Mobile,.h4Mobile,.h5Mobile, .h1Desktop,.h2Desktop,.h3Desktopm.h4Desktop,.h5Desktop {
+.h1Mobile,.h2Mobile,.h3Mobile,.h4Mobile,.h5Mobile,.h6Mobile, .h1Desktop,.h2Desktop,.h3Desktopm.h4Desktop,.h5Desktop {
   font-weight: 600;
 }
 .h1Mobile {
   font-size: $font-size-h1-mobile;
+  font-family: "Barlow-Condesend";
   margin: 24px 0;
   color: white;
 }
@@ -63,11 +73,19 @@
   font-size: $font-size-h4-mobile;
   margin: 12px 0;
   color: white;
+  font-family: sans-serif;
 }
 .h5Mobile {
   font-size: $font-size-h5-mobile;
   margin: 8px 0;
   color: white;
+  font-family: sans-serif;
+}
+.h6Mobile {
+  font-size: $font-size-h6-mobile;
+  margin: 8px 0;
+  color: white;
+  font-family: sans-serif;
 }
 
 /// Desktop Headings
@@ -86,8 +104,10 @@
 .h4Desktop {
   font-size: $font-size-h4-desktop;
   margin: 20px 0;
+  font-family: sans-serif;
 }
 .h5Desktop {
   font-size: $font-size-h5-desktop;
   margin: 16px 0;
+  font-family: sans-serif;
 }

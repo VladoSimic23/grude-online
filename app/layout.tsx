@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Barlow_Condensed } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { isMobileDevice } from "./libs/UserAgent/UserAgent";
@@ -9,19 +9,20 @@ import FooterComponent from "./Components/Footer/FooterComponent";
 import dynamic from "next/dynamic";
 import TopNavbar from "./Components/Nav/TopNavbar";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
-import MobilePromo from "./Components/MobileComponents/MobilePromo/MobilePromo";
 import MobilePopularno from "./Components/MobileComponents/MobilePopularno/MobilePopularno";
+import MobilePromo from "./Components/MobileComponents/MobilePromo/MobilePromo";
+
 //import Script from "next/script";
 //import DelayedScriptLoader from "./functions/scriptLoader";
 const NavWrap = dynamic(() => import("./Components/Nav/NavWarp"));
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const geistMono = Barlow_Condensed({
+  weight: ["100", "400", "600", "700"],
   subsets: ["latin"],
 });
 
@@ -45,7 +46,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${
+        className={`${geistMono.className} ${
           isMobile ? style.websiteBgDark : style.websiteBgWhite
         }`}
       >
@@ -55,14 +56,14 @@ export default async function RootLayout({
         {children}
 
         {isMobile && (
-          <div className="container">
-            <MobilePromo />
+          <div className="container px-4">
+            <MobilePopularno />
           </div>
         )}
 
         {isMobile && (
-          <div className="container">
-            <MobilePopularno />
+          <div className="container px-4">
+            <MobilePromo />
           </div>
         )}
 

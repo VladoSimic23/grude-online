@@ -31,7 +31,7 @@ const MobileHomepageClientDetails = ({
 
   return (
     <Link href={`/${slug}`} style={{ textDecoration: "none" }}>
-      <div style={{ marginBottom: "60px" }}>
+      <div style={{ marginBottom: "30px" }}>
         <div className={mobileStyle.mobileSingleItem}>
           <Image
             className={style.imageCover}
@@ -40,12 +40,12 @@ const MobileHomepageClientDetails = ({
             height={200}
             alt={title}
           />
-          <div
+          {/* <div
             className={mobileStyle.mobileCategoryOverlay}
             style={{ background: matchColors(theCategoryColor) }}
           >
             <span>{theCategoryColor}</span>
-          </div>
+          </div> */}
           <div
             className={mobileStyle.mobileCommentCount}
             style={{ background: matchColors(theCategoryColor) }}
@@ -54,7 +54,7 @@ const MobileHomepageClientDetails = ({
             {hasVideo || (hasIframe && <i className="bi bi-youtube"></i>)}
           </div>
         </div>
-        <h1 className={style.h4Mobile}>{title}</h1>
+        <h1 className={style.h3Mobile}>{title}</h1>
         <div className={mobileStyle.mobileDateAndComments}>
           <span
             className={mobileStyle.mobileSpan}

@@ -31,12 +31,12 @@ const MobileNajnovijeDetails = ({
 
   return (
     <Link href={`/${slug}`} style={{ textDecoration: "none" }}>
-      <div style={{ marginBottom: "60px" }}>
+      <div style={{ marginBottom: "30px" }}>
         <div
           className={mobileStyle.mobileSingleItem}
           style={{ position: "relative" }}
         >
-          {index < 1 && (
+          {index < 3 && (
             <Image
               style={{ position: "absolute", zIndex: "-1" }}
               className={style.imageCover}
@@ -44,8 +44,8 @@ const MobileNajnovijeDetails = ({
               width={300}
               height={200}
               alt={title}
-              priority={index < 1 ? true : false}
-              fetchPriority={index < 1 ? "high" : "low"}
+              priority={index < 3 ? true : false}
+              fetchPriority={index < 3 ? "high" : "low"}
               quality={1}
             />
           )}
@@ -60,12 +60,12 @@ const MobileNajnovijeDetails = ({
             //priority={index < 1 ? true : false}
             //fetchPriority={index < 1 ? "high" : "low"}
           />
-          <div
+          {/* <div
             className={mobileStyle.mobileCategoryOverlay}
             style={{ background: matchColors(theCategoryColor), zIndex: "5" }}
           >
             <span>{theCategoryColor}</span>
-          </div>
+          </div> */}
           <div
             className={mobileStyle.mobileCommentCount}
             style={{ background: matchColors(theCategoryColor), zIndex: "5" }}
@@ -74,7 +74,7 @@ const MobileNajnovijeDetails = ({
             {hasVideo || (hasIframe && <i className="bi bi-youtube"></i>)}
           </div>
         </div>
-        <h1 className={style.h4Mobile}>{title}</h1>
+        <h1 className={style.h3Mobile}>{title}</h1>
         <div className={mobileStyle.mobileDateAndComments}>
           <span
             className={mobileStyle.mobileSpan}

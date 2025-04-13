@@ -83,7 +83,9 @@ const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
         style={{ color: "white" }}
         dangerouslySetInnerHTML={{ __html: updatedContent }}
       ></div>
-      {extraImages.length > 0 && <MobileCarousel images={extraImages} />}
+      {extraImages.length > 0 && (
+        <MobileCarousel images={extraImages} title={title} />
+      )}
     </div>
   );
 };

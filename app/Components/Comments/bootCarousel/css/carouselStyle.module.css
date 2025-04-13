@@ -1,0 +1,34 @@
+/* NewsCarousel.module.css */
+.carouselItem {
+  position: relative;
+}
+
+.carouselImage {
+  width: 100%;
+  height: 400px;
+}
+
+.carouselCaption {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+  text-align: center;
+  position: relative;
+}
+
+.carouselCaption h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.carouselCaption p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+/* Adding space between carousel items */
+.carouselItem + .carouselItem {
+  margin-top: 20px;
+}/*# sourceMappingURL=carouselStyle.module.css.map */

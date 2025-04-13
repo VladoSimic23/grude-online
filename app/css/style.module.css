@@ -1,9 +1,19 @@
+.containerPadding {
+  padding: 0 10px !important;
+}
+
 .websiteBgDark {
   background: rgba(30, 27, 27, 0.93);
+}
+.websiteBgDark p, .websiteBgDark span, .websiteBgDark button {
+  font-family: sans-serif;
 }
 
 .websiteBgWhite {
   background: white;
+}
+.websiteBgWhite img {
+  border-radius: 8px;
 }
 
 .paragraph p {
@@ -41,38 +51,48 @@
   padding-bottom: 5px;
 }
 
-.h1Mobile, .h2Mobile, .h3Mobile, .h4Mobile, .h5Mobile, .h1Desktop, .h2Desktop, .h3Desktopm.h4Desktop, .h5Desktop {
+.h1Mobile, .h2Mobile, .h3Mobile, .h4Mobile, .h5Mobile, .h6Mobile, .h1Desktop, .h2Desktop, .h3Desktopm.h4Desktop, .h5Desktop {
   font-weight: 600;
 }
 
 .h1Mobile {
-  font-size: 28px;
+  font-size: 30px;
+  font-family: "Barlow-Condesend";
   margin: 24px 0;
   color: white;
 }
 
 .h2Mobile {
-  font-size: 24px;
+  font-size: 26px;
   margin: 20px 0;
   color: white;
 }
 
 .h3Mobile {
-  font-size: 20px;
+  font-size: 22px;
   margin: 16px 0;
   color: white;
 }
 
 .h4Mobile {
-  font-size: 16px;
+  font-size: 18px;
   margin: 12px 0;
   color: white;
+  font-family: sans-serif;
 }
 
 .h5Mobile {
+  font-size: 16px;
+  margin: 8px 0;
+  color: white;
+  font-family: sans-serif;
+}
+
+.h6Mobile {
   font-size: 14px;
   margin: 8px 0;
   color: white;
+  font-family: sans-serif;
 }
 
 .h1Desktop {
@@ -93,9 +113,11 @@
 .h4Desktop {
   font-size: 22px;
   margin: 20px 0;
+  font-family: sans-serif;
 }
 
 .h5Desktop {
   font-size: 20px;
   margin: 16px 0;
+  font-family: sans-serif;
 }/*# sourceMappingURL=style.module.css.map */

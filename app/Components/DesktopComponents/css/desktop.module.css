@@ -1,4 +1,5 @@
 .desktopOverlay {
+  border-radius: 8px;
   position: absolute;
   left: 0;
   top: 0;

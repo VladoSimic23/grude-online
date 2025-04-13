@@ -141,7 +141,7 @@
         bottom: 0;
         border-bottom-right-radius: 7px;
         font-size: 11px;
-        padding: 3px 6px;
+        padding: 3px 5px 2px 5px;
         color: white;
     }
 }
@@ -215,12 +215,34 @@
     bottom: 15px;
     right: 10px;
     cursor: pointer;
+    z-index: 10000;
     i {
         background: #ea8624a3;
         color: white;
         padding: 8px 10px;
     }
 }
+
+
+/// CAROUSEL POST
+/// 
+.mobCarousel {
+    display: flex;
+    justify-content: space-between;
+    img {
+        object-fit: contain;
+        height: auto;
+        width: auto;
+    }
+}
+.galleryGridImg {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+
+
 
 // @media only screen and (max-width: 992px) {
 //     .MobileInnerHTML {

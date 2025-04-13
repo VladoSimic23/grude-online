@@ -133,7 +133,7 @@
   bottom: 0;
   border-bottom-right-radius: 7px;
   font-size: 11px;
-  padding: 3px 6px;
+  padding: 3px 5px 2px 5px;
   color: white;
 }
 
@@ -190,9 +190,28 @@
   bottom: 15px;
   right: 10px;
   cursor: pointer;
+  z-index: 10000;
 }
 .toTop i {
   background: rgba(234, 134, 36, 0.6392156863);
   color: white;
   padding: 8px 10px;
+}
+
+.mobCarousel {
+  display: flex;
+  justify-content: space-between;
+}
+.mobCarousel img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: auto;
+  width: auto;
+}
+
+.galleryGridImg {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 6px;
 }/*# sourceMappingURL=mobileHomepage.module.css.map */
