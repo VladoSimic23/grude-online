@@ -190,7 +190,7 @@
   bottom: 15px;
   right: 10px;
   cursor: pointer;
-  z-index: 10000;
+  z-index: 5;
 }
 .toTop i {
   background: rgba(234, 134, 36, 0.6392156863);
