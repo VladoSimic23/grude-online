@@ -103,7 +103,7 @@ const SingleCrnaKronika = async ({ params }: Props) => {
       {isMobile && <PostSharingDetails slug={slug} />}
 
       {commentStatus === "open" && (
-        <div className="row">
+        <div className="row" style={{ padding: "0 5px" }}>
           <div className="col-md-8">
             {
               <>

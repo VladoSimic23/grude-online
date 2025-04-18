@@ -56,13 +56,13 @@ export default async function RootLayout({
         {children}
 
         {isMobile && (
-          <div className="container px-4">
+          <div className="container px-3">
             <MobilePopularno />
           </div>
         )}
 
         {isMobile && (
-          <div className="container px-4">
+          <div className="container px-3">
             <MobilePromo />
           </div>
         )}

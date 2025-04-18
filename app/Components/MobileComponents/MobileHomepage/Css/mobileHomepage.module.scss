@@ -115,9 +115,7 @@
     //padding: 12px;
     h1 {
         display: inline-block;
-        border-bottom: 1px solid #ea8a2b;
         margin-bottom: 30px;
-        padding-bottom: 10px;
     }
 }
 .slideTest {
@@ -195,6 +193,9 @@
             width: 100%;
             height: auto;
         }
+    }
+    p {
+        font-size: 18px;
     }
 
 }

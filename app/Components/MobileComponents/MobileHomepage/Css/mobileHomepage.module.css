@@ -106,9 +106,7 @@
 }
 .slideTestParent h1 {
   display: inline-block;
-  border-bottom: 1px solid #ea8a2b;
   margin-bottom: 30px;
-  padding-bottom: 10px;
 }
 
 .slideTest {
@@ -179,6 +177,9 @@
 .MobileInnerHTML div video {
   width: 100%;
   height: auto;
+}
+.MobileInnerHTML p {
+  font-size: 18px;
 }
 
 .PostSharing a {

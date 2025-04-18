@@ -59,7 +59,7 @@ const MobileHomepageClientDetails = ({
           <span
             className={mobileStyle.mobileSpan}
             style={{
-              borderBottom: `1px solid ${matchColors(theCategoryColor)}`,
+              borderBottom: `2px solid ${matchColors(theCategoryColor)}`,
             }}
           >
             {formatDateToCroatian(date)}
@@ -68,7 +68,7 @@ const MobileHomepageClientDetails = ({
           <div
             className={mobileStyle.mobileComments}
             style={{
-              borderBottom: `1px solid ${matchColors(theCategoryColor)}`,
+              borderBottom: `2px solid ${matchColors(theCategoryColor)}`,
             }}
           >
             <span

@@ -154,6 +154,9 @@
     @media (max-width: 992px) {
       .navLinks {
         padding: 10px 0 ;
+        a {
+          font-size: 18px !important;
+        }
       }
       .navbar {
         padding: 0;

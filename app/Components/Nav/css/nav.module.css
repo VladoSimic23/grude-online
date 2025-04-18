@@ -146,6 +146,9 @@
   .navLinks {
     padding: 10px 0;
   }
+  .navLinks a {
+    font-size: 18px !important;
+  }
   .navbar {
     padding: 0;
   }

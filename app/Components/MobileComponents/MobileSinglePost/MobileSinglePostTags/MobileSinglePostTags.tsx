@@ -11,7 +11,7 @@ const MobileSinglePostTags = ({ tags }: { tags: TagsI }) => {
   }
 
   return (
-    <div className="d-flex mt-4 flex-wrap">
+    <div className="d-flex mt-4 flex-wrap" style={{ padding: "0 5px" }}>
       {nodes.map((item, index) => {
         const tagEdit = item.name.split(" ").join("-").toLowerCase();
         return (

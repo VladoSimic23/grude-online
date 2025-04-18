@@ -16,7 +16,12 @@ const MobilePromo = async () => {
   return (
     <div className={mobileStyle.slideTestParent} style={{ margin: "50px 0" }}>
       <div>
-        <h1 className={styles.h2Mobile}>Promo</h1>
+        <h1
+          className={styles.h2Mobile}
+          style={{ borderBottom: "2px solid #ea8a2b" }}
+        >
+          Promo
+        </h1>
       </div>
       <div className={mobileStyle.slideTest}>
         {nodes.map((item, index: number) => {

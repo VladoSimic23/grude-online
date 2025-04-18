@@ -6,6 +6,7 @@ import { formatDateToCroatian } from "@/app/functions/formatDateToCroatian";
 import * as cheerio from "cheerio";
 import MobileCarousel from "./MobileCarousel/MobileCarousel";
 import defaultImage from "../../../../public/noImage.jpg";
+import MobileImageList from "./MobileCarousel/MobileImageList";
 
 const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
   const { title, content, date, postId } = post;
@@ -32,7 +33,7 @@ const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
   const updatedContent = $.html();
 
   return (
-    <div style={{ marginTop: "30px", overflow: "hidden" }}>
+    <div style={{ marginTop: "30px", overflow: "hidden", padding: "0 5px" }}>
       <h1
         style={{ color: "white" }}
         className={`${style.h2Mobile} text-center`}
@@ -46,7 +47,12 @@ const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
       <div style={{ position: "relative" }}>
         <Image
           className={`${style.imageContain} mt-4 mb-4`}
-          style={{ height: "auto", position: "absolute", zIndex: "-1" }}
+          style={{
+            height: "auto",
+            position: "absolute",
+            zIndex: "-1",
+            borderRadius: "8px",
+          }}
           src={
             post?.featuredImage?.node?.sourceUrl
               ? post?.featuredImage?.node?.sourceUrl
@@ -62,7 +68,12 @@ const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
         />
         <Image
           className={`${style.imageContain} mt-4 mb-4`}
-          style={{ height: "auto", position: "relative", zIndex: "1" }}
+          style={{
+            height: "auto",
+            position: "relative",
+            zIndex: "1",
+            borderRadius: "8px",
+          }}
           src={
             post?.featuredImage?.node?.sourceUrl
               ? post?.featuredImage?.node?.sourceUrl
@@ -85,6 +96,9 @@ const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
       ></div>
       {extraImages.length > 0 && (
         <MobileCarousel images={extraImages} title={title} />
+      )}
+      {extraImages.length > 0 && (
+        <MobileImageList images={extraImages} title={title} />
       )}
     </div>
   );

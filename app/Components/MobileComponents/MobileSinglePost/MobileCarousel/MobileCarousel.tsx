@@ -61,7 +61,7 @@ const MobileCarousel = ({
           ></i>
         </div>
 
-        <div className="p-2">
+        <div className="p-2" style={{ marginTop: "50px" }}>
           <h1
             style={{ color: "white" }}
             className={`${style.h2Mobile} text-center`}
@@ -73,7 +73,8 @@ const MobileCarousel = ({
         <div
           id="carouselExample"
           className="carousel slide"
-          data-bs-touch="true"
+          data-bs-touch="false"
+          //style={{ marginTop: "50%" }}
         >
           <div className="carousel-inner">
             {images.map((src: string, index: number) => (

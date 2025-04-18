@@ -19,7 +19,10 @@ const PostSharingDetails = ({ slug }: { slug: string }) => {
   };
 
   return (
-    <div className={mobileStyle.PostSharing} style={{ marginTop: "30px" }}>
+    <div
+      className={mobileStyle.PostSharing}
+      style={{ marginTop: "30px", padding: "0 5px" }}
+    >
       <h1 className={style.h3Mobile}>Podijeli: </h1>
       <div className="d-flex">
         <Link

@@ -13,7 +13,7 @@ const MobilePopularno = async () => {
     <div>
       <h1
         className={`${style.h2Mobile} d-inline-block pb-1`}
-        style={{ borderBottom: `1px solid royalblue` }}
+        style={{ borderBottom: `2px solid royalblue` }}
       >
         Popularno
       </h1>
