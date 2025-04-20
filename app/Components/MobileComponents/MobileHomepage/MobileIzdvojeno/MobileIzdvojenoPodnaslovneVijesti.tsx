@@ -73,7 +73,12 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
                     </div>
                   </div>
 
-                  <h1 className={style.h3Mobile}>{item.title}</h1>
+                  <h1
+                    className={style.h3Mobile}
+                    style={{ textAlign: "center" }}
+                  >
+                    {item.title}
+                  </h1>
                 </div>
               </Link>
             </div>
