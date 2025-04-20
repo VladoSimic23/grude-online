@@ -1,12 +1,11 @@
-"use client";
 import { IzdvojenoMobileI } from "@/app/libs/Queries/Queries/izdvojenoMobile";
 import Image from "next/image";
 import style from "../../../../css/style.module.css";
 import Link from "next/link";
 import { cheerioCheck } from "@/app/functions/cheerioCheck";
 import mobileStyle from "../Css/mobileHomepage.module.css";
-import { useEffect } from "react";
-import { Carousel } from "bootstrap";
+// import { useEffect } from "react";
+// import { Carousel } from "react-bootstrap";
 
 const MobileIzdvojenoPodnaslovneVijesti = ({
   vijesti,
@@ -15,17 +14,17 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
 }) => {
   //const [currentIndex] = useState(0);
 
-  useEffect(() => {
-    const el = document.querySelector("#dynamicCarousel");
-    if (!el) return;
-    const instance = Carousel.getInstance(el);
-    if (instance) instance.dispose();
-    new Carousel(el, {
-      interval: 500,
-      touch: true,
-      ride: true,
-    });
-  }, []);
+  // useEffect(() => {
+  //   const el = document.querySelector("#dynamicCarousel");
+  //   if (!el) return;
+  //   const instance = Carousel.getInstance(el);
+  //   if (instance) instance.dispose();
+  //   new Carousel(el, {
+  //     interval: 500,
+  //     touch: true,
+  //     ride: true,
+  //   });
+  // }, []);
 
   return (
     <div id="dynamicCarousel" className="carousel slide" data-bs-touch="true">
