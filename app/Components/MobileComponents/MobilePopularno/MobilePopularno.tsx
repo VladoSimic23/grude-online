@@ -5,6 +5,7 @@ import Link from "next/link";
 import defaultImage from "../../../../public/noImage.jpg";
 import CommentCount from "../../CommentCount/CommentCount";
 import mobileStyle from "../MobileHomepage/Css/mobileHomepage.module.css";
+import { decodeHTMLEntities } from "@/app/functions/decodeHtml";
 
 const MobilePopularno = async () => {
   const popular = await fetchPopularPosts();
@@ -53,7 +54,9 @@ const MobilePopularno = async () => {
                   </div>
                 </div>
                 <div className="col-7">
-                  <h1 className={style.h6Mobile}>{item?.title?.rendered}</h1>
+                  <h1 className={style.h6Mobile}>
+                    {decodeHTMLEntities(item?.title?.rendered)}
+                  </h1>
                 </div>
               </div>
             </Link>

@@ -47,23 +47,6 @@ const MobileIzdvojenoNaslovnaVijest = ({
             //priority={true}
             quality={50}
           />
-          <span
-            style={{
-              position: "absolute",
-              left: "0",
-              bottom: "0",
-              color: "white",
-              background: "#4d1b97",
-              display: "inline-grid",
-              padding: "1px 10px",
-              fontSize: "14px",
-              fontWeight: "600",
-              letterSpacing: "1px",
-              zIndex: "5",
-            }}
-          >
-            Izdvojeno
-          </span>
           {hasImages && (
             <i
               style={{

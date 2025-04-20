@@ -1,106 +1,172 @@
+"use client";
 import { IzdvojenoMobileI } from "@/app/libs/Queries/Queries/izdvojenoMobile";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import style from "../../../../css/style.module.css";
 import Link from "next/link";
 import { cheerioCheck } from "@/app/functions/cheerioCheck";
+import mobileStyle from "../Css/mobileHomepage.module.css";
 
-const MobileIzdvojenoPodnaslovneVijesti = async ({
-  vijest,
-  index,
+const MobileIzdvojenoPodnaslovneVijesti = ({
+  vijesti,
 }: {
-  vijest: IzdvojenoMobileI;
-  index: number;
+  vijesti: IzdvojenoMobileI[];
 }) => {
-  const {
-    title,
-    slug,
-    content,
-    featuredImage: {
-      node: { sourceUrl },
-    },
-  } = vijest;
-
-  const { hasIframe, hasImages, hasVideo } = cheerioCheck(content);
+  const [currentIndex] = useState(0);
 
   return (
-    <Link href={`/${slug}`} style={{ textDecoration: "none" }}>
-      <div>
-        <div style={{ position: "relative" }}>
-          <Image
-            style={{ position: "absolute", zIndex: "-1" }}
-            className={style.imageCover}
-            src={sourceUrl}
-            width={150}
-            height={100}
-            alt={`Naslovna ${index}`}
-            fetchPriority="high"
-            priority={true}
-            quality={1}
-          />
-          <Image
-            style={{ position: "relative", zIndex: "1" }}
-            className={style.imageCover}
-            src={sourceUrl}
-            width={150}
-            height={100}
-            alt={`Naslovna ${index}`}
-            //fetchPriority="high"
-            //priority={true}
-            quality={50}
-          />
+    <div id="carouselExample" className="carousel slide" data-bs-touch="true">
+      <div className="carousel-inner">
+        {vijesti.map((item: IzdvojenoMobileI, index: number) => {
+          const { hasIframe, hasImages, hasVideo } = cheerioCheck(item.content);
+          return (
+            <div
+              key={index}
+              className={`carousel-item  ${
+                currentIndex === index ? "active" : ""
+              }`}
+            >
+              <Link href={`/${item.slug}`} style={{ textDecoration: "none" }}>
+                <div>
+                  <div style={{ position: "relative" }}>
+                    <Image
+                      style={{
+                        position: "absolute",
+                        zIndex: "-1",
+                        borderRadius: "10px",
+                      }}
+                      className={style.imageCover}
+                      src={item.featuredImage.node.sourceUrl}
+                      width={400}
+                      height={220}
+                      alt={`Naslovna ${index}`}
+                      fetchPriority="high"
+                      priority={true}
+                      quality={1}
+                    />
+                    <Image
+                      style={{
+                        position: "relative",
+                        zIndex: "1",
+                        borderRadius: "10px",
+                      }}
+                      className={style.imageCover}
+                      src={item.featuredImage.node.sourceUrl}
+                      width={400}
+                      height={220}
+                      alt={`Naslovna ${index}`}
+                      //fetchPriority="high"
+                      //priority={true}
+                      quality={50}
+                    />
 
+                    <div
+                      className={mobileStyle.mobileCommentCount}
+                      style={{
+                        background: "#9d2013",
+                        zIndex: "5",
+                      }}
+                    >
+                      {hasImages && <i className="bi bi-camera"></i>}
+                      {hasVideo ||
+                        (hasIframe && <i className="bi bi-youtube"></i>)}
+                    </div>
+                  </div>
+
+                  <h1 className={style.h4Mobile}>{item.title}</h1>
+                </div>
+              </Link>
+            </div>
+          );
+        })}
+        <button
+          className="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="prev"
+          //style={{ alignItems: "flex-end" }}
+          //onClick={() => setCurrentIndex(currentIndex - 1)}
+        >
+          {" "}
           <span
-            style={{
-              position: "absolute",
-              left: "0",
-              bottom: "0",
-              color: "white",
-              background: "#4d1b97",
-              display: "inline-grid",
-              padding: "1px 10px",
-              fontSize: "12px",
-              fontWeight: "600",
-              letterSpacing: "1px",
-              zIndex: "5",
-            }}
-          >
-            Izdvojeno
-          </span>
-          {hasImages && (
-            <i
-              style={{
-                position: "absolute",
-                right: !hasIframe && !hasVideo ? "0" : "26px",
-                bottom: "0",
-                color: "white",
-                background: "#4d1b97",
-                display: "inline-grid",
-                padding: "3px 5px",
-                zIndex: "5",
-              }}
-              className="bi bi-camera"
-            ></i>
-          )}
-          {(hasIframe || hasVideo) && (
-            <i
-              style={{
-                position: "absolute",
-                right: "0",
-                bottom: "0",
-                color: "white",
-                background: "#4d1b97",
-                display: "inline-grid",
-                padding: "3px 5px",
-                zIndex: "5",
-              }}
-              className="bi bi-youtube"
-            ></i>
-          )}
-        </div>
-        <h1 className={style.h4Mobile}>{title}</h1>
+            className="carousel-control-prev-icon"
+            aria-hidden="true"
+            style={{ marginBottom: "40px", backgroundImage: "none" }}
+          ></span>
+          <span className="visually-hidden">Previous</span>
+        </button>
+
+        <button
+          className="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="next"
+          //style={{ alignItems: "flex-end" }}
+          //onClick={() => setCurrentIndex(currentIndex + 1)}
+        >
+          {" "}
+          <span
+            className="carousel-control-next-icon"
+            aria-hidden="true"
+            style={{ marginBottom: "40px", backgroundImage: "none" }}
+          ></span>
+          <span className="visually-hidden">Next</span>
+        </button>
       </div>
-    </Link>
+      <div
+        className="carousel-indicators"
+        style={{
+          top: "10px",
+          left: "0",
+          margin: "0",
+          marginLeft: "10px",
+          justifyContent: "left",
+          height: "30px",
+        }}
+      >
+        <button
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide-to="0"
+          className="active"
+          aria-current="true"
+          aria-label="Slide 1"
+          style={{
+            background: "#9d2013",
+            width: "15px",
+            height: "15px",
+            borderRadius: "50%",
+            border: "none",
+          }}
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+          style={{
+            background: "#9d2013",
+            width: "15px",
+            height: "15px",
+            borderRadius: "50%",
+            border: "none",
+          }}
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+          style={{
+            background: "#9d2013",
+            width: "15px",
+            height: "15px",
+            borderRadius: "50%",
+            border: "none",
+          }}
+        ></button>
+      </div>
+    </div>
   );
 };
 
