@@ -1,30 +1,41 @@
 "use client";
 import { IzdvojenoMobileI } from "@/app/libs/Queries/Queries/izdvojenoMobile";
 import Image from "next/image";
-import React, { useState } from "react";
 import style from "../../../../css/style.module.css";
 import Link from "next/link";
 import { cheerioCheck } from "@/app/functions/cheerioCheck";
 import mobileStyle from "../Css/mobileHomepage.module.css";
+import { useEffect } from "react";
+import { Carousel } from "bootstrap";
 
 const MobileIzdvojenoPodnaslovneVijesti = ({
   vijesti,
 }: {
   vijesti: IzdvojenoMobileI[];
 }) => {
-  const [currentIndex] = useState(0);
+  //const [currentIndex] = useState(0);
+
+  useEffect(() => {
+    const el = document.querySelector("#dynamicCarousel");
+    if (!el) return;
+    const instance = Carousel.getInstance(el);
+    if (instance) instance.dispose();
+    new Carousel(el, {
+      interval: 500,
+      touch: true,
+      ride: true,
+    });
+  }, []);
 
   return (
-    <div id="carouselExample" className="carousel slide" data-bs-touch="true">
+    <div id="dynamicCarousel" className="carousel slide" data-bs-touch="true">
       <div className="carousel-inner">
         {vijesti.map((item: IzdvojenoMobileI, index: number) => {
           const { hasIframe, hasImages, hasVideo } = cheerioCheck(item.content);
           return (
             <div
               key={index}
-              className={`carousel-item  ${
-                currentIndex === index ? "active" : ""
-              }`}
+              className={`carousel-item  ${index === 0 ? "active" : ""}`}
             >
               <Link href={`/${item.slug}`} style={{ textDecoration: "none" }}>
                 <div>
@@ -86,7 +97,7 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
         <button
           className="carousel-control-prev"
           type="button"
-          data-bs-target="#carouselExample"
+          data-bs-target="#dynamicCarousel"
           data-bs-slide="prev"
           //style={{ alignItems: "flex-end" }}
           //onClick={() => setCurrentIndex(currentIndex - 1)}
@@ -103,7 +114,7 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
         <button
           className="carousel-control-next"
           type="button"
-          data-bs-target="#carouselExample"
+          data-bs-target="#dynamicCarousel"
           data-bs-slide="next"
           //style={{ alignItems: "flex-end" }}
           //onClick={() => setCurrentIndex(currentIndex + 1)}
@@ -130,7 +141,7 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
       >
         <button
           type="button"
-          data-bs-target="#carouselExample"
+          data-bs-target="#dynamicCarousel"
           data-bs-slide-to="0"
           className="active"
           aria-current="true"
@@ -145,7 +156,7 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
         ></button>
         <button
           type="button"
-          data-bs-target="#carouselExample"
+          data-bs-target="#dynamicCarousel"
           data-bs-slide-to="1"
           aria-label="Slide 2"
           style={{
@@ -158,7 +169,7 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
         ></button>
         <button
           type="button"
-          data-bs-target="#carouselExample"
+          data-bs-target="#dynamicCarousel"
           data-bs-slide-to="2"
           aria-label="Slide 3"
           style={{
