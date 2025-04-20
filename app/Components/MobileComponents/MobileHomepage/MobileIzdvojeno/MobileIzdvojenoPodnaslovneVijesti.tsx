@@ -28,6 +28,12 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
             >
               <Link href={`/${item.slug}`} style={{ textDecoration: "none" }}>
                 <div>
+                  <h1
+                    className={style.h3Mobile}
+                    style={{ textAlign: "center" }}
+                  >
+                    {item.title}
+                  </h1>
                   <div style={{ position: "relative" }}>
                     <Image
                       style={{
@@ -72,13 +78,6 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
                         (hasIframe && <i className="bi bi-youtube"></i>)}
                     </div>
                   </div>
-
-                  <h1
-                    className={style.h3Mobile}
-                    style={{ textAlign: "center" }}
-                  >
-                    {item.title}
-                  </h1>
                 </div>
               </Link>
             </div>
@@ -121,7 +120,7 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
       <div
         className="carousel-indicators"
         style={{
-          top: "10px",
+          bottom: "-9px",
           left: "0",
           margin: "0",
           marginLeft: "10px",
