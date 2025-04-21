@@ -14,7 +14,18 @@ const MobileNajnovije = async () => {
 
   return (
     <div style={{ marginTop: "0px" }}>
-      <h1 className={`${style.h2Mobile} ${style.orangeBorder}`}>Najnovije</h1>
+      <h1 className={`${style.h2Mobile} ${style.orangeBorder}`}>
+        <span
+          style={{
+            color: "orange",
+            fontFamily: "Barlow Condensed",
+            fontSize: "28px",
+          }}
+        >
+          N
+        </span>
+        ajnovije
+      </h1>
       {nodes.map((item, index) => {
         return (
           <MobileNajnovijeDetails key={index} props={item} index={index} />

@@ -11,7 +11,7 @@ export const categoryStyles = [
   { cat: "zanimljivosti", color: "cornflowerblue" },
   { cat: "ostale-vijesti", color: "darkslateblue" },
   { cat: "promo", color: "royalblue" },
-  { cat: "izdvojeno", color: "darkblue" },
+  { cat: "izdvojeno", color: "#1967bd" },
   { cat: "nekategorizirano", color: "black" },
 ];
 

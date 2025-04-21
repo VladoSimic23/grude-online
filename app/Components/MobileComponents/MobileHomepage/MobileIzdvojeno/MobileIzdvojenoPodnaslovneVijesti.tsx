@@ -36,13 +36,14 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
       slidesPerView={1}
       loop={true}
       navigation
-      autoplay={{
-        delay: 6000,
-        disableOnInteraction: false,
-      }}
+      // autoplay={{
+      //   delay: 6000,
+      //   disableOnInteraction: false,
+      // }}
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       className="mySwiper"
+      //style={{ paddingTop: "30px" }}
     >
       {vijesti.map((item: IzdvojenoMobileI, index: number) => {
         const { hasIframe, hasImages, hasVideo } = cheerioCheck(item.content);
@@ -71,7 +72,11 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
                   />
                 )}
                 <Image
-                  style={{ position: "relative", zIndex: "1" }}
+                  style={{
+                    position: "relative",
+                    zIndex: "1",
+                    borderRadius: "0",
+                  }}
                   className={style.imageCover}
                   src={item.featuredImage.node.sourceUrl}
                   width={300}
@@ -83,19 +88,31 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
                 />
 
                 <div
-                  className={mobileStyle.mobileCommentCount}
+                  className={mobileStyle.mobileCommentCount2}
                   style={{
-                    background: "#1967bd",
+                    background: "#1e437d",
                     zIndex: "5",
+                    borderRadius: "0",
                   }}
                 >
                   {hasImages && <i className="bi bi-camera"></i>}
                   {hasVideo || (hasIframe && <i className="bi bi-youtube"></i>)}
                 </div>
               </div>
-              <div>
+              <div
+                style={{
+                  background: "#1e437d",
+                  //borderRadius: "8px",
+                  padding: "2px 5px 5px 5px",
+                  //marginTop: "10px",
+                }}
+              >
                 <h1
-                  style={{ textAlign: "center", margin: "10px 0" }}
+                  style={{
+                    textAlign: "center",
+                    margin: "5px 0",
+                    fontSize: "20px",
+                  }}
                   className={`${style.h3Mobile}`}
                 >
                   {item?.title}
