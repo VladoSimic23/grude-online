@@ -1,6 +1,8 @@
 .swiper-pagination {
-  top: 195px !important;
+  top: 3px !important;
   height: 30px !important;
+  text-align: left !important;
+  padding-left: 8px;
 }
 .swiper-button-prev,
 .swiper-button-next {
@@ -18,7 +20,7 @@
 }
 .swiper-button-prev::after,
 .swiper-button-next::after {
-  font-size: 20px !important;
+  font-size: 0px !important;
   position: absolute !important;
   top: 120px !important;
 }

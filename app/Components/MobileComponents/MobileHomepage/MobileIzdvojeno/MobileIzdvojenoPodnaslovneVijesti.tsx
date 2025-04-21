@@ -29,8 +29,6 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
 }: {
   vijesti: IzdvojenoMobileI[];
 }) => {
-  //const [currentIndex] = useState(0);
-
   return (
     <Swiper
       modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
@@ -38,10 +36,10 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
       slidesPerView={1}
       loop={true}
       navigation
-      autoplay={{
-        delay: 6000,
-        disableOnInteraction: false,
-      }}
+      // autoplay={{
+      //   delay: 6000,
+      //   disableOnInteraction: false,
+      // }}
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       className="mySwiper"
@@ -97,7 +95,7 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
               </div>
               <div>
                 <h1
-                  style={{ textAlign: "center" }}
+                  style={{ textAlign: "center", margin: "10px 0" }}
                   className={`${style.h3Mobile}`}
                 >
                   {item?.title}

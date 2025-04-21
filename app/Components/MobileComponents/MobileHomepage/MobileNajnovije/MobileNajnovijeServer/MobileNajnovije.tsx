@@ -13,7 +13,7 @@ const MobileNajnovije = async () => {
   } = najnovije;
 
   return (
-    <div style={{ marginTop: "10px" }}>
+    <div style={{ marginTop: "0px" }}>
       <h1 className={`${style.h2Mobile} ${style.orangeBorder}`}>Najnovije</h1>
       {nodes.map((item, index) => {
         return (
