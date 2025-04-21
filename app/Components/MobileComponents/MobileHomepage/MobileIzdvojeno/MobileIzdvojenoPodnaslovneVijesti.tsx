@@ -36,10 +36,10 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
       slidesPerView={1}
       loop={true}
       navigation
-      // autoplay={{
-      //   delay: 6000,
-      //   disableOnInteraction: false,
-      // }}
+      autoplay={{
+        delay: 6000,
+        disableOnInteraction: false,
+      }}
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       className="mySwiper"
