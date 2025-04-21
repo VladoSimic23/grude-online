@@ -53,7 +53,6 @@ export default async function RootLayout({
         {/* <OneSignalComp /> */}
         {!isMobile && <TopNavbar />}
         <NavWrap />
-
         {children}
 
         {isMobile && (

@@ -22,6 +22,7 @@
     "react-dom": "^19.0.0",
     "react-onesignal": "^3.0.1",
     "sharp": "^0.33.5",
+    "swiper": "^11.2.6",
     "ua-parser-js": "^2.0.0",
     "use-debounce": "^10.0.4"
   },

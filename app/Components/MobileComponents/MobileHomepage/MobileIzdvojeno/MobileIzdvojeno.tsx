@@ -15,9 +15,7 @@ const MobileIzdvojeno = async () => {
 
   return (
     <div style={{ marginTop: "20px" }}>
-      <div className="carousel-inner">
-        <MobileIzdvojenoPodnaslovneVijesti vijesti={nodes} />
-      </div>
+      <MobileIzdvojenoPodnaslovneVijesti vijesti={nodes} />
     </div>
   );
 };
