@@ -13,7 +13,7 @@ const MobileNajnovije = async () => {
   } = najnovije;
 
   return (
-    <div style={{ marginTop: "0px" }}>
+    <div style={{ marginTop: "30px" }}>
       <h1 className={`${style.h2Mobile} ${style.orangeBorder}`}>
         <span
           style={{

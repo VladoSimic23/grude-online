@@ -36,10 +36,10 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
       slidesPerView={1}
       loop={true}
       navigation
-      // autoplay={{
-      //   delay: 6000,
-      //   disableOnInteraction: false,
-      // }}
+      autoplay={{
+        delay: 6000,
+        disableOnInteraction: false,
+      }}
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       className="mySwiper"
@@ -90,7 +90,7 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
                   <h1
                     style={{
                       textAlign: "center",
-                      padding: "8px 5px 10px 5px",
+                      padding: "4px 5px 6px 5px",
                       fontSize: "18px",
                       position: "absolute",
                       zIndex: "2",
