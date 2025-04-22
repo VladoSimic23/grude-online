@@ -36,10 +36,10 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
       slidesPerView={1}
       loop={true}
       navigation
-      autoplay={{
-        delay: 6000,
-        disableOnInteraction: false,
-      }}
+      // autoplay={{
+      //   delay: 6000,
+      //   disableOnInteraction: false,
+      // }}
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       className="mySwiper"
@@ -71,21 +71,39 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
                     quality={1}
                   />
                 )}
-                <Image
-                  style={{
-                    position: "relative",
-                    zIndex: "1",
-                    borderRadius: "0",
-                  }}
-                  className={style.imageCover}
-                  src={item.featuredImage.node.sourceUrl}
-                  width={300}
-                  height={220}
-                  alt={item.title}
-                  quality={50}
-                  //priority={index < 1 ? true : false}
-                  //fetchPriority={index < 1 ? "high" : "low"}
-                />
+                <div style={{ position: "relative" }}>
+                  <Image
+                    style={{
+                      position: "relative",
+                      zIndex: "1",
+                      borderRadius: "0",
+                    }}
+                    className={style.imageCover}
+                    src={item.featuredImage.node.sourceUrl}
+                    width={300}
+                    height={220}
+                    alt={item.title}
+                    quality={50}
+                    //priority={index < 1 ? true : false}
+                    //fetchPriority={index < 1 ? "high" : "low"}
+                  />
+                  <h1
+                    style={{
+                      textAlign: "center",
+                      padding: "8px 5px 10px 5px",
+                      fontSize: "18px",
+                      position: "absolute",
+                      zIndex: "2",
+                      bottom: "0",
+                      width: "100%",
+                      background: "#1e427d9d",
+                      margin: "0",
+                    }}
+                    className={`${style.h3Mobile}`}
+                  >
+                    {item?.title}
+                  </h1>
+                </div>
 
                 <div
                   className={mobileStyle.mobileCommentCount2}
@@ -99,25 +117,14 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
                   {hasVideo || (hasIframe && <i className="bi bi-youtube"></i>)}
                 </div>
               </div>
-              <div
+              {/* <div
                 style={{
                   background: "#1e437d",
                   //borderRadius: "8px",
                   padding: "2px 5px 5px 5px",
                   //marginTop: "10px",
                 }}
-              >
-                <h1
-                  style={{
-                    textAlign: "center",
-                    margin: "5px 0",
-                    fontSize: "20px",
-                  }}
-                  className={`${style.h3Mobile}`}
-                >
-                  {item?.title}
-                </h1>
-              </div>
+              ></div> */}
             </Link>
           </SwiperSlide>
         );
