@@ -43,7 +43,7 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       className="mySwiper"
-      //style={{ paddingTop: "30px" }}
+      style={{ borderRadius: "10px" }}
     >
       {vijesti.map((item: IzdvojenoMobileI, index: number) => {
         const { hasIframe, hasImages, hasVideo } = cheerioCheck(item.content);
@@ -51,7 +51,7 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
           <SwiperSlide
             key={index}
             className={`${index === 0 ? "active" : ""}`}
-            style={{ fontSize: "10px !important" }}
+            style={{ fontSize: "10px !important", borderRadius: "10px" }}
           >
             <Link href={`/${item.slug}`} style={{ textDecoration: "none" }}>
               <div
@@ -84,6 +84,7 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
                     height={220}
                     alt={item.title}
                     quality={50}
+
                     //priority={index < 1 ? true : false}
                     //fetchPriority={index < 1 ? "high" : "low"}
                   />
