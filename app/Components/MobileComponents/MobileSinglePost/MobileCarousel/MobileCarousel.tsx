@@ -114,6 +114,7 @@ const MobileCarousel = ({
                       height={220}
                       alt={`Gallery Image ${index + 1}`}
                       quality={75}
+                      priority
                     />
                   </div>
                 </div>
