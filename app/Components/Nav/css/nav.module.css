@@ -201,7 +201,7 @@
   }
   .mobileMenuToggle {
     display: block; /* Show the toggle button on smaller screens */
-    margin-right: 30px;
+    margin-right: 20px;
   }
   .navWrap {
     top: 66px;
@@ -218,7 +218,7 @@
     padding: 15px 0;
   }
   .imageContainer img {
-    margin-left: 15px;
+    margin-left: 20px;
   }
 }
 .gallery {

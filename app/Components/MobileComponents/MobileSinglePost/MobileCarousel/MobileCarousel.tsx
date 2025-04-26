@@ -3,6 +3,16 @@ import Image from "next/image";
 import React, { useState } from "react";
 import style from "../../../../css/style.module.css";
 import mobileStyle from "../../MobileHomepage/Css/mobileHomepage.module.css";
+import "../../../Swiper/swiperCustomCssPost.css";
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+import { A11y, Navigation, Pagination, Scrollbar } from "swiper/modules";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 const MobileCarousel = ({
   images,
@@ -11,7 +21,6 @@ const MobileCarousel = ({
   images: string[];
   title: string;
 }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [displayGallery, setDisplayGaller] = useState(false);
 
   if (!displayGallery) {
@@ -70,78 +79,48 @@ const MobileCarousel = ({
           </h1>
         </div>
 
-        <div
-          id="carouselExample"
-          className="carousel slide"
-          data-bs-touch="false"
-          //style={{ marginTop: "50%" }}
+        <Swiper
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          spaceBetween={50}
+          slidesPerView={1}
+          loop={true}
+          navigation
+          scrollbar={{ draggable: true }}
+          className="mySwiper"
+          style={{ borderRadius: "10px" }}
         >
-          <div className="carousel-inner">
-            {images.map((src: string, index: number) => (
-              <div
+          {images.map((src: string, index: number) => {
+            return (
+              <SwiperSlide
                 key={index}
-                style={{ transition: "all 0.4s ease-in-out" }}
-                className={`carousel-item  ${
-                  currentIndex === index ? "active" : ""
-                }`}
+                className={`${index === 0 ? "active" : ""}`}
+                style={{ fontSize: "10px !important", borderRadius: "10px" }}
               >
-                <div>
-                  <Image
-                    src={src}
-                    alt={`Extra ${index + 1}`}
-                    width={300}
-                    height={450}
-                    className={`d-block w-100 ${style.imageContainGallery}`}
-                    style={{ position: "relative", borderRadius: "12px" }}
-                    priority={true}
-                  />
-                  <p
-                    style={{
-                      color: "white",
-                      textAlign: "center",
-                      paddingTop: "25px",
-                    }}
-                  >
-                    <span>
-                      {index + 1} od {images.length}
-                    </span>
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <button
-            className="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExample"
-            data-bs-slide="prev"
-            onClick={() => setCurrentIndex(currentIndex - 1)}
-          >
-            {" "}
-            <span
-              className="carousel-control-prev-icon"
-              aria-hidden="true"
-              style={{ position: "absolute", bottom: "10px" }}
-            ></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
+                <div
+                  className={mobileStyle.mobileSingleItem}
+                  style={{ position: "relative" }}
+                >
+                  <div style={{ position: "relative" }}>
+                    <Image
+                      style={{
+                        position: "relative",
+                        zIndex: "1",
 
-          <button
-            className="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExample"
-            data-bs-slide="next"
-            onClick={() => setCurrentIndex(currentIndex + 1)}
-          >
-            {" "}
-            <span
-              className="carousel-control-next-icon"
-              aria-hidden="true"
-              style={{ position: "absolute", bottom: "10px" }}
-            ></span>
-            <span className="visually-hidden">Next</span>
-          </button>
-        </div>
+                        height: "auto",
+                      }}
+                      className={style.imageCover}
+                      src={src}
+                      width={300}
+                      height={220}
+                      alt={`Gallery Image ${index + 1}`}
+                      quality={75}
+                    />
+                  </div>
+                </div>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
       </div>
     );
   }

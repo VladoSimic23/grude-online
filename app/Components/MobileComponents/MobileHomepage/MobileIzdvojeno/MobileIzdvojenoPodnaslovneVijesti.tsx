@@ -15,14 +15,14 @@ import {
   Navigation,
   Pagination,
   Scrollbar,
+  EffectFade,
 } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
-// import required modules
+import "swiper/css/effect-fade";
 
 const MobileIzdvojenoPodnaslovneVijesti = ({
   vijesti,
@@ -31,10 +31,11 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
 }) => {
   return (
     <Swiper
-      modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+      modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay, EffectFade]}
       spaceBetween={50}
       slidesPerView={1}
       loop={true}
+      effect="fade"
       navigation
       autoplay={{
         delay: 6000,
