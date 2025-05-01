@@ -39,3 +39,8 @@
 .swiper-pagination-bullet-active {
   background: #3b89e0 !important;
 }
+.swiper-wrapper {
+  display: flex !important;
+  align-content: center !important;
+  width: auto !important;
+}

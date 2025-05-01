@@ -39,7 +39,10 @@ const Promo = async () => {
                     />
                   </div>
                   <div className="col-8 ">
-                    <h1 style={{ fontSize: "14px", fontWeight: "600" }}>
+                    <h1
+                      className={`${styles.h5Desktop} mt-0 mb-0`}
+                      style={{ fontSize: "16px", fontWeight: "600" }}
+                    >
                       {title}
                     </h1>
                   </div>

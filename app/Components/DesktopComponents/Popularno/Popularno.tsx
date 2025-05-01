@@ -4,7 +4,7 @@ import Image from "next/image";
 import { decodeHTMLEntities } from "@/app/functions/decodeHtml";
 import Link from "next/link";
 import CommentCount from "../../CommentCount/CommentCount";
-import defaultImage from "../../../../public/noImage.jpg"
+import defaultImage from "../../../../public/noImage.jpg";
 
 const Popularno = async () => {
   const popular = await fetchPopularPosts();
@@ -24,7 +24,11 @@ const Popularno = async () => {
                 <div className="row mt-3 border-bottom">
                   <div className="col-4 mb-3">
                     <Image
-                      src={item?.featured_image?.source_url ? item?.featured_image?.source_url : defaultImage }
+                      src={
+                        item?.featured_image?.source_url
+                          ? item?.featured_image?.source_url
+                          : defaultImage
+                      }
                       width={150}
                       height={80}
                       alt={`Popular Post Image ${index}`}
@@ -35,7 +39,10 @@ const Popularno = async () => {
                     />
                   </div>
                   <div className="col-8 ">
-                    <h1 style={{ fontSize: "14px", fontWeight: "600" }}>
+                    <h1
+                      className={`${styles.h5Desktop} mt-0 mb-0`}
+                      style={{ fontSize: "16px", fontWeight: "600" }}
+                    >
                       {decodeHTMLEntities(item?.title?.rendered)}
                     </h1>
                     <CommentCount

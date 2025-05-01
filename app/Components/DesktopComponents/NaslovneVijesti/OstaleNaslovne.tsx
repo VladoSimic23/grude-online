@@ -44,7 +44,7 @@ const OstaleNaslovne = async () => {
                   <div
                     className={`position-absolute bottom-0 p-3 ${desktopStyle.dateAndComment}`}
                   >
-                    <h1 className={`${style.h4Mobile}`}>{title}</h1>
+                    <h1 className={`${style.h3Mobile}`}>{title}</h1>
                     <div style={{ color: "white", fontSize: "14px" }}>
                       <span>{formatDateToCroatian(date)}</span> |{" "}
                       <span>
