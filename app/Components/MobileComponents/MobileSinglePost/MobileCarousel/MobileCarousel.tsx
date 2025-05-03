@@ -36,8 +36,20 @@ const MobileCarousel = ({
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
   // const [activeThumb, setActiveThumb] = useState<number>(0);
+  const [isThumb, setIsThumb] = useState(true);
+  const [imageHeight, setImageHeight] = useState(100);
+  //const [thumbHeight, setThumbHeight] = useState(12);
 
   // console.log(activeThumb);
+  const handleCarousel = () => {
+    setIsThumb(!isThumb);
+    if (!isThumb) {
+      setImageHeight(88);
+    }
+    if (isThumb) {
+      setImageHeight(100);
+    }
+  };
 
   if (!displayGallery) {
     return (
@@ -60,7 +72,7 @@ const MobileCarousel = ({
             position: "fixed",
             top: "0",
             left: "0",
-            height: "88vh",
+            height: `${imageHeight}vh`,
             width: "100%",
             background: "rgba(34, 32, 32, 0.99)",
             zIndex: "10000",
@@ -69,6 +81,11 @@ const MobileCarousel = ({
           }}
         >
           <div className={mobileStyle.mobCarousel}>
+            <i
+              onClick={handleCarousel}
+              style={{ color: "#dc7e24", fontSize: "22px", cursor: "pointer" }}
+              className="bi bi-grid-3x3-gap-fill"
+            ></i>
             <Image
               src="/Grude_online_Logotip2.png"
               alt="grudeOnlineLogo"
@@ -78,7 +95,7 @@ const MobileCarousel = ({
             <i
               onClick={() => setDisplayGaller(false)}
               style={{
-                color: "white",
+                color: "#008aa1",
                 cursor: "pointer",
                 fontWeight: "700",
                 fontSize: "24px",
@@ -184,7 +201,7 @@ const MobileCarousel = ({
             zIndex: "10000",
             //overflow: "scroll",
             padding: "10px 15px",
-            display: "flex",
+            display: isThumb ? "flex" : "none",
             alignItems: "center",
           }}
         >

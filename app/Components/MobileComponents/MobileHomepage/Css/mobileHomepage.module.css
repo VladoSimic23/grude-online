@@ -221,6 +221,8 @@
 .mobCarousel {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 8px;
+  align-items: baseline;
 }
 .mobCarousel img {
   -o-object-fit: contain;
