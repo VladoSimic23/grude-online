@@ -1,6 +1,10 @@
 @import "../../../../css/variables/variables";
 //@import "./../../../css//typography/typography";
 
+
+.activeThumb {
+    border: 3px solid orange; /* Add an orange border to the active thumb */
+  }
 .mobileSingleItem {
     position: relative;
     img {

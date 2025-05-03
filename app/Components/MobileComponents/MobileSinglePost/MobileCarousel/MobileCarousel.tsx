@@ -14,6 +14,7 @@ import {
   Scrollbar,
   FreeMode,
   Thumbs,
+  Zoom,
 } from "swiper/modules";
 
 // Import Swiper styles
@@ -33,6 +34,9 @@ const MobileCarousel = ({
   const [displayGallery, setDisplayGaller] = useState(false);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
+  // const [activeThumb, setActiveThumb] = useState<number>(0);
+
+  // console.log(activeThumb);
 
   if (!displayGallery) {
     return (
@@ -99,11 +103,19 @@ const MobileCarousel = ({
               A11y,
               Thumbs,
               FreeMode,
+              Zoom,
             ]}
             spaceBetween={50}
             slidesPerView={1}
             loop={true}
+            zoom={{
+              maxRatio: 5, // Set max zoom ratio (e.g., zoom 5x)
+              minRatio: 1, // Set min zoom ratio (i.e., no zoom)
+            }}
             navigation
+            pagination={{
+              type: "progressbar", // Use fraction pagination (1/5, 2/5, etc.)
+            }}
             thumbs={{
               swiper:
                 thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
@@ -111,7 +123,6 @@ const MobileCarousel = ({
             scrollbar={{ draggable: true }}
             className="mySwiper"
             style={{
-              borderRadius: "10px",
               //marginTop: "30px",
               display: "flex",
               alignItems: "center",
@@ -185,9 +196,16 @@ const MobileCarousel = ({
             spaceBetween={10}
             slidesPerView={4}
             freeMode={true}
+            slideToClickedSlide={true}
             watchSlidesProgress={true}
             modules={[FreeMode, Navigation, Thumbs]}
             className="mySwiper"
+            //centeredSlides={true}
+            // thumbs={{
+            //   swiper: thumbsSwiper,
+            //   slideThumbActiveClass: "is-active",
+            // }}
+            //onSlideChange={(swiper) => setActiveThumb(swiper.activeIndex)}
             //style={{ marginTop: "50px" }}
           >
             {images.map((src: string, index: number) => {
@@ -201,7 +219,7 @@ const MobileCarousel = ({
                   }}
                 >
                   <div
-                    className={mobileStyle.mobileSingleItem}
+                    className={`${mobileStyle.mobileSingleItem} `}
                     style={{ position: "relative" }}
                   >
                     <div style={{ position: "relative" }}>

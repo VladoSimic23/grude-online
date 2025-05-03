@@ -37,10 +37,10 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
       loop={true}
       effect="fade"
       navigation
-      // autoplay={{
-      //   delay: 6000,
-      //   disableOnInteraction: false,
-      // }}
+      autoplay={{
+        delay: 6000,
+        disableOnInteraction: false,
+      }}
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       className="mySwiper"

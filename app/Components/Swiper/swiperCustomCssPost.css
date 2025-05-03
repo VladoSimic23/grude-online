@@ -1,8 +1,11 @@
 .swiper-pagination {
   top: 0 !important;
-  height: 30px !important;
+  height: 2px !important;
   text-align: left !important;
   padding-left: 8px;
+}
+.swiper-pagination-progressbar-fill {
+  background: #cb7623 !important;
 }
 .swiper-button-prev,
 .swiper-button-next {
