@@ -23,6 +23,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/free-mode";
 import "swiper/css/thumbs";
+import "swiper/css/zoom";
 
 const MobileCarousel = ({
   images,
@@ -108,10 +109,7 @@ const MobileCarousel = ({
             spaceBetween={50}
             slidesPerView={1}
             loop={true}
-            zoom={{
-              maxRatio: 5, // Set max zoom ratio (e.g., zoom 5x)
-              minRatio: 1, // Set min zoom ratio (i.e., no zoom)
-            }}
+            zoom={true}
             navigation
             pagination={{
               type: "progressbar", // Use fraction pagination (1/5, 2/5, etc.)
