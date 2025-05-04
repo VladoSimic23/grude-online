@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import style from "../../../../css/style.module.css";
 import mobileStyle from "../../MobileHomepage/Css/mobileHomepage.module.css";
 import "../../../Swiper/swiperCustomCssPost.css";
@@ -39,19 +39,20 @@ const MobileCarousel = ({
   const [isThumb, setIsThumb] = useState(false);
   const [imageHeight, setImageHeight] = useState(100);
   //const [thumbHeight, setThumbHeight] = useState(12);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  useEffect(() => {
-    if (displayGallery) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+  // useEffect(() => {
+  //   if (displayGallery) {
+  //     document.body.style.overflow = "hidden";
+  //   } else {
+  //     document.body.style.overflow = "";
+  //   }
 
-    // Clean up when component unmounts
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [displayGallery]);
+  //   // Clean up when component unmounts
+  //   return () => {
+  //     document.body.style.overflow = "";
+  //   };
+  // }, [displayGallery]);
 
   // console.log(activeThumb);
   const handleCarousel = () => {
@@ -87,7 +88,7 @@ const MobileCarousel = ({
             left: "0",
             height: `${imageHeight}vh`,
             width: "100%",
-            background: "rgba(34, 32, 32, 0.99)",
+            background: "rgba(34, 32, 32)",
             zIndex: "10000",
             //overflow: "scroll",
             padding: "15px 15px",
@@ -148,6 +149,7 @@ const MobileCarousel = ({
               swiper:
                 thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
             }}
+            onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
             scrollbar={{ draggable: true }}
             className="mySwiper"
             style={{
@@ -177,7 +179,7 @@ const MobileCarousel = ({
                     <div
                       style={{
                         position: "relative",
-                        marginTop: "-10%",
+                        marginTop: "-15%",
                       }}
                     >
                       <div className="swiper-zoom-container">
@@ -229,21 +231,15 @@ const MobileCarousel = ({
             freeMode={true}
             slideToClickedSlide={true}
             watchSlidesProgress={true}
+            //centeredSlides={true}
             modules={[FreeMode, Navigation, Thumbs]}
             className="mySwiper"
-            //centeredSlides={true}
-            // thumbs={{
-            //   swiper: thumbsSwiper,
-            //   slideThumbActiveClass: "is-active",
-            // }}
-            //onSlideChange={(swiper) => setActiveThumb(swiper.activeIndex)}
-            //style={{ marginTop: "50px" }}
           >
             {images.map((src: string, index: number) => {
               return (
                 <SwiperSlide
                   key={index}
-                  //className={`${index === 0 ? "active" : ""}`}
+                  className={index === activeIndex ? "is-active" : ""}
                   style={{
                     fontSize: "10px !important",
                     borderRadius: "10px",

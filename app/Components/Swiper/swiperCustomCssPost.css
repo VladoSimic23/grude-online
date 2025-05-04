@@ -25,13 +25,14 @@
 .swiper-button-next::after {
   font-size: 0px !important;
   position: absolute !important;
-  top: 20px !important;
+  top: 48% !important;
+  color: rgb(0, 138, 161) !important;
 }
 .swiper-button-prev::after {
-  left: 15px;
+  left: 5px;
 }
 .swiper-button-next::after {
-  right: 15px;
+  right: 5px;
 }
 .swiper-pagination-bullet {
   background: white !important;
@@ -46,4 +47,9 @@
   display: flex !important;
   align-content: center !important;
   width: auto !important;
+}
+
+.swiper-slide.is-active {
+  border: 2px solid #e68423; /* or any style you want */
+  opacity: 1;
 }
