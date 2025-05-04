@@ -23,7 +23,7 @@ export interface PostsByCategoryI {
   comments: CommentsI;
 }
 
-export async function getPostsByCategorySmall(
+export async function getPostsByCategorySmall2(
   category: string,
   numOfPosts: number,
   size: string,
@@ -68,38 +68,38 @@ export async function getPostsByCategorySmall(
   };
 }
 
-// export async function getPostsByCategorySmall(
-//   category: string,
-//   numOfPosts: number,
-//   size: string
-// ) {
-//   const data = await fetchAPI<PostsByCategorySourceI>(`query NewQuery {
-//       posts(first: ${numOfPosts}, where: {categoryName: "${category}"}) {
-//           nodes {
-//             slug
-//             title
-//             date
-//             featuredImage {
-//               node {
-//                 sourceUrl(size: ${size})
-//               }
-//             }
-//             categories {
-//               edges {
-//                 node {
-//                   slug
-//                 }
-//               }
-//             }
-//               comments(first:500) {
-//                 nodes {
-//                 commentId
-//                 }
-//               }
-//           }
+export async function getPostsByCategorySmall(
+  category: string,
+  numOfPosts: number,
+  size: string
+) {
+  const data = await fetchAPI<PostsByCategorySourceI>(`query NewQuery {
+      posts(first: ${numOfPosts}, where: {categoryName: "${category}"}) {
+          nodes {
+            slug
+            title
+            date
+            featuredImage {
+              node {
+                sourceUrl(size: ${size})
+              }
+            }
+            categories {
+              edges {
+                node {
+                  slug
+                }
+              }
+            }
+              comments(first:500) {
+                nodes {
+                commentId
+                }
+              }
+          }
 
-//       }
-//     }`);
+      }
+    }`);
 
-//   return data;
-// }
+  return data;
+}

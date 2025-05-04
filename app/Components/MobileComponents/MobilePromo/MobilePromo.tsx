@@ -5,12 +5,12 @@ import { decodeHTMLEntities } from "@/app/functions/decodeHtml";
 import Link from "next/link";
 //import CommentCount from "../../CommentCount/CommentCount";
 import defaultImage from "../../../../public/noImage.jpg";
-import { getPostsByCategorySmall } from "@/app/libs/Queries/Queries/postsByCategorySmall";
+import { getPostsByCategorySmall2 } from "@/app/libs/Queries/Queries/postsByCategorySmall";
 import { getRecentPostSlugs } from "@/app/libs/Queries/Queries/recentPosts";
 
 const MobilePromo = async () => {
   const naja = await getRecentPostSlugs(10);
-  const promoNews = await getPostsByCategorySmall(
+  const promoNews = await getPostsByCategorySmall2(
     "sport",
     6,
     "THUMBNAIL",
