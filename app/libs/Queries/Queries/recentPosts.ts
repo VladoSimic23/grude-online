@@ -56,3 +56,14 @@ export const getRecentPostsHomepage = async (numOfPosts: number) => {
 
   return data;
 };
+
+export const getRecentPostSlugs = async (numOfPosts: number) => {
+  const data = await fetchAPI<{ posts: { nodes: { slug: string }[] } }>(`{
+    posts(first: ${numOfPosts}) {
+      nodes {
+        slug
+      }
+    }
+  }`);
+  return data.posts.nodes.map((post) => post.slug);
+};

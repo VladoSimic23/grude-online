@@ -1,14 +1,14 @@
-import mobileStyle from "../MobileHomepage/Css/mobileHomepage.module.css";
-import styles from "../../../css/style.module.css";
-import Image from "next/image";
-import { decodeHTMLEntities } from "@/app/functions/decodeHtml";
-import Link from "next/link";
-//import CommentCount from "../../CommentCount/CommentCount";
-import defaultImage from "../../../../public/noImage.jpg";
 import { getPostsByCategorySmall } from "@/app/libs/Queries/Queries/postsByCategorySmall";
 import { getRecentPostSlugs } from "@/app/libs/Queries/Queries/recentPosts";
+import React from "react";
+import styles from "../../../css/style.module.css";
+import mobileStyle from "../MobileHomepage/Css/mobileHomepage.module.css";
+import Link from "next/link";
+import defaultImage from "../../../../public/noImage.jpg";
+import Image from "next/image";
+import { decodeHTMLEntities } from "@/app/functions/decodeHtml";
 
-const MobilePromo = async () => {
+const MobilePromoTest = async () => {
   const naja = await getRecentPostSlugs(10);
   const promoNews = await getPostsByCategorySmall(
     "sport",
@@ -21,21 +21,26 @@ const MobilePromo = async () => {
   } = promoNews;
 
   return (
-    <div className={mobileStyle.slideTestParent} style={{ margin: "50px 0" }}>
-      <div>
-        <h1
-          className={styles.h2Mobile}
-          style={{ borderBottom: "2px solid #ea8a2b" }}
-        >
-          Promo
-        </h1>
-      </div>
-      <div className={mobileStyle.slideTest}>
+    <div style={{ marginBottom: "50px" }}>
+      <h1
+        className={styles.h2Mobile}
+        style={{ borderBottom: "2px solid #ea8a2b", display: "inline-block" }}
+      >
+        Promo
+      </h1>
+
+      <div className="row">
         {nodes.map((item, index: number) => {
           return (
-            <div key={index} className={mobileStyle.slideTestChild}>
+            <div
+              key={index}
+              className={`${mobileStyle.slideTestChild} col-6 mb-2`}
+            >
               <Link href={`/${item?.slug}`}>
-                <div className={mobileStyle.slideTestChildWrap}>
+                <div
+                  className={mobileStyle.slideTestChildWrap}
+                  //style={{ paddingRight: "0px" }}
+                >
                   <Image
                     src={
                       item?.featuredImage.node.sourceUrl
@@ -48,6 +53,7 @@ const MobilePromo = async () => {
                     quality={20}
                     priority={false}
                     loading={"lazy"}
+                    className="w-100"
                   />
 
                   {/* <CommentCount
@@ -68,4 +74,4 @@ const MobilePromo = async () => {
   );
 };
 
-export default MobilePromo;
+export default MobilePromoTest;

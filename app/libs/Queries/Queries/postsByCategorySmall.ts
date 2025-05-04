@@ -26,35 +26,80 @@ export interface PostsByCategoryI {
 export async function getPostsByCategorySmall(
   category: string,
   numOfPosts: number,
-  size: string
+  size: string,
+  excludedSlugs: string[]
 ) {
-  const data = await fetchAPI<PostsByCategorySourceI>(`query NewQuery {
-      posts(first: ${numOfPosts}, where: {categoryName: "${category}"}) {
-          nodes {
-            slug
-            title
-            date
-            featuredImage {
-              node {
-                sourceUrl(size: ${size})
-              }
-            }
-            categories {
-              edges {
-                node {
-                  slug
-                }
-              }
-            }
-              comments(first:500) {
-                nodes {
-                commentId
-                }
-              }
+  const data = await fetchAPI<PostsByCategorySourceI>(`query {
+    posts(first: 20, where: {categoryName: "${category}"}) {
+      nodes {
+        slug
+        title
+        date
+        featuredImage {
+          node {
+            sourceUrl(size: ${size})
           }
-
+        }
+        categories {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
+        comments(first: 500) {
+          nodes {
+            commentId
+          }
+        }
       }
-    }`);
+    }
+  }`);
 
-  return data;
+  // Filter out excluded slugs on frontend
+  const filteredPosts = data?.posts?.nodes?.filter(
+    (post) => !excludedSlugs?.includes(post?.slug)
+  );
+
+  return {
+    posts: {
+      nodes: filteredPosts.slice(0, numOfPosts),
+    },
+  };
 }
+
+// export async function getPostsByCategorySmall(
+//   category: string,
+//   numOfPosts: number,
+//   size: string
+// ) {
+//   const data = await fetchAPI<PostsByCategorySourceI>(`query NewQuery {
+//       posts(first: ${numOfPosts}, where: {categoryName: "${category}"}) {
+//           nodes {
+//             slug
+//             title
+//             date
+//             featuredImage {
+//               node {
+//                 sourceUrl(size: ${size})
+//               }
+//             }
+//             categories {
+//               edges {
+//                 node {
+//                   slug
+//                 }
+//               }
+//             }
+//               comments(first:500) {
+//                 nodes {
+//                 commentId
+//                 }
+//               }
+//           }
+
+//       }
+//     }`);
+
+//   return data;
+// }
