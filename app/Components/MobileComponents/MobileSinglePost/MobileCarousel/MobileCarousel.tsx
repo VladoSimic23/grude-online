@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "../../../../css/style.module.css";
 import mobileStyle from "../../MobileHomepage/Css/mobileHomepage.module.css";
 import "../../../Swiper/swiperCustomCssPost.css";
@@ -36,9 +36,22 @@ const MobileCarousel = ({
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
   // const [activeThumb, setActiveThumb] = useState<number>(0);
-  const [isThumb, setIsThumb] = useState(true);
+  const [isThumb, setIsThumb] = useState(false);
   const [imageHeight, setImageHeight] = useState(100);
   //const [thumbHeight, setThumbHeight] = useState(12);
+
+  useEffect(() => {
+    if (displayGallery) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    // Clean up when component unmounts
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [displayGallery]);
 
   // console.log(activeThumb);
   const handleCarousel = () => {
@@ -164,24 +177,27 @@ const MobileCarousel = ({
                     <div
                       style={{
                         position: "relative",
+                        marginTop: "-10%",
                       }}
                     >
-                      <Image
-                        style={{
-                          position: "relative",
-                          zIndex: "1",
-                          // marginTop: "50%",
-                          // transform: "translateY(-50%)",
-                          height: "auto",
-                        }}
-                        className={style.imageCover}
-                        src={src}
-                        width={300}
-                        height={220}
-                        alt={`Gallery Image ${index + 1}`}
-                        quality={75}
-                        priority
-                      />
+                      <div className="swiper-zoom-container">
+                        <Image
+                          style={{
+                            position: "relative",
+                            zIndex: "1",
+                            // marginTop: "50%",
+                            // transform: "translateY(-50%)",
+                            height: "auto",
+                          }}
+                          className={style.imageCover}
+                          src={src}
+                          width={300}
+                          height={220}
+                          alt={`Gallery Image ${index + 1}`}
+                          quality={75}
+                          priority
+                        />
+                      </div>
                     </div>
                   </div>
                 </SwiperSlide>
