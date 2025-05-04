@@ -177,6 +177,25 @@
   padding-right: 0;
 }
 
+.slideTestChild2 {
+  padding-right: 15px;
+}
+.slideTestChild2 a {
+  text-decoration: none;
+}
+.slideTestChild2 img {
+  border-radius: 7px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.slideTestChild2 h1 {
+  white-space: wrap;
+  font-size: 14px;
+  line-height: 1.3 !important;
+  margin-top: 5px !important;
+  border-bottom: none;
+}
+
 .MobileInnerHTML img {
   max-width: 100%;
   height: auto;

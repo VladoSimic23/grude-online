@@ -18,7 +18,7 @@ const MobileNajnovije = async () => {
       <h1 className={`${style.h2Mobile} ${style.orangeBorder}`}>
         <span
           style={{
-            color: "orange",
+            color: "#ea8624",
             fontFamily: "Barlow Condensed",
             fontSize: "28px",
           }}

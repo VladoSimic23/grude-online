@@ -26,7 +26,16 @@ const MobilePromoTest = async () => {
         className={styles.h2Mobile}
         style={{ borderBottom: "2px solid #ea8a2b", display: "inline-block" }}
       >
-        Promo
+        <span
+          style={{
+            color: "#ea8624",
+            fontFamily: "Barlow Condensed",
+            fontSize: "28px",
+          }}
+        >
+          P
+        </span>
+        romo
       </h1>
 
       <div className="row">
@@ -34,7 +43,7 @@ const MobilePromoTest = async () => {
           return (
             <div
               key={index}
-              className={`${mobileStyle.slideTestChild} col-6 mb-2`}
+              className={`${mobileStyle.slideTestChild2} col-6 mb-2`}
             >
               <Link href={`/${item?.slug}`}>
                 <div
@@ -47,8 +56,8 @@ const MobilePromoTest = async () => {
                         ? item?.featuredImage.node.sourceUrl
                         : defaultImage
                     }
-                    width={150}
-                    height={100}
+                    width={160}
+                    height={120}
                     alt={`Popular Post Image ${index}`}
                     quality={20}
                     priority={false}
