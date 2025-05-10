@@ -9,14 +9,7 @@ import "../../../Swiper/swiperCustomCss.css";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import {
-  A11y,
-  Autoplay,
-  Navigation,
-  Pagination,
-  Scrollbar,
-  EffectFade,
-} from "swiper/modules";
+import { Autoplay, Navigation, Pagination, EffectFade } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
@@ -31,7 +24,7 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
 }) => {
   return (
     <Swiper
-      modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay, EffectFade]}
+      modules={[Navigation, Pagination, Autoplay, EffectFade]}
       spaceBetween={50}
       slidesPerView={1}
       loop={true}
@@ -39,7 +32,7 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
       navigation
       autoplay={{
         delay: 6000,
-        disableOnInteraction: false,
+        //disableOnInteraction: false,
       }}
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}

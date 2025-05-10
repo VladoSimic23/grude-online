@@ -10,7 +10,7 @@ import dynamic from "next/dynamic";
 import TopNavbar from "./Components/Nav/TopNavbar";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 import MobilePopularno from "./Components/MobileComponents/MobilePopularno/MobilePopularno";
-import MobilePromo from "./Components/MobileComponents/MobilePromo/MobilePromo";
+//import MobilePromo from "./Components/MobileComponents/MobilePromo/MobilePromo";
 
 //import Script from "next/script";
 //import DelayedScriptLoader from "./functions/scriptLoader";
@@ -61,11 +61,11 @@ export default async function RootLayout({
           </div>
         )}
 
-        {isMobile && (
+        {/* {isMobile && (
           <div className="container px-3">
             <MobilePromo />
           </div>
-        )}
+        )} */}
 
         <FooterComponent />
 

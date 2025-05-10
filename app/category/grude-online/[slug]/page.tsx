@@ -108,7 +108,7 @@ const SingleGrudeOnline = async ({ params }: Props) => {
         )} */}
 
       {commentStatus === "open" && (
-        <div className="row">
+        <div className="row" id="comments">
           <div className="col-md-8">
             {
               <>

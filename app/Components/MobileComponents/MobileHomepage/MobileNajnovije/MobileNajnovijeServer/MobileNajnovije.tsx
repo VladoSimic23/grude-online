@@ -3,8 +3,9 @@ import {
   RecentPostsSourceI,
 } from "@/app/libs/Queries/Queries/recentPosts";
 import MobileNajnovijeDetails from "../MobileNajnovijeServer/MobileNajnovijeDetails";
-import style from "../../../../../css/style.module.css";
-import MobilePromoTest from "../../../MobilePromo/MobilePromoTest";
+//import style from "../../../../../css/style.module.css";
+//import MobilePromoTest from "../../../MobilePromo/MobilePromoTest";
+import MobilePromo from "../../../MobilePromo/MobilePromo";
 
 const MobileNajnovije = async () => {
   const najnovije: RecentPostsSourceI = await getRecentPostsHomepage(10);
@@ -14,8 +15,8 @@ const MobileNajnovije = async () => {
   } = najnovije;
 
   return (
-    <div style={{ marginTop: "30px" }}>
-      <h1 className={`${style.h2Mobile} ${style.orangeBorder}`}>
+    <div style={{ marginTop: "60px" }}>
+      {/* <h1 className={`${style.h2Mobile} ${style.orangeBorder}`}>
         <span
           style={{
             color: "#ea8624",
@@ -26,13 +27,13 @@ const MobileNajnovije = async () => {
           N
         </span>
         ajnovije
-      </h1>
+      </h1> */}
       {nodes.slice(0, 5).map((item, index) => {
         return (
           <MobileNajnovijeDetails key={index} props={item} index={index} />
         );
       })}
-      <MobilePromoTest />
+      <MobilePromo />
       {nodes.slice(5, 10).map((item, index) => {
         return (
           <MobileNajnovijeDetails key={index} props={item} index={index} />

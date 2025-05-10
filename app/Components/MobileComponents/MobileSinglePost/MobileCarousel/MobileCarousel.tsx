@@ -36,8 +36,8 @@ const MobileCarousel = ({
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
   // const [activeThumb, setActiveThumb] = useState<number>(0);
-  const [isThumb, setIsThumb] = useState(false);
-  const [imageHeight, setImageHeight] = useState(100);
+  //const [isThumb, setIsThumb] = useState(true);
+  //const [imageHeight, setImageHeight] = useState(100);
   //const [thumbHeight, setThumbHeight] = useState(12);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -55,15 +55,15 @@ const MobileCarousel = ({
   // }, [displayGallery]);
 
   // console.log(activeThumb);
-  const handleCarousel = () => {
-    setIsThumb(!isThumb);
-    if (!isThumb) {
-      setImageHeight(88);
-    }
-    if (isThumb) {
-      setImageHeight(100);
-    }
-  };
+  // const handleCarousel = () => {
+  //   setIsThumb(!isThumb);
+  //   if (!isThumb) {
+  //     setImageHeight(88);
+  //   }
+  //   if (isThumb) {
+  //     setImageHeight(100);
+  //   }
+  // };
 
   if (!displayGallery) {
     return (
@@ -86,7 +86,7 @@ const MobileCarousel = ({
             position: "fixed",
             top: "0",
             left: "0",
-            height: `${imageHeight}vh`,
+            height: `${88}vh`,
             width: "100%",
             background: "rgba(34, 32, 32)",
             zIndex: "10000",
@@ -95,11 +95,11 @@ const MobileCarousel = ({
           }}
         >
           <div className={mobileStyle.mobCarousel}>
-            <i
+            {/* <i
               onClick={handleCarousel}
               style={{ color: "#dc7e24", fontSize: "22px", cursor: "pointer" }}
               className="bi bi-grid-3x3-gap-fill"
-            ></i>
+            ></i> */}
             <Image
               src="/Grude_online_Logotip2.png"
               alt="grudeOnlineLogo"
@@ -166,7 +166,7 @@ const MobileCarousel = ({
                   className={`${index === 0 ? "active" : ""}`}
                   style={{
                     fontSize: "10px !important",
-                    borderRadius: "10px",
+                    //borderRadius: "10px",
                     height: "auto",
                     display: "grid",
                     alignItems: "center",
@@ -219,7 +219,7 @@ const MobileCarousel = ({
             zIndex: "10000",
             //overflow: "scroll",
             padding: "10px 15px",
-            display: isThumb ? "flex" : "none",
+            //display: isThumb ? "flex" : "none",
             alignItems: "center",
           }}
         >
@@ -242,7 +242,7 @@ const MobileCarousel = ({
                   className={index === activeIndex ? "is-active" : ""}
                   style={{
                     fontSize: "10px !important",
-                    borderRadius: "10px",
+                    //borderRadius: "10px",
                   }}
                 >
                   <div

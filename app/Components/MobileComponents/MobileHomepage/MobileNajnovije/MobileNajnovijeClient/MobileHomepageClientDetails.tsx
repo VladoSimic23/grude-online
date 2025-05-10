@@ -7,6 +7,7 @@ import Image from "next/image";
 import { matchColors } from "@/app/functions/categoryColors";
 import { formatDateToCroatian } from "@/app/functions/formatDateToCroatian";
 import Link from "next/link";
+import CommentLink from "@/app/Components/Comments/CommentsLink";
 
 const MobileHomepageClientDetails = ({
   props,
@@ -34,6 +35,7 @@ const MobileHomepageClientDetails = ({
       <div style={{ marginBottom: "30px" }}>
         <div className={mobileStyle.mobileSingleItem}>
           <Image
+            style={{ borderRadius: "10px" }}
             className={style.imageCover}
             src={sourceUrl}
             width={300}
@@ -64,27 +66,11 @@ const MobileHomepageClientDetails = ({
           >
             {formatDateToCroatian(date)}
           </span>
-
-          <div
-            className={mobileStyle.mobileComments}
-            style={{
-              borderBottom: `2px solid ${matchColors(theCategoryColor)}`,
-            }}
-          >
-            <span
-              style={{
-                color: "white",
-              }}
-            >
-              {nodes.length}
-            </span>
-            <i
-              style={{
-                color: "white",
-              }}
-              className="bi bi-chat-left-text"
-            ></i>
-          </div>
+          <CommentLink
+            slug={slug}
+            color={theCategoryColor}
+            length={nodes?.length}
+          />
         </div>
       </div>
     </Link>

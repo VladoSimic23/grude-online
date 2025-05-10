@@ -5,9 +5,6 @@
 .mobileSingleItem {
   position: relative;
 }
-.mobileSingleItem img {
-  border-radius: 10px;
-}
 
 .mobileCommentCount {
   position: absolute;

@@ -2,6 +2,7 @@
   top: 0 !important;
   text-align: left !important;
   padding-left: 8px;
+  height: 25px !important;
 }
 .swiper-button-prev,
 .swiper-button-next {

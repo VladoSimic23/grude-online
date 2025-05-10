@@ -21,7 +21,7 @@ const MobilePromo = async () => {
   } = promoNews;
 
   return (
-    <div className={mobileStyle.slideTestParent} style={{ margin: "50px 0" }}>
+    <div className={mobileStyle.slideTestParent} style={{ margin: "25px 0" }}>
       <div>
         <h1
           className={styles.h2Mobile}

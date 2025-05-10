@@ -6,6 +6,7 @@ import { formatDateToCroatian } from "@/app/functions/formatDateToCroatian";
 import * as cheerio from "cheerio";
 import MobileCarousel from "./MobileCarousel/MobileCarousel";
 import defaultImage from "../../../../public/noImage.jpg";
+import ScrollToComments from "../../Comments/ScrollToComments";
 
 const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
   const { title, content, date, postId } = post;
@@ -99,6 +100,7 @@ const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
       {/* {extraImages.length > 0 && (
         <MobileImageList images={extraImages} title={title} />
       )} */}
+      <ScrollToComments />
     </div>
   );
 };
