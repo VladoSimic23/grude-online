@@ -21,7 +21,7 @@ export default function CommentLinkPopularno({
       }
     };
     fetchData();
-  }, []);
+  }, [slug]);
 
   const handleClick = () => {
     sessionStorage.setItem("scrollToComments", "true");

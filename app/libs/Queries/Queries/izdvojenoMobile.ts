@@ -34,7 +34,7 @@ export async function getMobileIzdvojeno(category: string, numOfPosts: number) {
             content 
             featuredImage {
               node {
-                sourceUrl(size: MEDIUM)
+                sourceUrl(size: LARGE)
               }
             }
           }
