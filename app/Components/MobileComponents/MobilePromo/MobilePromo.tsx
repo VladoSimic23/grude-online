@@ -18,7 +18,7 @@ const MobilePromo = async () => {
   return (
     <div
       className={mobileStyle.slideTestParent}
-      style={{ margin: "25px 0 40px 0" }}
+      style={{ margin: "25px 0 30px 0" }}
     >
       <div>
         <h1
@@ -40,8 +40,8 @@ const MobilePromo = async () => {
                         ? item?.featuredImage.node.sourceUrl
                         : defaultImage
                     }
-                    width={250}
-                    height={150}
+                    width={220}
+                    height={130}
                     alt={`Popular Post Image ${index}`}
                     quality={20}
                     priority={false}
@@ -54,7 +54,7 @@ const MobilePromo = async () => {
                     fontSize="12px"
                   /> */}
                 </div>
-                <h1 className={styles.h5Mobile}>
+                <h1 className={styles.h2Mobile}>
                   {decodeHTMLEntities(item?.title)}
                 </h1>
               </Link>
