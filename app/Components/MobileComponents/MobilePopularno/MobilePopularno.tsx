@@ -3,9 +3,10 @@ import Image from "next/image";
 import { fetchPopularPosts } from "@/app/libs/Queries/FetchFunction/fetchPopularPosts";
 import Link from "next/link";
 import defaultImage from "../../../../public/noImage.jpg";
-import CommentCount from "../../CommentCount/CommentCount";
+//import CommentCount from "../../CommentCount/CommentCount";
 import mobileStyle from "../MobileHomepage/Css/mobileHomepage.module.css";
 import { decodeHTMLEntities } from "@/app/functions/decodeHtml";
+import CommentLinkPopularno from "../../Comments/CommentLinkPopularno";
 
 const MobilePopularno = async () => {
   const popular = await fetchPopularPosts();
@@ -46,11 +47,12 @@ const MobilePopularno = async () => {
                       priority={false}
                       loading={"lazy"}
                     />
-                    <CommentCount
+                    {/* <CommentCount
                       slug={item?.slug}
                       color="white"
                       fontSize="12px"
-                    />
+                    /> */}
+                    <CommentLinkPopularno slug={item?.slug} color={"white"} />
                   </div>
                 </div>
                 <div className="col-7">

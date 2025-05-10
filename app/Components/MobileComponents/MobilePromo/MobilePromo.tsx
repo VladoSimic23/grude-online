@@ -10,18 +10,16 @@ import { getRecentPostSlugs } from "@/app/libs/Queries/Queries/recentPosts";
 
 const MobilePromo = async () => {
   const naja = await getRecentPostSlugs(10);
-  const promoNews = await getPostsByCategorySmall2(
-    "sport",
-    6,
-    "THUMBNAIL",
-    naja
-  );
+  const promoNews = await getPostsByCategorySmall2("sport", 6, "MEDIUM", naja);
   const {
     posts: { nodes },
   } = promoNews;
 
   return (
-    <div className={mobileStyle.slideTestParent} style={{ margin: "25px 0" }}>
+    <div
+      className={mobileStyle.slideTestParent}
+      style={{ margin: "25px 0 40px 0" }}
+    >
       <div>
         <h1
           className={styles.h2Mobile}
@@ -42,8 +40,8 @@ const MobilePromo = async () => {
                         ? item?.featuredImage.node.sourceUrl
                         : defaultImage
                     }
-                    width={150}
-                    height={100}
+                    width={250}
+                    height={150}
                     alt={`Popular Post Image ${index}`}
                     quality={20}
                     priority={false}
