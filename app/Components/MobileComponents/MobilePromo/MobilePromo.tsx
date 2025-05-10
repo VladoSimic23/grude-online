@@ -54,7 +54,7 @@ const MobilePromo = async () => {
                     fontSize="12px"
                   /> */}
                 </div>
-                <h1 className={styles.h2Mobile}>
+                <h1 className={styles.h2Mobile} style={{ fontSize: "20px" }}>
                   {decodeHTMLEntities(item?.title)}
                 </h1>
               </Link>
