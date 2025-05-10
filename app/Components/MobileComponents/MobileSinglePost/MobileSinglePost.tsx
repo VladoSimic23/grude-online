@@ -25,7 +25,7 @@ const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
   if (images.length > 3) {
     images.each((index, img) => {
       extraImages.push($(img).attr("src"));
-      $(img).remove();
+      //$(img).remove();
     });
   }
 
