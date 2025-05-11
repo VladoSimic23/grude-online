@@ -1,11 +1,12 @@
 "use client";
+
+import React, { useRef, useState } from "react";
 import Image from "next/image";
-import React, { useState } from "react";
 import style from "../../../../css/style.module.css";
 import mobileStyle from "../../MobileHomepage/Css/mobileHomepage.module.css";
 import "../../../Swiper/swiperCustomCssPost.css";
 
-// Import Swiper React components
+// Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   A11y,
@@ -16,8 +17,6 @@ import {
   Thumbs,
   Zoom,
 } from "swiper/modules";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -25,258 +24,234 @@ import "swiper/css/free-mode";
 import "swiper/css/thumbs";
 import "swiper/css/zoom";
 
-const MobileCarousel = ({
-  images,
-}: //title,
-{
-  images: string[];
-  title: string;
-}) => {
-  const [displayGallery, setDisplayGaller] = useState(false);
+const MobileCarousel = ({ images }: { images: string[]; title: string }) => {
+  const [displayGallery, setDisplayGallery] = useState(false);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
-  // const [activeThumb, setActiveThumb] = useState<number>(0);
-  //const [isThumb, setIsThumb] = useState(true);
-  //const [imageHeight, setImageHeight] = useState(100);
-  //const [thumbHeight, setThumbHeight] = useState(12);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // useEffect(() => {
-  //   if (displayGallery) {
-  //     document.body.style.overflow = "hidden";
-  //   } else {
-  //     document.body.style.overflow = "";
-  //   }
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const swiperRef = useRef<any>(null);
 
-  //   // Clean up when component unmounts
-  //   return () => {
-  //     document.body.style.overflow = "";
-  //   };
-  // }, [displayGallery]);
+  const openGallery = (index: number) => {
+    setActiveIndex(index);
+    setDisplayGallery(true);
 
-  // console.log(activeThumb);
-  // const handleCarousel = () => {
-  //   setIsThumb(!isThumb);
-  //   if (!isThumb) {
-  //     setImageHeight(88);
-  //   }
-  //   if (isThumb) {
-  //     setImageHeight(100);
-  //   }
-  // };
+    setTimeout(() => {
+      if (swiperRef.current?.slideToLoop) {
+        swiperRef.current.slideToLoop(index);
+      }
+    }, 100);
+  };
 
-  if (!displayGallery) {
-    return (
-      <div>
-        <button
-          className={mobileStyle.mobileButton}
-          onClick={() => setDisplayGaller(true)}
-        >
-          Prikaži Galeriju
-        </button>
-      </div>
-    );
-  }
-
-  if (displayGallery) {
-    return (
-      <div>
+  return (
+    <div>
+      {/* Preview Thumbnails */}
+      <div style={{ marginTop: "-25px", position: "relative" }}>
+        <div className="row gap-0 p-2 mb-4">
+          {images.slice(0, 4).map((img, index) => (
+            <div
+              key={index}
+              onClick={() => openGallery(index)}
+              style={{ cursor: "pointer" }}
+              className="col-3 p-1"
+            >
+              <Image
+                src={img}
+                alt="thumbnail"
+                width={100}
+                height={70}
+                style={{ objectFit: "cover", maxWidth: "100%" }}
+                quality={20}
+                priority
+              />
+            </div>
+          ))}
+        </div>
         <div
+          onClick={() => setDisplayGallery(true)}
           style={{
-            position: "fixed",
-            top: "0",
-            left: "0",
-            height: `${88}vh`,
-            width: "100%",
-            background: "rgba(34, 32, 32)",
-            zIndex: "10000",
-            //overflow: "scroll",
-            padding: "15px 15px",
+            position: "absolute",
+            bottom: "-5px",
+            right: "0",
+            color: "black",
+            display: "inline-block",
+            background: "white",
+            padding: "7px 16px",
           }}
         >
-          <div className={mobileStyle.mobCarousel}>
-            {/* <i
-              onClick={handleCarousel}
-              style={{ color: "#dc7e24", fontSize: "22px", cursor: "pointer" }}
-              className="bi bi-grid-3x3-gap-fill"
-            ></i> */}
-            <Image
-              src="/Grude_online_Logotip2.png"
-              alt="grudeOnlineLogo"
-              width={330}
-              height={42}
-            />
-            <i
-              onClick={() => setDisplayGaller(false)}
-              style={{
-                color: "#008aa1",
-                cursor: "pointer",
-                fontWeight: "700",
-                fontSize: "24px",
-              }}
-              className="bi bi-x-lg"
-            ></i>
-          </div>
+          <h1
+            style={{ margin: "0", fontSize: "20px", fontWeight: "bold" }}
+            className={mobileStyle.h2Mobile}
+          >
+            {images.length}
+          </h1>
+        </div>
+      </div>
 
-          {/* <div className="p-1" style={{ marginTop: "0px" }}>
-            <h1
-              style={{ color: "white" }}
-              className={`${style.h4Mobile} text-center`}
-            >
-              {title}
-            </h1>
-          </div> */}
-
-          <Swiper
-            modules={[
-              Navigation,
-              Pagination,
-              Scrollbar,
-              A11y,
-              Thumbs,
-              FreeMode,
-              Zoom,
-            ]}
-            spaceBetween={50}
-            slidesPerView={1}
-            loop={true}
-            zoom={true}
-            navigation
-            pagination={{
-              type: "progressbar", // Use fraction pagination (1/5, 2/5, etc.)
-            }}
-            thumbs={{
-              swiper:
-                thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
-            }}
-            onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-            scrollbar={{ draggable: true }}
-            className="mySwiper"
+      {/* Fullscreen Gallery */}
+      {displayGallery && (
+        <>
+          <div
             style={{
-              //marginTop: "30px",
-              display: "flex",
-              alignItems: "center",
-              height: "100%",
+              position: "fixed",
+              top: 0,
+              left: 0,
+              height: "88vh",
+              width: "100%",
+              background: "rgba(34, 32, 32)",
+              zIndex: 10000,
+              padding: "15px",
             }}
           >
-            {images.map((src: string, index: number) => {
-              return (
-                <SwiperSlide
-                  key={index}
-                  className={`${index === 0 ? "active" : ""}`}
-                  style={{
-                    fontSize: "10px !important",
-                    //borderRadius: "10px",
-                    height: "auto",
-                    display: "grid",
-                    alignItems: "center",
-                  }}
-                >
-                  <div
-                    className={mobileStyle.mobileSingleItem}
-                    style={{ position: "relative" }}
+            <div className={mobileStyle.mobCarousel}>
+              <Image
+                src="/Grude_online_Logotip2.png"
+                alt="grudeOnlineLogo"
+                width={330}
+                height={42}
+              />
+              <i
+                onClick={() => setDisplayGallery(false)}
+                className="bi bi-x-lg"
+                style={{
+                  color: "#008aa1",
+                  cursor: "pointer",
+                  fontWeight: 700,
+                  fontSize: 24,
+                }}
+              ></i>
+            </div>
+
+            <Swiper
+              modules={[
+                Navigation,
+                Pagination,
+                Scrollbar,
+                A11y,
+                Thumbs,
+                FreeMode,
+                Zoom,
+              ]}
+              initialSlide={activeIndex}
+              spaceBetween={50}
+              slidesPerView={1}
+              loop={true}
+              zoom={true}
+              navigation
+              pagination={{
+                type: "progressbar", // Use fraction pagination (1/5, 2/5, etc.)
+              }}
+              onSwiper={(swiper) => {
+                swiperRef.current = swiper;
+              }}
+              thumbs={{
+                swiper:
+                  thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
+              }}
+              onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+              scrollbar={{ draggable: true }}
+              className="mySwiper"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                height: "100%",
+              }}
+            >
+              {images.map((src: string, index: number) => {
+                return (
+                  <SwiperSlide
+                    key={index}
+                    className={`${index === 0 ? "active" : ""}`}
+                    style={{
+                      fontSize: "10px !important",
+                      height: "auto",
+                      display: "grid",
+                      alignItems: "center",
+                    }}
                   >
                     <div
-                      style={{
-                        position: "relative",
-                        marginTop: "-15%",
-                      }}
+                      className={mobileStyle.mobileSingleItem}
+                      style={{ position: "relative" }}
                     >
-                      <div className="swiper-zoom-container">
-                        <Image
-                          style={{
-                            position: "relative",
-                            zIndex: "1",
-                            // marginTop: "50%",
-                            // transform: "translateY(-50%)",
-                            height: "auto",
-                          }}
-                          className={style.imageCover}
-                          src={src}
-                          width={300}
-                          height={220}
-                          alt={`Gallery Image ${index + 1}`}
-                          quality={75}
-                          priority
-                        />
+                      <div
+                        style={{
+                          position: "relative",
+                          marginTop: "-15%",
+                        }}
+                      >
+                        <div className="swiper-zoom-container">
+                          <Image
+                            style={{
+                              position: "relative",
+                              zIndex: "1",
+                              height: "auto",
+                            }}
+                            className={style.imageCover}
+                            src={src}
+                            width={300}
+                            height={220}
+                            alt={`Gallery Image ${index + 1}`}
+                            quality={75}
+                            priority
+                          />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
-        </div>
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          </div>
 
-        <div
-          style={{
-            position: "fixed",
-            bottom: "0",
-            left: "0",
-            height: "12vh",
-            width: "100%",
-            background: "rgba(34, 32, 32, 0.99)",
-            zIndex: "10000",
-            //overflow: "scroll",
-            padding: "10px 15px",
-            //display: isThumb ? "flex" : "none",
-            alignItems: "center",
-          }}
-        >
-          <Swiper
-            onSwiper={setThumbsSwiper}
-            loop={true}
-            spaceBetween={10}
-            slidesPerView={4}
-            freeMode={true}
-            slideToClickedSlide={true}
-            watchSlidesProgress={true}
-            //centeredSlides={true}
-            modules={[FreeMode, Navigation, Thumbs]}
-            className="mySwiper"
+          {/* Thumbnails */}
+          <div
+            style={{
+              position: "fixed",
+              bottom: 0,
+              left: 0,
+              height: "12vh",
+              width: "100%",
+              background: "rgba(34, 32, 32, 0.99)",
+              zIndex: 10000,
+              padding: "10px 15px",
+            }}
           >
-            {images.map((src: string, index: number) => {
-              return (
+            <Swiper
+              onSwiper={setThumbsSwiper}
+              loop
+              spaceBetween={10}
+              slidesPerView={4}
+              freeMode
+              watchSlidesProgress
+              slideToClickedSlide
+              modules={[FreeMode, Navigation, Thumbs]}
+              className="mySwiper"
+            >
+              {images.map((src, index) => (
                 <SwiperSlide
                   key={index}
                   className={index === activeIndex ? "is-active" : ""}
-                  style={{
-                    fontSize: "10px !important",
-                    //borderRadius: "10px",
-                  }}
                 >
-                  <div
-                    className={`${mobileStyle.mobileSingleItem} `}
-                    style={{ position: "relative" }}
-                  >
-                    <div style={{ position: "relative" }}>
-                      <Image
-                        style={{
-                          position: "relative",
-                          zIndex: "1",
-
-                          //height: "auto",
-                        }}
-                        className={style.imageCover}
-                        src={src}
-                        width={70}
-                        height={70}
-                        alt={`Gallery Image ${index + 1}`}
-                        quality={75}
-                        priority
-                      />
-                    </div>
+                  <div className={mobileStyle.mobileSingleItem}>
+                    <Image
+                      className={style.imageCover}
+                      src={src}
+                      width={70}
+                      height={70}
+                      alt={`Gallery Image ${index + 1}`}
+                      quality={75}
+                      priority
+                    />
                   </div>
                 </SwiperSlide>
-              );
-            })}
-          </Swiper>
-        </div>
-      </div>
-    );
-  }
-
-  return;
+              ))}
+            </Swiper>
+          </div>
+        </>
+      )}
+    </div>
+  );
 };
 
 export default MobileCarousel;

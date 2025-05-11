@@ -51,7 +51,7 @@ const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
             height: "auto",
             position: "absolute",
             zIndex: "-1",
-            borderRadius: "8px",
+            //borderRadius: "8px",
           }}
           src={
             post?.featuredImage?.node?.sourceUrl
@@ -72,7 +72,7 @@ const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
             height: "auto",
             position: "relative",
             zIndex: "1",
-            borderRadius: "8px",
+            //borderRadius: "8px",
           }}
           src={
             post?.featuredImage?.node?.sourceUrl
@@ -87,6 +87,9 @@ const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
           quality={50}
           id={`post-image-${postId}`}
         />
+        {extraImages.length > 0 && (
+          <MobileCarousel images={extraImages} title={title} />
+        )}
       </div>
 
       <div
@@ -94,12 +97,7 @@ const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
         style={{ color: "white" }}
         dangerouslySetInnerHTML={{ __html: updatedContent }}
       ></div>
-      {extraImages.length > 0 && (
-        <MobileCarousel images={extraImages} title={title} />
-      )}
-      {/* {extraImages.length > 0 && (
-        <MobileImageList images={extraImages} title={title} />
-      )} */}
+
       <ScrollToComments />
     </div>
   );

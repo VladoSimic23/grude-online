@@ -54,22 +54,15 @@ const CommentDetails = ({ item }: { item: ClientCommentsContent }) => {
 
       <div>
         {/* <button onClick={handleLike}> */}
-        <button>
-          <Image
-            src={"/icons8-like-30.png"}
-            width={20}
-            height={20}
-            alt="dislike"
-          />{" "}
+        <button style={{ background: "white", border: "1px solid black" }}>
+          <i style={{ fontSize: "14px" }} className="bi bi-hand-thumbs-up"></i>
           {/* <span>{likes}</span> */}
         </button>
-        <button>
-          <Image
-            src={"/icons8-dislike-30.png"}
-            width={20}
-            height={20}
-            alt="like"
-          />
+        <button style={{ background: "white", border: "1px solid black" }}>
+          <i
+            style={{ fontSize: "14px" }}
+            className="bi bi-hand-thumbs-down"
+          ></i>
         </button>
       </div>
     </div>
