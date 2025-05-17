@@ -54,7 +54,24 @@ const MobilePromo = async () => {
                     priority={false}
                     loading={"lazy"}
                   />
-
+                  <span
+                    style={{
+                      position: "absolute",
+                      width: "fit-content",
+                      bottom: "0",
+                      left: "0",
+                      background: "rgb(206, 116, 26)",
+                      padding: "4px 10px 3px 10px",
+                      fontSize: "10px",
+                      letterSpacing: "1px",
+                      borderBottomLeftRadius: "7px",
+                      borderBottomRightRadius: "0",
+                      fontWeight: "bold",
+                      color: "white",
+                    }}
+                  >
+                    OGLAS
+                  </span>
                   {/* <CommentCount
                     slug={item?.slug}
                     color="white"
