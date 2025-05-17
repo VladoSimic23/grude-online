@@ -7,9 +7,16 @@ import * as cheerio from "cheerio";
 import MobileCarousel from "./MobileCarousel/MobileCarousel";
 import defaultImage from "../../../../public/noImage.jpg";
 import ScrollToComments from "../../Comments/ScrollToComments";
+//import CommentLinkInPost from "../../Comments/CommentLinkInPost";
 
 const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
-  const { title, content, date, postId } = post;
+  const {
+    title,
+    content,
+    date,
+    postId,
+    //comments: { nodes },
+  } = post;
 
   const $ = cheerio.load(content);
   const images = $("img");
@@ -40,11 +47,23 @@ const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
       >
         {title}
       </h1>
-      <h2 className={`${style.h5Mobile} text-center`}>
-        {formatDateToCroatian(date)}
-      </h2>
 
       <div style={{ position: "relative" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "baseline",
+          }}
+        >
+          <h2
+            className={`${style.h5Mobile} text-center`}
+            style={{ fontSize: "15px !important" }}
+          >
+            {formatDateToCroatian(date)}
+          </h2>
+          {/* <CommentLinkInPost length={nodes.length} /> */}
+        </div>
         <Image
           className={`${style.imageContain} mt-4 mb-4`}
           style={{

@@ -28,17 +28,22 @@ const MobileNajnovije = async () => {
         </span>
         ajnovije
       </h1> */}
-      {nodes.slice(0, 5).map((item, index) => {
-        return (
-          <MobileNajnovijeDetails key={index} props={item} index={index} />
-        );
-      })}
+
+      <div className="container px-3">
+        {nodes.slice(0, 5).map((item, index) => {
+          return (
+            <MobileNajnovijeDetails key={index} props={item} index={index} />
+          );
+        })}
+      </div>
       <MobilePromo />
-      {nodes.slice(5, 10).map((item, index) => {
-        return (
-          <MobileNajnovijeDetails key={index} props={item} index={index} />
-        );
-      })}
+      <div className="container px-3">
+        {nodes.slice(5, 10).map((item, index) => {
+          return (
+            <MobileNajnovijeDetails key={index} props={item} index={index} />
+          );
+        })}
+      </div>
     </div>
   );
 };

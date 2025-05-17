@@ -9,12 +9,12 @@ import MobileHomepageClient from "./MobileHomepage/MobileNajnovije/MobileNajnovi
 const MobileContainer = () => {
   return (
     <>
-      <div className="container px-3">
+      <div>
         {/* <NewsCarousel /> */}
         <MobileNajnovije />
       </div>
 
-      <div className="container px-3">
+      <div>
         <MobileHomepageClient />
       </div>
     </>
