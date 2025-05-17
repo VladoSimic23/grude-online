@@ -30,10 +30,10 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
       loop={true}
       effect="fade"
       navigation
-      autoplay={{
-        delay: 6000,
-        //disableOnInteraction: false,
-      }}
+      // autoplay={{
+      //   delay: 6000,
+      //   //disableOnInteraction: false,
+      // }}
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       className="mySwiper"
@@ -91,7 +91,7 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
                       zIndex: "2",
                       bottom: "0",
                       width: "100%",
-                      background: "#0f479f9e",
+                      background: "#373a3e9e",
                       margin: "0",
                     }}
                     className={`${style.h3Mobile}`}
@@ -103,7 +103,7 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
                 <div
                   className={mobileStyle.mobileCommentCount2}
                   style={{
-                    background: "#0f479f9e",
+                    background: "#373a3e9e",
                     zIndex: "5",
                     borderRadius: "0",
                   }}
