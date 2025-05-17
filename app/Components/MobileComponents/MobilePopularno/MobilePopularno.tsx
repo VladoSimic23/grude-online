@@ -19,7 +19,7 @@ const MobilePopularno = async () => {
       >
         Popularno
       </h1>
-      {popular?.slice(0, 4).map((item, index) => {
+      {popular?.slice(0, 5).map((item, index) => {
         return (
           <div key={index} className={mobileStyle.slideTestChild}>
             <Link

@@ -8,6 +8,7 @@ import MobileCarousel from "./MobileCarousel/MobileCarousel";
 import defaultImage from "../../../../public/noImage.jpg";
 import ScrollToComments from "../../Comments/ScrollToComments";
 //import CommentLinkInPost from "../../Comments/CommentLinkInPost";
+import "../../Swiper/swiperCustomCss.css";
 
 const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
   const {

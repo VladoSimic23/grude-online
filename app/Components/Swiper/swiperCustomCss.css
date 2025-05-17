@@ -39,3 +39,10 @@
 .swiper-pagination-bullet-active {
   background: #7f8183 !important;
 }
+.instagram-media {
+  height: revert-layer !important;
+}
+.tiktok-embed {
+  background: white;
+  padding: 20px 0;
+}
