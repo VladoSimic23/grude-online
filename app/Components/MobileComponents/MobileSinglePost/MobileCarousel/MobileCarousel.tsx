@@ -5,6 +5,7 @@ import Image from "next/image";
 import style from "../../../../css/style.module.css";
 import mobileStyle from "../../MobileHomepage/Css/mobileHomepage.module.css";
 import "../../../Swiper/swiperCustomCssPost.css";
+import defaultImage from "../../../../../public/noImage.jpg";
 
 // Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -24,7 +25,16 @@ import "swiper/css/free-mode";
 import "swiper/css/thumbs";
 import "swiper/css/zoom";
 
-const MobileCarousel = ({ images }: { images: string[]; title: string }) => {
+const MobileCarousel = ({
+  images,
+  postId,
+  mainImg,
+}: {
+  images: string[];
+  title: string;
+  postId: string;
+  mainImg: string;
+}) => {
   const [displayGallery, setDisplayGallery] = useState(false);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
@@ -46,6 +56,24 @@ const MobileCarousel = ({ images }: { images: string[]; title: string }) => {
 
   return (
     <div>
+      <Image
+        className={`${style.imageContain} mt-4 mb-4`}
+        onClick={() => setDisplayGallery(true)}
+        style={{
+          height: "auto",
+          position: "relative",
+          zIndex: "1",
+          //borderRadius: "8px",
+        }}
+        src={mainImg ? mainImg : defaultImage}
+        width={500}
+        height={250}
+        alt={`post image ${postId}`}
+        priority={false}
+        //fetchPriority="high"
+        quality={50}
+        id={`post-image-${postId}`}
+      />
       {/* Preview Thumbnails */}
       <div style={{ marginTop: "-25px", position: "relative" }}>
         <div className="row gap-0 p-2 mb-4">

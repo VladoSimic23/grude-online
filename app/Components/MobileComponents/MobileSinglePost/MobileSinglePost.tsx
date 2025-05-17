@@ -66,35 +66,44 @@ const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
           quality={1}
           id={`post-image-${postId}`}
         />
-        <Image
-          className={`${style.imageContain} mt-4 mb-4`}
-          style={{
-            height: "auto",
-            position: "relative",
-            zIndex: "1",
-            //borderRadius: "8px",
-          }}
-          src={
-            post?.featuredImage?.node?.sourceUrl
-              ? post?.featuredImage?.node?.sourceUrl
-              : defaultImage
-          }
-          width={500}
-          height={250}
-          alt={`post image ${postId}`}
-          priority={false}
-          //fetchPriority="high"
-          quality={50}
-          id={`post-image-${postId}`}
-        />
-        {extraImages.length > 0 && (
-          <MobileCarousel images={extraImages} title={title} />
+        {extraImages.length > 0 ? (
+          <MobileCarousel
+            images={extraImages}
+            title={title}
+            mainImg={post?.featuredImage?.node.sourceUrl}
+            postId={postId}
+          />
+        ) : (
+          <Image
+            className={`${style.imageContain} mt-4 mb-4`}
+            style={{
+              height: "auto",
+              position: "relative",
+              zIndex: "1",
+              //borderRadius: "8px",
+            }}
+            src={
+              post?.featuredImage?.node?.sourceUrl
+                ? post?.featuredImage?.node?.sourceUrl
+                : defaultImage
+            }
+            width={500}
+            height={250}
+            alt={`post image ${postId}`}
+            priority={false}
+            //fetchPriority="high"
+            quality={50}
+            id={`post-image-${postId}`}
+          />
         )}
+        {/* {extraImages.length > 0 && (
+          <MobileCarousel images={extraImages} title={title} />
+        )} */}
       </div>
 
       <div
         className={mobileStyle.MobileInnerHTML}
-        style={{ color: "white" }}
+        style={{ color: "white", fontFamily: "sans-serif" }}
         dangerouslySetInnerHTML={{ __html: updatedContent }}
       ></div>
 

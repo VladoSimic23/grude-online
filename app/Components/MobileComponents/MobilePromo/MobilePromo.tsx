@@ -25,7 +25,10 @@ const MobilePromo = async () => {
           className={styles.h2Mobile}
           style={{ borderBottom: "2px solid #ea8a2b" }}
         >
-          Promo
+          <span style={{ color: "#ea8a2b", fontFamily: "Barlow Condensed" }}>
+            P
+          </span>
+          romo
         </h1>
       </div>
       <div className={mobileStyle.slideTest}>
@@ -40,7 +43,7 @@ const MobilePromo = async () => {
                         ? item?.featuredImage.node.sourceUrl
                         : defaultImage
                     }
-                    width={220}
+                    width={200}
                     height={130}
                     alt={`Popular Post Image ${index}`}
                     quality={20}
