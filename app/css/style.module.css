@@ -4,6 +4,7 @@
 
 .websiteBgDark {
   background: rgba(30, 27, 27, 0.93);
+  margin-top: 75px;
 }
 .websiteBgDark p, .websiteBgDark span, .websiteBgDark button {
   font-family: sans-serif;

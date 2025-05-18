@@ -24,18 +24,24 @@ const MobileHomepageClient = () => {
   };
   return (
     <div>
-      {theData?.posts?.nodes?.slice(10).map((item, index) => {
-        return (
-          <MobileHomepageClientDetails key={index} props={item} index={index} />
-        );
-      })}
+      <div className="container px-3">
+        {theData?.posts?.nodes?.slice(10).map((item, index) => {
+          return (
+            <MobileHomepageClientDetails
+              key={index}
+              props={item}
+              index={index}
+            />
+          );
+        })}
 
-      <button
-        className={`${mobileStyle.mobileButton} mt-0`}
-        onClick={handleClick}
-      >
-        {isLoading ? "Loading..." : "Učitaj više vijesti ..."}
-      </button>
+        <button
+          className={`${mobileStyle.mobileButton} mt-0`}
+          onClick={handleClick}
+        >
+          {isLoading ? "Loading..." : "Učitaj više vijesti ..."}
+        </button>
+      </div>
     </div>
   );
 };

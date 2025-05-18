@@ -164,7 +164,12 @@
       .navMobileWrap {
           display: flex;
           align-items: center;
-          margin-top: 8px;
+          //margin-top: 8px;
+          position: fixed;
+          top: 0;
+          z-index: 10;
+          width: 100%;
+          background: #423b3b;
           div {
             padding-left: 0 !important;
             padding-right: 0 !important;
@@ -192,7 +197,7 @@
         top: 33px; /* Adjust the top position according to your design */
         left: 0;
         width: 100%;
-        background-color: #403633;
+        background-color: #423b3b;
         z-index: 10;
         //padding: 10px;
        
@@ -225,7 +230,7 @@
         margin-right: 20px;
       }
       .navWrap {
-          top: 66px;
+          top: 56px;
           width: 100%;
           position: absolute;
           left: 0;
