@@ -62,9 +62,11 @@ export async function generateStaticParams() {
     posts: { nodes },
   } = posts;
 
-  return nodes.map((post: AllPostsI) => ({
-    slug: post?.slug,
-  }));
+  return nodes
+    .filter((post) => post?.slug)
+    .map((post: AllPostsI) => ({
+      slug: post?.slug.toString(),
+    }));
 }
 
 const SingleGrudeOnline = async ({ params }: Props) => {
