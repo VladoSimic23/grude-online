@@ -14,7 +14,7 @@ const ctgr = [
   { path: "/category/kultura", category: "Kultura" },
   { path: "/category/zanimljivosti", category: "Zanimljivosti" },
   { path: "/category/lifestyle", category: "Lifestyle" },
-  // { path: "/contact", category: "Kontaktirajte nas" },
+  { path: "/contact", category: "Kontaktirajte nas" },
 ];
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
