@@ -61,12 +61,6 @@ export default async function RootLayout({
           </div>
         )}
 
-        {/* {isMobile && (
-          <div className="container px-3">
-            <MobilePromo />
-          </div>
-        )} */}
-
         <FooterComponent />
 
         <BootstrapClient />
