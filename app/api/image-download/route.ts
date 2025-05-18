@@ -20,8 +20,7 @@ export async function GET(request: Request) {
         "Content-Disposition": `attachment; filename="${src.split("/").pop()}"`,
       },
     });
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
   } catch (error) {
-    return new NextResponse("Failed to fetch image", { status: 500 });
+    return new NextResponse(`Failed to fetch image ${error}`, { status: 500 });
   }
 }
