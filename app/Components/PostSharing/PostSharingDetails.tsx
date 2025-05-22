@@ -54,6 +54,7 @@ const PostSharingDetails = ({ slug }: { slug: string }) => {
           target="_blank"
           title="Podijeli putem WhatsAppa"
           className="me-3"
+          rel="noopener noreferrer"
         >
           <i className="bi bi-whatsapp"></i>
         </Link>
