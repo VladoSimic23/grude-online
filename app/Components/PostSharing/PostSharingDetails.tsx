@@ -33,14 +33,7 @@ const PostSharingDetails = ({ slug }: { slug: string }) => {
         >
           <i style={{ color: "#0966ff" }} className="bi bi-facebook"></i>
         </Link>
-        <Link
-          href={`https://plus.google.com/share?url=${grOnlineMainPath}}/${slug}`}
-          target="_blank"
-          title="Podjeli putem Google+"
-          className="me-3"
-        >
-          <i style={{ color: "rgb(156, 4, 4)" }} className="bi bi-google"></i>
-        </Link>
+
         <Link
           href={`https://twitter.com/intent/tweet?url=${grOnlineMainPath}/${slug}`}
           target="_blank"
@@ -52,16 +45,15 @@ const PostSharingDetails = ({ slug }: { slug: string }) => {
             className="bi bi-twitter"
           ></i>
         </Link>
+
         <Link
-          href={`http://www.pinterest.com/pin/create/button/?url=${grOnlineMainPath}/${slug}`}
+          style={{ color: "rgb(40, 182, 40)" }}
+          href={`https://wa.me/?text=${grOnlineMainPath}/${slug}`}
           target="_blank"
-          title="Podjeli putem Pinteresta"
+          title="Podjeli putem Whats appa"
           className="me-3"
         >
-          <i
-            style={{ color: "rgb(255, 0, 0)" }}
-            className="bi bi-pinterest"
-          ></i>
+          <i className="bi bi-whatsapp"></i>
         </Link>
 
         <span
