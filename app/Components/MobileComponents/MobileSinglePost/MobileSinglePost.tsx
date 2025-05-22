@@ -7,38 +7,61 @@ import * as cheerio from "cheerio";
 import MobileCarousel from "./MobileCarousel/MobileCarousel";
 import defaultImage from "../../../../public/noImage.jpg";
 import ScrollToComments from "../../Comments/ScrollToComments";
-//import CommentLinkInPost from "../../Comments/CommentLinkInPost";
-import "../../Swiper/swiperCustomCss.css";
+import PostEmbedPreview from "./PostEmbedPreview";
+import { JSX } from "react";
 
 const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
-  const {
-    title,
-    content,
-    date,
-    postId,
-    //comments: { nodes },
-  } = post;
+  const { title, content, date, postId } = post;
 
   const $ = cheerio.load(content);
-  const images = $("img");
 
+  const images = $("img");
   $("img.wp-caption, div.wp-caption").each((index, element) => {
     $(element).remove();
   });
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const extraImages: any = [];
-
-  // If there are more than 3 images, remove the extras and save their src
+  const extraImages: string[] = [];
   if (images.length > 3) {
     images.each((index, img) => {
-      extraImages.push($(img).attr("src"));
-      //$(img).remove();
+      extraImages.push($(img).attr("src") || "");
     });
   }
 
-  // Get the updated content as HTML
+  // Zamjena WP embedded postova sa custom previewom
+  $("blockquote.wp-embedded-content").each((i, el) => {
+    const link = $(el).find("a").attr("href");
+    if (link && link.startsWith("https://www.grude-online.info/")) {
+      // Zamijenimo cijeli blockquote sa custom wrapper divom i data-url
+      $(el).replaceWith(`<div class="post-embed" data-url="${link}"></div>`);
+    }
+  });
+
   const updatedContent = $.html();
+
+  // Parsiramo embedove nakon rendera
+  const renderWithEmbeds = () => {
+    const $ = cheerio.load(updatedContent);
+    const elements: JSX.Element[] = [];
+
+    $("body")
+      .contents()
+      .each((i, el) => {
+        if (
+          el.type === "tag" &&
+          el.name === "div" &&
+          $(el).hasClass("post-embed")
+        ) {
+          const url = $(el).attr("data-url");
+          if (url) elements.push(<PostEmbedPreview key={i} url={url} />);
+        } else {
+          elements.push(
+            <div key={i} dangerouslySetInnerHTML={{ __html: $.html(el) }} />
+          );
+        }
+      });
+
+    return elements;
+  };
 
   return (
     <div style={{ marginTop: "30px", overflow: "hidden", padding: "0 5px" }}>
@@ -63,21 +86,11 @@ const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
           >
             {formatDateToCroatian(date)}
           </h2>
-          {/* <CommentLinkInPost length={nodes.length} /> */}
         </div>
         <Image
           className={`${style.imageContain} mt-4 mb-4`}
-          style={{
-            height: "auto",
-            position: "absolute",
-            zIndex: "-1",
-            //borderRadius: "8px",
-          }}
-          src={
-            post?.featuredImage?.node?.sourceUrl
-              ? post?.featuredImage?.node?.sourceUrl
-              : defaultImage
-          }
+          style={{ height: "auto", position: "absolute", zIndex: "-1" }}
+          src={post?.featuredImage?.node?.sourceUrl || defaultImage}
           width={500}
           height={250}
           alt={`post image ${postId}`}
@@ -96,36 +109,24 @@ const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
         ) : (
           <Image
             className={`${style.imageContain} mt-4 mb-4`}
-            style={{
-              height: "auto",
-              position: "relative",
-              zIndex: "1",
-              //borderRadius: "8px",
-            }}
-            src={
-              post?.featuredImage?.node?.sourceUrl
-                ? post?.featuredImage?.node?.sourceUrl
-                : defaultImage
-            }
+            style={{ height: "auto", position: "relative", zIndex: "1" }}
+            src={post?.featuredImage?.node?.sourceUrl || defaultImage}
             width={500}
             height={250}
             alt={`post image ${postId}`}
             priority={false}
-            //fetchPriority="high"
             quality={50}
             id={`post-image-${postId}`}
           />
         )}
-        {/* {extraImages.length > 0 && (
-          <MobileCarousel images={extraImages} title={title} />
-        )} */}
       </div>
 
       <div
         className={mobileStyle.MobileInnerHTML}
         style={{ color: "white", fontFamily: "sans-serif" }}
-        dangerouslySetInnerHTML={{ __html: updatedContent }}
-      ></div>
+      >
+        {renderWithEmbeds()}
+      </div>
 
       <ScrollToComments />
     </div>
