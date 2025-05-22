@@ -1,4 +1,5 @@
 //import CommentComponent from "@/app/Components/Comments/CommentComponent";
+//import TestAd from "@/app/Components/Adds/testAdd";
 import CommentForm from "@/app/Components/Comments/CommentForm";
 import RestComments from "@/app/Components/Comments/RestApiComments/RestCommentComponent";
 import SinglePost from "@/app/Components/DesktopComponents/SinglePost/SinglePost";
@@ -86,6 +87,7 @@ const SingleCrnaKronika = async ({ params }: Props) => {
 
   return (
     <div className="container">
+      {/* <TestAd /> */}
       {isMobile && (
         <Suspense
           fallback={<h1 style={{ color: "white" }}>Loading Post ...</h1>}

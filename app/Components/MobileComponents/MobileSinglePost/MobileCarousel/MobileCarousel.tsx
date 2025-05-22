@@ -94,6 +94,12 @@ const MobileCarousel = ({
     };
   }, []);
 
+  const shareImageViaWhatsApp = () => {
+    const message = `Pogledaj ovu sliku: ${currentSrc}`;
+    const whatsappLink = `https://wa.me/?text=${encodeURIComponent(message)}`;
+    window.open(whatsappLink, "_blank");
+  };
+
   return (
     <div>
       <Image
@@ -170,7 +176,7 @@ const MobileCarousel = ({
               padding: "15px",
             }}
           >
-            <div className={mobileStyle.mobCarousel}>
+            {/* <div className={mobileStyle.mobCarousel}>
               <span
                 style={{
                   //position: "absolute",
@@ -201,6 +207,65 @@ const MobileCarousel = ({
 
               <i
                 onClick={closeGallery} // Close gallery when clicked
+                className="bi bi-x-lg"
+                style={{
+                  color: "#008aa1",
+                  cursor: "pointer",
+                  fontWeight: 700,
+                  fontSize: 24,
+                }}
+              ></i>
+            </div> */}
+            <div className={mobileStyle.mobCarousel}>
+              {/* <span
+                style={{
+                  right: "60px",
+                  border: "none",
+                  color: "#008aa1",
+                  fontSize: "20px",
+                  borderRadius: "6px",
+                  cursor: "pointer",
+                  zIndex: 10001,
+                }}
+                onClick={() => {
+                  const imageUrl = `/api/image-download?src=${encodeURIComponent(
+                    currentSrc
+                  )}`;
+                  window.open(imageUrl, "_blank");
+                }}
+              >
+                <i className="bi bi-download"></i>
+              </span> */}
+
+              <button
+                onClick={shareImageViaWhatsApp}
+                style={{
+                  // position: "absolute",
+                  // top: "15px",
+                  // right: "100px",
+                  backgroundColor: "#222020",
+                  border: "none",
+                  borderRadius: "5px",
+                  padding: "10px 2px 5px 2px",
+                  color: "#cb7623",
+                  fontWeight: 600,
+                  fontSize: "16px",
+                  cursor: "pointer",
+                }}
+                title="Podijeli putem WhatsAppa"
+              >
+                <i className="bi bi-share-fill"></i>
+              </button>
+
+              <Image
+                src="/Grude_online_Logotip2.png"
+                alt="grudeOnlineLogo"
+                width={330}
+                height={42}
+              />
+
+              <i
+                onClick={closeGallery}
                 className="bi bi-x-lg"
                 style={{
                   color: "#008aa1",
