@@ -46,7 +46,7 @@ const PostSharingDetails = ({ slug }: { slug: string }) => {
           ></i>
         </Link>
 
-        <button
+        <span
           onClick={() => {
             if (navigator.share) {
               navigator
@@ -63,11 +63,15 @@ const PostSharingDetails = ({ slug }: { slug: string }) => {
             }
           }}
           className="me-3"
-          style={{ color: "rgb(40, 182, 40)" }}
+          style={{
+            color: "rgb(40, 182, 40)",
+            fontSize: "24px",
+            marginTop: "1px",
+          }}
           title="Podijeli putem WhatsAppa"
         >
           <i className="bi bi-whatsapp"></i>
-        </button>
+        </span>
 
         <span
           onClick={handleClick}
