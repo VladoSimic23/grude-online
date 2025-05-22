@@ -46,18 +46,28 @@ const PostSharingDetails = ({ slug }: { slug: string }) => {
           ></i>
         </Link>
 
-        <Link
-          style={{ color: "rgb(40, 182, 40)" }}
-          href={`https://wa.me/?text=${encodeURIComponent(
-            `${grOnlineMainPath}/${slug}`
-          )}`}
-          target="_blank"
-          title="Podijeli putem WhatsAppa"
+        <button
+          onClick={() => {
+            if (navigator.share) {
+              navigator
+                .share({
+                  url: `${grOnlineMainPath}/${slug}`,
+                })
+                .catch((error) => console.log("Error sharing", error));
+            } else {
+              window.open(
+                `https://wa.me/?text=${encodeURIComponent(
+                  `${grOnlineMainPath}/${slug}`
+                )}`
+              );
+            }
+          }}
           className="me-3"
-          rel="noopener noreferrer"
+          style={{ color: "rgb(40, 182, 40)" }}
+          title="Podijeli putem WhatsAppa"
         >
           <i className="bi bi-whatsapp"></i>
-        </Link>
+        </button>
 
         <span
           onClick={handleClick}
