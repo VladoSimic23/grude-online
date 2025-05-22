@@ -1,5 +1,6 @@
-import CommentComponent from "@/app/Components/Comments/CommentComponent";
+//import CommentComponent from "@/app/Components/Comments/CommentComponent";
 import CommentForm from "@/app/Components/Comments/CommentForm";
+import RestComments from "@/app/Components/Comments/RestApiComments/RestCommentComponent";
 import SinglePost from "@/app/Components/DesktopComponents/SinglePost/SinglePost";
 //import MobilePopularno from "@/app/Components/MobileComponents/MobilePopularno/MobilePopularno";
 //import MobilePromo from "@/app/Components/MobileComponents/MobilePromo/MobilePromo";
@@ -7,6 +8,7 @@ import MobileSinglePost from "@/app/Components/MobileComponents/MobileSinglePost
 import MobileSinglePostTags from "@/app/Components/MobileComponents/MobileSinglePost/MobileSinglePostTags/MobileSinglePostTags";
 import PostSharingDetails from "@/app/Components/PostSharing/PostSharingDetails";
 import { removeHtmlTags } from "@/app/functions/removeHtmlTags";
+//import { getComments } from "@/app/libs/dbComments/dbc";
 import { grOnlineMainPath } from "@/app/libs/GrudeOnlineURLs/grudeOnlineURLs";
 import { AllPostsI, getAllPosts } from "@/app/libs/Queries/Queries/allPosts";
 import {
@@ -109,8 +111,12 @@ const SingleCrnaKronika = async ({ params }: Props) => {
           <div className="col-md-8">
             {
               <>
-                <CommentComponent
+                {/* <CommentComponent
                   post={slug}
+                  color={isMobile ? "white" : "black"}
+                /> */}
+                <RestComments
+                  postId={Number(postId)}
                   color={isMobile ? "white" : "black"}
                 />
                 <CommentForm

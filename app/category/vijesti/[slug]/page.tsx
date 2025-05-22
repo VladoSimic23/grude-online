@@ -1,5 +1,6 @@
-import CommentComponent from "@/app/Components/Comments/CommentComponent";
+//import CommentComponent from "@/app/Components/Comments/CommentComponent";
 import CommentForm from "@/app/Components/Comments/CommentForm";
+import RestComments from "@/app/Components/Comments/RestApiComments/RestCommentComponent";
 import SinglePost from "@/app/Components/DesktopComponents/SinglePost/SinglePost";
 //import MobilePopularno from "@/app/Components/MobileComponents/MobilePopularno/MobilePopularno";
 //import MobilePromo from "@/app/Components/MobileComponents/MobilePromo/MobilePromo";
@@ -114,8 +115,8 @@ const SingleVijesti = async ({ params }: Props) => {
           <div className="col-md-8">
             {
               <>
-                <CommentComponent
-                  post={slug}
+                <RestComments
+                  postId={Number(postId)}
                   color={isMobile ? "white" : "black"}
                 />
                 <CommentForm
