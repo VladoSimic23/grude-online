@@ -48,9 +48,11 @@ const PostSharingDetails = ({ slug }: { slug: string }) => {
 
         <Link
           style={{ color: "rgb(40, 182, 40)" }}
-          href={`https://wa.me/?text=${grOnlineMainPath}/${slug}`}
+          href={`https://wa.me/?text=${encodeURIComponent(
+            `${grOnlineMainPath}/${slug}`
+          )}`}
           target="_blank"
-          title="Podjeli putem Whats appa"
+          title="Podijeli putem WhatsAppa"
           className="me-3"
         >
           <i className="bi bi-whatsapp"></i>
