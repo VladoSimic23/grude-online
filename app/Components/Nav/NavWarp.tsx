@@ -9,7 +9,6 @@ import dynamic from "next/dynamic";
 const Navbar = dynamic(() => import("./Navbar"), { ssr: false });
 
 const NavWrap = () => {
-  //const isMob = await isMobileDevice();
   return (
     <div className={navStyles.navMobileWrap}>
       {/* {!isMob && <TopNavbar />} */}
