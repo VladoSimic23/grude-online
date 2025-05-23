@@ -1,0 +1,9 @@
+[[redirects]]
+  from = "/OneSignalSDKWorker.js"
+  to = "/OneSignalSDKWorker.js"
+  status = 200
+
+[[redirects]]
+  from = "/OneSignalSDKUpdaterWorker.js"
+  to = "/OneSignalSDKUpdaterWorker.js"
+  status = 200

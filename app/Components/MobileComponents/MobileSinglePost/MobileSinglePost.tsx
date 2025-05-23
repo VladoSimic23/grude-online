@@ -9,6 +9,7 @@ import defaultImage from "../../../../public/noImage.jpg";
 import ScrollToComments from "../../Comments/ScrollToComments";
 import PostEmbedPreview from "./PostEmbedPreview";
 import { JSX } from "react";
+import "../../Swiper/swiperCustomCss.css";
 
 const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
   const { title, content, date, postId } = post;
