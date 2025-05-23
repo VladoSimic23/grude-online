@@ -27,7 +27,7 @@ export type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = (await params)?.slug;
-  const post: SinglePostSourceI = await getSinglePost(slug, "LARGE");
+  const post: SinglePostSourceI = await getSinglePost(slug);
 
   if (post.postBy === null) {
     return {};
@@ -75,7 +75,7 @@ export async function generateStaticParams() {
 const SingleCrnaKronika = async ({ params }: Props) => {
   const { slug } = await params;
   const isMobile = await isMobileDevice();
-  const thePost = await getSinglePost(slug, !isMobile ? "LARGE" : "MEDIUM");
+  const thePost = await getSinglePost(slug);
 
   if (thePost.postBy === null) {
     return <NotFound />;

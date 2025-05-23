@@ -4,6 +4,7 @@ import style from "../../../css/style.module.css";
 import mobileStyle from "../MobileHomepage/Css/mobileHomepage.module.css";
 import { formatDateToCroatian } from "@/app/functions/formatDateToCroatian";
 import Link from "next/link";
+import CommentLink from "../../Comments/CommentsLink";
 
 const MobilePostListByCategory = ({
   data,
@@ -49,21 +50,11 @@ const MobilePostListByCategory = ({
                   {formatDateToCroatian(date)}
                 </span>
 
-                <div className={mobileStyle.mobileComments}>
-                  <span
-                    style={{
-                      color: "white",
-                    }}
-                  >
-                    {nodes.length}
-                  </span>
-                  <i
-                    style={{
-                      color: "white",
-                    }}
-                    className="bi bi-chat-left-text"
-                  ></i>
-                </div>
+                <CommentLink
+                  slug={slug}
+                  color={"black"}
+                  length={nodes?.length}
+                />
               </div>
             </div>
           </Link>

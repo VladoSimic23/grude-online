@@ -30,7 +30,7 @@ const CrnaKronika = async () => {
   );
 
   return (
-    <div className="container">
+    <div className="container mt-3 px-3">
       {isMobile && (
         <h1 className={`${style.h2Mobile} ${style.orangeBorder}`}>
           Gospodarstvo

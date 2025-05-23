@@ -25,7 +25,7 @@ export type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = (await params)?.slug;
-  const post: SinglePostSourceI = await getSinglePost(slug, "LARGE");
+  const post: SinglePostSourceI = await getSinglePost(slug);
 
   if (post.postBy === null) {
     return {};
@@ -73,7 +73,7 @@ export async function generateStaticParams() {
 const SingleGalerije = async ({ params }: Props) => {
   const isMobile = await isMobileDevice();
   const { slug } = await params;
-  const thePost = await getSinglePost(slug, !isMobile ? "LARGE" : "MEDIUM");
+  const thePost = await getSinglePost(slug);
 
   if (thePost.postBy === null) {
     console.error("Missing slug parameter");

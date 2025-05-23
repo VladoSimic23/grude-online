@@ -25,7 +25,7 @@ export type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = (await params)?.slug;
-  const post: SinglePostSourceI = await getSinglePost(slug, "LARGE");
+  const post: SinglePostSourceI = await getSinglePost(slug);
 
   if (post.postBy === null) {
     return {};
@@ -73,7 +73,7 @@ export async function generateStaticParams() {
 const SingleGrudeOnline = async ({ params }: Props) => {
   const isMobile = await isMobileDevice();
   const { slug } = await params;
-  const thePost = await getSinglePost(slug, !isMobile ? "LARGE" : "MEDIUM");
+  const thePost = await getSinglePost(slug);
 
   if (thePost.postBy === null) {
     console.error("Missing slug parameter");
@@ -106,10 +106,6 @@ const SingleGrudeOnline = async ({ params }: Props) => {
 
       {isMobile && <PostSharingDetails slug={slug} />}
 
-      {/* {thePost?.commentStatus === "open" && (
-          <CommentForm slug={slug} id={thePost?.postId} />
-        )} */}
-
       {commentStatus === "open" && (
         <div className="row" id="comments">
           <div className="col-md-8">
@@ -129,21 +125,6 @@ const SingleGrudeOnline = async ({ params }: Props) => {
           </div>
         </div>
       )}
-
-      {/* {isMobile && (
-        <Suspense
-          fallback={<h2 style={{ color: "white" }}>Loading Promo ...</h2>}
-        >
-          <MobilePromo />
-        </Suspense>
-      )}
-      {isMobile && (
-        <Suspense
-          fallback={<h2 style={{ color: "white" }}>Loading Popularno ...</h2>}
-        >
-          <MobilePopularno />
-        </Suspense>
-      )} */}
     </div>
   );
 };

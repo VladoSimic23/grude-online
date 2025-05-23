@@ -30,7 +30,7 @@ const Politika = async () => {
   );
 
   return (
-    <div className="container mt-3">
+    <div className="container mt-3 px-3">
       {isMobile && (
         <h1 className={`${style.h2Mobile} ${style.orangeBorder}`}>Politika</h1>
       )}

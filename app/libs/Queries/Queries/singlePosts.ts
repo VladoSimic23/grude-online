@@ -43,7 +43,7 @@ export interface SinglePostI {
   comments: CommentsI;
 }
 
-export async function getSinglePost(slug: string, size: string) {
+export async function getSinglePost(slug: string) {
   const query = `
       query SinglePost($slug: String!) {
         postBy(slug: $slug) {
@@ -60,7 +60,7 @@ export async function getSinglePost(slug: string, size: string) {
               commentStatus
                 featuredImage {
                 node {
-                  sourceUrl(size: ${size})
+                  sourceUrl(size: LARGE)
                 }
               }
               categories {
