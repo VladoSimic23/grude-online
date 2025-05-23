@@ -10,7 +10,7 @@ import dynamic from "next/dynamic";
 import TopNavbar from "./Components/Nav/TopNavbar";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 import MobilePopularno from "./Components/MobileComponents/MobilePopularno/MobilePopularno";
-import OneSignalComp from "./Components/OneSIgnal/OneSignal";
+//import OneSignalComp from "./Components/OneSIgnal/OneSignal";
 
 //import MobilePromo from "./Components/MobileComponents/MobilePromo/MobilePromo";
 
@@ -52,7 +52,7 @@ export default async function RootLayout({
           isMobile ? style.websiteBgDark : style.websiteBgWhite
         }`}
       >
-        <OneSignalComp />
+        {/* <OneSignalComp /> */}
 
         {!isMobile && <TopNavbar />}
         <NavWrap />
