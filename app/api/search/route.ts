@@ -43,5 +43,6 @@ export async function POST(request: NextRequest) {
   }
 
   const data = await response.json();
+
   return new Response(JSON.stringify(data), { status: 200 });
 }
