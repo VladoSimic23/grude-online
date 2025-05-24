@@ -22,7 +22,7 @@ export default function ContactForm() {
     setStatus("Sending...");
 
     const res = await fetch(
-      "https://your-wordpress-site.com/wp-json/contact-form/send",
+      "https://grude-online.info/wp-json/contact-form/send",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

@@ -3,7 +3,7 @@ import { gonlinePopularPosts } from "../../GrudeOnlineURLs/grudeOnlineURLs";
 export const fetchPopularPosts = async () => {
   try {
     const response = await fetch(gonlinePopularPosts, {
-      next: { revalidate: 12000, tags: ["collection"] },
+      next: { revalidate: 120000, tags: ["collection"] },
     });
 
     if (!response.ok) {

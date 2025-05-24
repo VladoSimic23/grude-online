@@ -20,7 +20,7 @@ export const fetchClientComments = async (contentName: string) => {
       },
       body: JSON.stringify({
         query: `query NewQuery {
-            comments(first:100, where: {contentName: "${contentName}"}) {
+            comments(first:500, where: {contentName: "${contentName}"}) {
               nodes {         
                 commentId           
               }
