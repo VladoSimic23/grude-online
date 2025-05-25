@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import Script from "next/script";
+//import Script from "next/script";
 
 declare global {
   interface Window {
@@ -34,21 +34,19 @@ export default function GoogleAds() {
       window.googletag.enableServices();
 
       // Prikaži oglas
-      window.googletag.display("div-gpt-ad-1");
+      window.googletag.display("div-gpt-ad-1748176938350-0");
+      console.log(window.googletag);
     });
   }, []);
 
   return (
     <>
       {/* Učitaj Google Publisher Tag skriptu */}
-      <Script
-        src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
-        strategy="afterInteractive"
-      />
+
       {/* Div za oglas */}
       <div
         id="div-gpt-ad-1748176938350-0"
-        style={{ width: 970, height: 250 }}
+        style={{ width: 300, height: 250 }}
       />
     </>
   );
