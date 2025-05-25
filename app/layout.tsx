@@ -10,7 +10,7 @@ import dynamic from "next/dynamic";
 import TopNavbar from "./Components/Nav/TopNavbar";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 import MobilePopularno from "./Components/MobileComponents/MobilePopularno/MobilePopularno";
-import Script from "next/script";
+//import Script from "next/script";
 import GoogleAds from "./Components/GoogleAds/GoogleAds";
 
 //import OneSignalComp from "./Components/OneSIgnal/OneSignal";

@@ -1,4 +1,4 @@
-import styles from "../../../css/style.module.css";
+//import styles from "../../../css/style.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { getPostsByCategorySmall } from "@/app/libs/Queries/Queries/postsByCategorySmall";
