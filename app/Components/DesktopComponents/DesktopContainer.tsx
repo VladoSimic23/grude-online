@@ -13,11 +13,12 @@ const DesktopContainer = () => {
     <div>
       <NaslovneVijesti />
       <div className="container">
+        <Promo />
         <div className="row mt-4">
           <div className="col-md-9">
             <GrudeOnline />
             <OstaleVijesti />
-            <div className="row">
+            <div className="row g-0 gx-2">
               <div className="col-md-6">
                 <SportNaslovna />
               </div>
@@ -30,7 +31,6 @@ const DesktopContainer = () => {
           </div>
           <div className="col-md-3">
             <Popularno />
-            <Promo />
           </div>
         </div>
       </div>

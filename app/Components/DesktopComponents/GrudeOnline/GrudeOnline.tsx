@@ -13,7 +13,7 @@ const GrudeOnline = async () => {
   } = data;
 
   return (
-    <div className="container">
+    <div>
       <div className={desktopStyle.decorUnderline}>
         <Link href="/category/grude-online">
           <h1>Grude Online</h1>

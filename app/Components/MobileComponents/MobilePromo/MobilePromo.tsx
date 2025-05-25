@@ -10,7 +10,7 @@ import { getRecentPostSlugs } from "@/app/libs/Queries/Queries/recentPosts";
 
 const MobilePromo = async () => {
   const naja = await getRecentPostSlugs(10);
-  const promoNews = await getPostsByCategorySmall2("sport", 6, "MEDIUM", naja);
+  const promoNews = await getPostsByCategorySmall2("promo", 6, "MEDIUM", naja);
   const {
     posts: { nodes },
   } = promoNews;

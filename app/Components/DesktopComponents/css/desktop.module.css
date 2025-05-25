@@ -26,6 +26,9 @@
   font-weight: 600;
 }
 
+.desktopInnerHTML {
+  font-family: sans-serif;
+}
 .desktopInnerHTML iframe {
   max-width: 100%;
   max-height: 100%;

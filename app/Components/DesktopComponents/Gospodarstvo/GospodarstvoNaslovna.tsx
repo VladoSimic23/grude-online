@@ -13,7 +13,7 @@ const GospodarstvoNaslovna = async () => {
   } = data;
 
   return (
-    <div className="container mt-4">
+    <div className="mt-4">
       <div className={desktopStyle.decorUnderline}>
         <Link href="/category/gospodarstvo">
           <h1>Gospodarstvo</h1>

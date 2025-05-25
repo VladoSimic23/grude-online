@@ -14,13 +14,13 @@ const GalerijeNaslovna = async () => {
   } = data;
 
   return (
-    <div className="container mt-4">
+    <div className="mt-4">
       <div className={desktopStyle.decorUnderline}>
         <Link href="/category/galerije">
           <h1>Galerije</h1>
         </Link>
       </div>
-      <div className="row gap-0">
+      <div className="row g-0 gx-2">
         {nodes.map((item, index) => {
           const {
             title,

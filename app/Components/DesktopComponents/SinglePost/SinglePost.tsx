@@ -7,7 +7,7 @@ import { formatDateToCroatian } from "@/app/functions/formatDateToCroatian";
 //import MobileCarousel from "./MobileCarousel/MobileCarousel";
 import defaultImage from "../../../../public/noImage.jpg";
 import Popularno from "../Popularno/Popularno";
-import Promo from "../Promo/Promo";
+
 import desktopStyle from "../../DesktopComponents/css/desktop.module.css";
 import DesktopSinglePostTags from "../DesktopTags/DesktopTags";
 import PostSharingDesktop from "../../PostSharing/PostSharingDesktop";
@@ -64,6 +64,7 @@ const SinglePost = ({ post }: { post: SinglePostI }) => {
               height={550}
               alt={title}
               priority={true}
+              style={{ borderRadius: "0px" }}
             />
           </div>
           <div
@@ -77,7 +78,6 @@ const SinglePost = ({ post }: { post: SinglePostI }) => {
         </div>
         <div className="col-md-4">
           <Popularno />
-          <Promo />
         </div>
       </div>
     </div>

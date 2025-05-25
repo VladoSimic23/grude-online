@@ -13,7 +13,7 @@ const OstaleVijesti = async () => {
   } = data;
 
   return (
-    <div className="container mt-4">
+    <div className="mt-4">
       <div className={desktopStyle.decorUnderline}>
         <Link href="/category/ostale-vijesti">
           <h1>Ostale Vijesti</h1>

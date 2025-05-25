@@ -4,9 +4,9 @@ import OstaleNaslovne from "./OstaleNaslovne";
 
 const NaslovneVijesti = () => {
   return (
-    <div className="container" style={{ marginTop: "30px", padding: "0 30px" }}>
-      <div className="row">
-        <div className="col-lg-6 p-1">
+    <div className="container" style={{ marginTop: "30px" }}>
+      <div className="row p-0 gx-3">
+        <div className="col-lg-6">
           <Naslovna />
         </div>
         <div className="col-lg-6">

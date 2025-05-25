@@ -13,7 +13,7 @@ const SportNaslovna = async () => {
   } = data;
 
   return (
-    <div className="container mt-4">
+    <div className="mt-4">
       <div className={desktopStyle.decorUnderline}>
         <Link href="/category/sport">
           <h1>Sport</h1>

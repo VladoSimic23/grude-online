@@ -14,7 +14,7 @@ const OstaleNaslovne = async () => {
   } = data;
 
   return (
-    <div className="row gap-0">
+    <div className="row gap-0" style={{ marginTop: "-3px" }}>
       {nodes.map((item, index) => {
         const {
           title,

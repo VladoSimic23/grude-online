@@ -109,6 +109,7 @@
 
 .isDesktopComments {
   display: flex;
+  font-family: sans-serif;
 }
 .isDesktopComments h4 {
   font-size: 22px;
