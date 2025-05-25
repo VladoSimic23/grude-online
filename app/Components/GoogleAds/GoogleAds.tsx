@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-//import Script from "next/script";
 
 declare global {
   interface Window {
@@ -9,7 +8,17 @@ declare global {
   }
 }
 
-export default function GoogleAds() {
+type AdSize = [number, number];
+
+export default function GoogleAds({
+  slot,
+  id,
+  sizes,
+}: {
+  slot: string;
+  id: string;
+  sizes: AdSize[];
+}) {
   useEffect(() => {
     // Inicijaliziraj googletag ako nije definiran
     window.googletag = window.googletag || { cmd: [] };
@@ -18,15 +27,7 @@ export default function GoogleAds() {
       // Definiraj oglasni slot i dodaj servis
 
       window.googletag
-        .defineSlot(
-          "/31722200/desktop_prvi_desno",
-          [
-            [300, 600],
-            [300, 250],
-            [336, 280],
-          ],
-          "div-gpt-ad-1748176938350-0"
-        )
+        .defineSlot(slot, sizes, id)
         ?.addService(googletag.pubads());
 
       // Konfiguriraj oglase
@@ -34,8 +35,7 @@ export default function GoogleAds() {
       window.googletag.enableServices();
 
       // Prikaži oglas
-      window.googletag.display("div-gpt-ad-1748176938350-0");
-      console.log(window.googletag);
+      window.googletag.display(id);
     });
   }, []);
 
@@ -45,8 +45,8 @@ export default function GoogleAds() {
 
       {/* Div za oglas */}
       <div
-        id="div-gpt-ad-1748176938350-0"
-        style={{ width: 300, height: 250 }}
+        id={id}
+        style={{ margin: "0 auto", marginTop: "20px", textAlign: "center" }}
       />
     </>
   );

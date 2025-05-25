@@ -11,7 +11,7 @@ import TopNavbar from "./Components/Nav/TopNavbar";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 import MobilePopularno from "./Components/MobileComponents/MobilePopularno/MobilePopularno";
 //import Script from "next/script";
-import GoogleAds from "./Components/GoogleAds/GoogleAds";
+
 import Script from "next/script";
 
 //import OneSignalComp from "./Components/OneSIgnal/OneSignal";
@@ -66,7 +66,7 @@ export default async function RootLayout({
         {/* <OneSignalComp /> */}
         {!isMobile && <TopNavbar />}
         <NavWrap />
-        <GoogleAds />
+
         {children}
         {isMobile && (
           <div className="container px-3">

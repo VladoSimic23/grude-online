@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import MobileContainer from "./Components/MobileComponents/MobileContainer";
 import DesktopContainer from "./Components/DesktopComponents/DesktopContainer";
 import MobileIzdvojeno from "./Components/MobileComponents/MobileHomepage/MobileIzdvojeno/MobileIzdvojeno";
+import GoogleAds from "./Components/GoogleAds/GoogleAds";
 //import dynamic from "next/dynamic";
 // const DelayedScriptLoader = dynamic(
 //   () => import("@/app/functions/scriptLoader")
@@ -29,6 +30,15 @@ const Home = async () => {
       {isMobile && (
         <div className={`container px-3`}>
           <MobileIzdvojeno />
+          <GoogleAds
+            slot="/31722200/desktop_prvi_desno"
+            id="div-gpt-ad-1748176938350-0"
+            sizes={[
+              [300, 600],
+              [300, 250],
+              [336, 280],
+            ]}
+          />
         </div>
       )}
       {isMobile && <MobileContainer />}
