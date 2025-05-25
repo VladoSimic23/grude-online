@@ -47,7 +47,7 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
             className={`${index === 0 ? "active" : ""}`}
             style={{ fontSize: "10px !important", borderRadius: "10px" }}
           >
-            <Link href={`/${item.slug}`} style={{ textDecoration: "none" }}>
+            <a href={`/${item.slug}`} style={{ textDecoration: "none" }}>
               <div
                 className={mobileStyle.mobileSingleItem}
                 style={{ position: "relative" }}
@@ -120,7 +120,7 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
                   //marginTop: "10px",
                 }}
               ></div> */}
-            </Link>
+            </a>
           </SwiperSlide>
         );
       })}

@@ -22,7 +22,7 @@ const MobilePopularno = async () => {
       {popular?.slice(0, 5).map((item, index) => {
         return (
           <div key={index} className={mobileStyle.slideTestChild}>
-            <Link
+            <a
               key={index}
               href={`/${item?.slug}`}
               style={{ textDecoration: "none" }}
@@ -61,7 +61,7 @@ const MobilePopularno = async () => {
                   </h1>
                 </div>
               </div>
-            </Link>
+            </a>
           </div>
         );
       })}

@@ -39,7 +39,7 @@ const MobilePromo = async () => {
         {nodes.map((item, index: number) => {
           return (
             <div key={index} className={mobileStyle.slideTestChild}>
-              <Link href={`/${item?.slug}`}>
+              <a href={`/${item?.slug}`}>
                 <div className={mobileStyle.slideTestChildWrap}>
                   <Image
                     src={
@@ -81,7 +81,7 @@ const MobilePromo = async () => {
                 <h1 className={styles.h2Mobile} style={{ fontSize: "20px" }}>
                   {decodeHTMLEntities(item?.title)}
                 </h1>
-              </Link>
+              </a>
             </div>
           );
         })}

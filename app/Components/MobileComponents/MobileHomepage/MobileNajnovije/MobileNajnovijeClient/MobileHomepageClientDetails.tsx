@@ -31,7 +31,7 @@ const MobileHomepageClientDetails = ({
   const { hasIframe, hasImages, hasVideo } = cheerioCheck(content);
 
   return (
-    <Link href={`/${slug}`} style={{ textDecoration: "none" }}>
+    <a href={`/${slug}`} style={{ textDecoration: "none" }}>
       <div style={{ marginBottom: "30px" }}>
         <div className={mobileStyle.mobileSingleItem}>
           <Image
@@ -73,7 +73,7 @@ const MobileHomepageClientDetails = ({
           />
         </div>
       </div>
-    </Link>
+    </a>
   );
 };
 

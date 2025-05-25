@@ -10,6 +10,7 @@ import dynamic from "next/dynamic";
 import TopNavbar from "./Components/Nav/TopNavbar";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 import MobilePopularno from "./Components/MobileComponents/MobilePopularno/MobilePopularno";
+
 //import OneSignalComp from "./Components/OneSIgnal/OneSignal";
 
 //import MobilePromo from "./Components/MobileComponents/MobilePromo/MobilePromo";
@@ -47,6 +48,10 @@ export default async function RootLayout({
   const isMobile = await isMobileDevice();
   return (
     <html lang="en">
+      <head>
+        <script async src="//www.instagram.com/embed.js" />
+        <script async src="https://platform.twitter.com/widgets.js" />
+      </head>
       <body
         className={`${geistMono.className} ${
           isMobile ? style.websiteBgDark : style.websiteBgWhite

@@ -204,8 +204,7 @@
 .MobileInnerHTML iFrame {
   max-width: 100%;
   background: white;
-  height: inherit;
-  min-height: 30vh;
+  aspect-ratio: 16/9;
 }
 .MobileInnerHTML div {
   width: auto !important;

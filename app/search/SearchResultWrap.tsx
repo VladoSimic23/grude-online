@@ -96,7 +96,7 @@ export default function SearchResultsWrap() {
         {results.map((result, index) => {
           const { title, featuredImage, date } = result;
           return (
-            <Link
+            <a
               key={index}
               href={`/${result?.slug}`}
               style={{ textDecoration: "none" }}
@@ -122,7 +122,7 @@ export default function SearchResultsWrap() {
                   </p>
                 </div>
               </li>
-            </Link>
+            </a>
           );
         })}
       </ul>

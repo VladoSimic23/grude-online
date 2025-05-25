@@ -32,7 +32,7 @@ const MobileNajnovijeDetails = ({
 
   return (
     <>
-      <Link href={`/${slug}`} style={{ textDecoration: "none" }}>
+      <a href={`/${slug}`} style={{ textDecoration: "none" }}>
         <div style={{ marginBottom: "30px" }}>
           <div
             className={mobileStyle.mobileSingleItem}
@@ -123,7 +123,7 @@ const MobileNajnovijeDetails = ({
           </div> */}
           </div>
         </div>
-      </Link>
+      </a>
     </>
   );
 };
