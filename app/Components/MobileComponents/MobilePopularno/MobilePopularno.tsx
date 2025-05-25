@@ -1,7 +1,7 @@
 import style from "../../../css/style.module.css";
 import Image from "next/image";
 import { fetchPopularPosts } from "@/app/libs/Queries/FetchFunction/fetchPopularPosts";
-import Link from "next/link";
+//import Link from "next/link";
 import defaultImage from "../../../../public/noImage.jpg";
 //import CommentCount from "../../CommentCount/CommentCount";
 import mobileStyle from "../MobileHomepage/Css/mobileHomepage.module.css";

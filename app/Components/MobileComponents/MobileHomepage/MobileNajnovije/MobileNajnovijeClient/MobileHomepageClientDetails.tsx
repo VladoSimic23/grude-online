@@ -6,7 +6,7 @@ import mobileStyle from "../../Css/mobileHomepage.module.css";
 import Image from "next/image";
 import { matchColors } from "@/app/functions/categoryColors";
 import { formatDateToCroatian } from "@/app/functions/formatDateToCroatian";
-import Link from "next/link";
+//import Link from "next/link";
 import CommentLink from "@/app/Components/Comments/CommentsLink";
 
 const MobileHomepageClientDetails = ({

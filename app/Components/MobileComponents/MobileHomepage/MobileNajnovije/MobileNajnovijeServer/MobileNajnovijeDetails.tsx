@@ -5,7 +5,7 @@ import Image from "next/image";
 import { formatDateToCroatian } from "@/app/functions/formatDateToCroatian";
 import { matchColors } from "@/app/functions/categoryColors";
 import { cheerioCheck } from "@/app/functions/cheerioCheck";
-import Link from "next/link";
+//import Link from "next/link";
 import CommentLink from "@/app/Components/Comments/CommentsLink";
 
 const MobileNajnovijeDetails = ({

@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { formatDateToCroatian } from "../functions/formatDateToCroatian";
 import style from "../css/style.module.css";
 import defaultImage from "../../public/noImage.jpg";
-import Link from "next/link";
+//import Link from "next/link";
 import mobileStyle from "../Components/MobileComponents/MobileHomepage/Css/mobileHomepage.module.css";
 
 interface Post {

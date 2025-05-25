@@ -2,7 +2,7 @@ import mobileStyle from "../MobileHomepage/Css/mobileHomepage.module.css";
 import styles from "../../../css/style.module.css";
 import Image from "next/image";
 import { decodeHTMLEntities } from "@/app/functions/decodeHtml";
-import Link from "next/link";
+//import Link from "next/link";
 //import CommentCount from "../../CommentCount/CommentCount";
 import defaultImage from "../../../../public/noImage.jpg";
 import { getPostsByCategorySmall2 } from "@/app/libs/Queries/Queries/postsByCategorySmall";

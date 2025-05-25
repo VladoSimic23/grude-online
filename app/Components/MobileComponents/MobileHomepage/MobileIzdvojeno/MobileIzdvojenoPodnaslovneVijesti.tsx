@@ -2,7 +2,7 @@
 import { IzdvojenoMobileI } from "@/app/libs/Queries/Queries/izdvojenoMobile";
 import Image from "next/image";
 import style from "../../../../css/style.module.css";
-import Link from "next/link";
+//import Link from "next/link";
 import { cheerioCheck } from "@/app/functions/cheerioCheck";
 import mobileStyle from "../Css/mobileHomepage.module.css";
 import "../../../Swiper/swiperCustomCss.css";
