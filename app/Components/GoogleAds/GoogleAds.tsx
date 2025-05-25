@@ -16,9 +16,18 @@ export default function GoogleAds() {
 
     window.googletag.cmd.push(() => {
       // Definiraj oglasni slot i dodaj servis
+
       window.googletag
-        .defineSlot("/31722200/desktop_970", [970, 250], "div-gpt-ad-1")
-        ?.addService(window.googletag.pubads());
+        .defineSlot(
+          "/31722200/desktop_prvi_desno",
+          [
+            [300, 600],
+            [300, 250],
+            [336, 280],
+          ],
+          "div-gpt-ad-1748176938350-0"
+        )
+        ?.addService(googletag.pubads());
 
       // Konfiguriraj oglase
       window.googletag.pubads().enableSingleRequest();
@@ -37,7 +46,10 @@ export default function GoogleAds() {
         strategy="afterInteractive"
       />
       {/* Div za oglas */}
-      <div id="div-gpt-ad-1" style={{ width: 970, height: 250 }} />
+      <div
+        id="div-gpt-ad-1748176938350-0"
+        style={{ width: 970, height: 250 }}
+      />
     </>
   );
 }
