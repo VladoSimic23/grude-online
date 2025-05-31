@@ -1,5 +1,4 @@
 import { getPostsByCategorySmall2 } from "@/app/libs/Queries/Queries/postsByCategorySmall";
-import { getRecentPostSlugs } from "@/app/libs/Queries/Queries/recentPosts";
 import React from "react";
 import styles from "../../../css/style.module.css";
 import mobileStyle from "../MobileHomepage/Css/mobileHomepage.module.css";
@@ -9,13 +8,7 @@ import Image from "next/image";
 import { decodeHTMLEntities } from "@/app/functions/decodeHtml";
 
 const MobilePromoTest = async () => {
-  const naja = await getRecentPostSlugs(10);
-  const promoNews = await getPostsByCategorySmall2(
-    "sport",
-    6,
-    "THUMBNAIL",
-    naja
-  );
+  const promoNews = await getPostsByCategorySmall2("sport", 6, "THUMBNAIL");
   const {
     posts: { nodes },
   } = promoNews;
