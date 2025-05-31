@@ -252,4 +252,17 @@
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 6px;
+}
+
+@media (orientation: landscape) {
+  .landscapeView {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+  }
+  .landscapeView .landscapeViewChild {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }/*# sourceMappingURL=mobileHomepage.module.css.map */

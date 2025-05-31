@@ -33,7 +33,10 @@ const MobileNajnovijeDetails = ({
   return (
     <>
       <a href={`/${slug}`} style={{ textDecoration: "none" }}>
-        <div style={{ marginBottom: "30px" }}>
+        <div
+          style={{ marginBottom: "30px" }}
+          className={mobileStyle.landscapeView}
+        >
           <div
             className={mobileStyle.mobileSingleItem}
             style={{ position: "relative" }}
@@ -84,23 +87,24 @@ const MobileNajnovijeDetails = ({
               {hasVideo || (hasIframe && <i className="bi bi-youtube"></i>)}
             </div>
           </div>
-          <h1 className={style.h3Mobile}>{title}</h1>
-          <div className={mobileStyle.mobileDateAndComments}>
-            <span
-              className={mobileStyle.mobileSpan}
-              style={{
-                borderBottom: `2px solid ${matchColors(theCategoryColor)}`,
-              }}
-            >
-              {formatDateToCroatian(date)}
-            </span>
+          <div className={mobileStyle.landscapeViewChild}>
+            <h1 className={style.h3Mobile}>{title}</h1>
+            <div className={mobileStyle.mobileDateAndComments}>
+              <span
+                className={mobileStyle.mobileSpan}
+                style={{
+                  borderBottom: `2px solid ${matchColors(theCategoryColor)}`,
+                }}
+              >
+                {formatDateToCroatian(date)}
+              </span>
 
-            <CommentLink
-              slug={slug}
-              color={theCategoryColor}
-              length={nodes?.length}
-            />
-            {/* <div
+              <CommentLink
+                slug={slug}
+                color={theCategoryColor}
+                length={nodes?.length}
+              />
+              {/* <div
             className={mobileStyle.mobileComments}
             onClick={handleClick}
             style={{
@@ -121,6 +125,7 @@ const MobileNajnovijeDetails = ({
               className="bi bi-chat-left-text"
             ></i>
           </div> */}
+            </div>
           </div>
         </div>
       </a>

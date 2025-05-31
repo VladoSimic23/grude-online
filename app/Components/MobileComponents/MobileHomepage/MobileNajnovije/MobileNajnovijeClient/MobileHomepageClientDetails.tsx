@@ -32,7 +32,10 @@ const MobileHomepageClientDetails = ({
 
   return (
     <a href={`/${slug}`} style={{ textDecoration: "none" }}>
-      <div style={{ marginBottom: "30px" }}>
+      <div
+        style={{ marginBottom: "30px" }}
+        className={mobileStyle.landscapeView}
+      >
         <div className={mobileStyle.mobileSingleItem}>
           <Image
             style={{ borderRadius: "10px" }}
@@ -56,21 +59,23 @@ const MobileHomepageClientDetails = ({
             {hasVideo || (hasIframe && <i className="bi bi-youtube"></i>)}
           </div>
         </div>
-        <h1 className={style.h3Mobile}>{title}</h1>
-        <div className={mobileStyle.mobileDateAndComments}>
-          <span
-            className={mobileStyle.mobileSpan}
-            style={{
-              borderBottom: `2px solid ${matchColors(theCategoryColor)}`,
-            }}
-          >
-            {formatDateToCroatian(date)}
-          </span>
-          <CommentLink
-            slug={slug}
-            color={theCategoryColor}
-            length={nodes?.length}
-          />
+        <div className={mobileStyle.landscapeViewChild}>
+          <h1 className={style.h3Mobile}>{title}</h1>
+          <div className={mobileStyle.mobileDateAndComments}>
+            <span
+              className={mobileStyle.mobileSpan}
+              style={{
+                borderBottom: `2px solid ${matchColors(theCategoryColor)}`,
+              }}
+            >
+              {formatDateToCroatian(date)}
+            </span>
+            <CommentLink
+              slug={slug}
+              color={theCategoryColor}
+              length={nodes?.length}
+            />
+          </div>
         </div>
       </div>
     </a>
