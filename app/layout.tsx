@@ -49,6 +49,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const isMobile = await isMobileDevice();
+
   return (
     <html lang="en">
       <head>
@@ -64,15 +65,18 @@ export default async function RootLayout({
         }`}
       >
         {/* <OneSignalComp /> */}
+
         {!isMobile && <TopNavbar />}
         <NavWrap />
 
         {children}
+
         {isMobile && (
           <div className="container px-3">
             <MobilePopularno />
           </div>
         )}
+
         <FooterComponent />
         <BootstrapClient />
         {isMobile && <ScrollToTop />}

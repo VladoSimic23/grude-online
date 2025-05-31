@@ -26,8 +26,8 @@ export interface PostsByCategoryI {
 export async function getPostsByCategorySmall2(
   category: string,
   numOfPosts: number,
-  size: string,
-  excludedSlugs: string[]
+  size: string
+  //excludedSlugs: string[]
 ) {
   const data = await fetchAPI<PostsByCategorySourceI>(`query {
     posts(first: 20, where: {categoryName: "${category}"}) {
@@ -57,13 +57,13 @@ export async function getPostsByCategorySmall2(
   }`);
 
   // Filter out excluded slugs on frontend
-  const filteredPosts = data?.posts?.nodes?.filter(
-    (post) => !excludedSlugs?.includes(post?.slug)
-  );
+  // const filteredPosts = data?.posts?.nodes?.filter(
+  //   (post) => !excludedSlugs?.includes(post?.slug)
+  // );
 
   return {
     posts: {
-      nodes: filteredPosts.slice(0, numOfPosts),
+      nodes: data?.posts?.nodes,
     },
   };
 }

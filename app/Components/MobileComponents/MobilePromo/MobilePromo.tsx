@@ -6,11 +6,11 @@ import { decodeHTMLEntities } from "@/app/functions/decodeHtml";
 //import CommentCount from "../../CommentCount/CommentCount";
 import defaultImage from "../../../../public/noImage.jpg";
 import { getPostsByCategorySmall2 } from "@/app/libs/Queries/Queries/postsByCategorySmall";
-import { getRecentPostSlugs } from "@/app/libs/Queries/Queries/recentPosts";
+//import { getRecentPostSlugs } from "@/app/libs/Queries/Queries/recentPosts";
 
 const MobilePromo = async () => {
-  const naja = await getRecentPostSlugs(10);
-  const promoNews = await getPostsByCategorySmall2("promo", 6, "MEDIUM", naja);
+  //const naja = await getRecentPostSlugs(10);
+  const promoNews = await getPostsByCategorySmall2("promo", 6, "MEDIUM");
   const {
     posts: { nodes },
   } = promoNews;
@@ -20,8 +20,8 @@ const MobilePromo = async () => {
       className={`${mobileStyle.slideTestParent} px-3`}
       style={{
         margin: "25px 0 30px 0",
-        background: "#353535",
-        boxShadow: " 1px 0px 8px 1px #353535",
+        background: "#424141",
+        boxShadow: " 1px 0px 8px 1px #424141",
       }}
     >
       <div>
@@ -29,10 +29,7 @@ const MobilePromo = async () => {
           className={styles.h2Mobile}
           style={{ borderBottom: "2px solid #ea8a2b" }}
         >
-          <span style={{ color: "#ea8a2b", fontFamily: "Barlow Condensed" }}>
-            P
-          </span>
-          romo
+          Promo
         </h1>
       </div>
       <div className={mobileStyle.slideTest}>

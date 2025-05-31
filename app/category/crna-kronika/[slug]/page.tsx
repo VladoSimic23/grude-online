@@ -3,6 +3,7 @@
 import CommentForm from "@/app/Components/Comments/CommentForm";
 import RestComments from "@/app/Components/Comments/RestApiComments/RestCommentComponent";
 import SinglePost from "@/app/Components/DesktopComponents/SinglePost/SinglePost";
+import MobilePromo from "@/app/Components/MobileComponents/MobilePromo/MobilePromo";
 //import MobilePopularno from "@/app/Components/MobileComponents/MobilePopularno/MobilePopularno";
 //import MobilePromo from "@/app/Components/MobileComponents/MobilePromo/MobilePromo";
 import MobileSinglePost from "@/app/Components/MobileComponents/MobileSinglePost/MobileSinglePost";
@@ -86,53 +87,54 @@ const SingleCrnaKronika = async ({ params }: Props) => {
   } = thePost;
 
   return (
-    <div className="container">
-      {/* <TestAd /> */}
-      {isMobile && (
-        <Suspense
-          fallback={<h1 style={{ color: "white" }}>Loading Post ...</h1>}
-        >
-          <MobileSinglePost post={thePost?.postBy} />
-        </Suspense>
-      )}
+    <div>
+      <div className="container">
+        {/* <TestAd /> */}
+        {isMobile && (
+          <Suspense
+            fallback={<h1 style={{ color: "white" }}>Loading Post ...</h1>}
+          >
+            <MobileSinglePost post={thePost?.postBy} />
+          </Suspense>
+        )}
 
-      {!isMobile && <SinglePost post={thePost?.postBy} />}
+        {!isMobile && <SinglePost post={thePost?.postBy} />}
 
-      {isMobile && (
-        <Suspense
-          fallback={<h2 style={{ color: "white" }}>Loading Tags ...</h2>}
-        >
-          <MobileSinglePostTags tags={tags} />
-        </Suspense>
-      )}
+        {isMobile && (
+          <Suspense
+            fallback={<h2 style={{ color: "white" }}>Loading Tags ...</h2>}
+          >
+            <MobileSinglePostTags tags={tags} />
+          </Suspense>
+        )}
 
-      {isMobile && <PostSharingDetails slug={slug} />}
+        {isMobile && <PostSharingDetails slug={slug} />}
 
-      {commentStatus === "open" && (
-        <div className="row" style={{ padding: "0 5px" }}>
-          <div className="col-md-8">
-            {
-              <>
-                {/* <CommentComponent
+        {commentStatus === "open" && (
+          <div className="row" style={{ padding: "0 5px" }}>
+            <div className="col-md-8">
+              {
+                <>
+                  {/* <CommentComponent
                   post={slug}
                   color={isMobile ? "white" : "black"}
                 /> */}
-                <RestComments
-                  postId={Number(postId)}
-                  color={isMobile ? "white" : "black"}
-                />
-                <CommentForm
-                  color={isMobile ? "white" : "black"}
-                  slug={slug}
-                  id={postId}
-                />
-              </>
-            }
+                  <RestComments
+                    postId={Number(postId)}
+                    color={isMobile ? "white" : "black"}
+                  />
+                  <CommentForm
+                    color={isMobile ? "white" : "black"}
+                    slug={slug}
+                    id={postId}
+                  />
+                </>
+              }
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* {isMobile && (
+        {/* {isMobile && (
         <Suspense
           fallback={<h2 style={{ color: "white" }}>Loading Promo ...</h2>}
         >
@@ -146,6 +148,8 @@ const SingleCrnaKronika = async ({ params }: Props) => {
           <MobilePopularno />
         </Suspense>
       )} */}
+      </div>
+      {isMobile && <MobilePromo />}
     </div>
   );
 };
