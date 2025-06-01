@@ -2,7 +2,6 @@ import SearchResultsWrap from "./SearchResultWrap";
 import { isMobileDevice } from "../libs/UserAgent/UserAgent";
 import SearchResultsWrapDesktop from "./desktopSearch/SearchResultsWrapDesktop";
 import Popularno from "../Components/DesktopComponents/Popularno/Popularno";
-import Promo from "../Components/DesktopComponents/Promo/Promo";
 
 export async function generateMetadata({
   searchParams,
@@ -22,12 +21,11 @@ const SearchResultsPage = async () => {
       {isMobile && <SearchResultsWrap />}
       {!isMobile && (
         <div className="row mt-4">
-          <div className="col-md-8">
+          <div className="col-lg-8">
             <SearchResultsWrapDesktop />
           </div>
-          <div className="col-md-4">
+          <div className="col-lg-4">
             <Popularno />
-            <Promo />
           </div>
         </div>
       )}

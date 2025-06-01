@@ -13,7 +13,7 @@ const Naslovna = async () => {
   } = data;
 
   return (
-    <div>
+    <div className={desktopStyle.naslovna}>
       <Link href={`/${nodes[0]?.slug}`}>
         <div className="position-relative">
           <div className={desktopStyle.desktopOverlay}></div>

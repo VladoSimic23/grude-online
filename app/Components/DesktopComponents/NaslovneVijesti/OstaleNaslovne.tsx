@@ -14,7 +14,7 @@ const OstaleNaslovne = async () => {
   } = data;
 
   return (
-    <div className="row gap-0" style={{ marginTop: "-3px" }}>
+    <div className={`row gap-0`} style={{ marginTop: "-3px" }}>
       {nodes.map((item, index) => {
         const {
           title,
@@ -25,7 +25,10 @@ const OstaleNaslovne = async () => {
         } = item;
         if (index !== 0) {
           return (
-            <div key={index} className="col-md-6 p-1">
+            <div
+              key={index}
+              className={`col-md-6 p-1 ${desktopStyle.ostaleNaslovneChild}`}
+            >
               <Link href={`/${slug}`}>
                 <div className="position-relative">
                   <div className={desktopStyle.desktopOverlay}></div>

@@ -1,6 +1,7 @@
 import React from "react";
 import Naslovna from "./Naslovna";
 import OstaleNaslovne from "./OstaleNaslovne";
+import desktopStyle from "../css/desktop.module.css";
 
 const NaslovneVijesti = () => {
   return (
@@ -9,7 +10,7 @@ const NaslovneVijesti = () => {
         <div className="col-lg-6">
           <Naslovna />
         </div>
-        <div className="col-lg-6">
+        <div className={`col-lg-6 ${desktopStyle.ostaleNaslovne}`}>
           <OstaleNaslovne />
         </div>
       </div>

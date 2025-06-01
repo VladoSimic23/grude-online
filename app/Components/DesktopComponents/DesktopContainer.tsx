@@ -16,7 +16,7 @@ const DesktopContainer = () => {
       <div className="container">
         <Promo />
         <div className="row mt-4">
-          <div className="col-md-9">
+          <div className="col-xl-9">
             <GrudeOnline />
             <OstaleVijesti />
             <div className="row g-0 gx-2">
@@ -30,7 +30,7 @@ const DesktopContainer = () => {
             <LifestyleNaslovna />
             <GalerijeNaslovna />
           </div>
-          <div className="col-md-3">
+          <div className="col-xl-3">
             <GoogleAds
               slot="/31722200/desktop_prvi_desno"
               id="div-gpt-ad-1748176938350-0"

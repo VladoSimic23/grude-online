@@ -48,4 +48,19 @@
 
 .dateAndComment {
   z-index: 1000;
+}
+
+@media only screen and (max-width: 992px) {
+  .desktopPopularno img {
+    min-height: 120px;
+  }
+  .naslovna img {
+    max-height: 350px;
+  }
+  .ostaleNaslovne {
+    padding: 6px 15px;
+  }
+  .ostaleNaslovneChild img {
+    max-height: 200px;
+  }
 }/*# sourceMappingURL=desktop.module.css.map */

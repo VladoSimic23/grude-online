@@ -1,5 +1,5 @@
 import Popularno from "@/app/Components/DesktopComponents/Popularno/Popularno";
-import Promo from "@/app/Components/DesktopComponents/Promo/Promo";
+
 import TagDetailsDesktop from "@/app/Components/Tags/DesktopTags/TagDetailsDesktop";
 import TagDetails from "@/app/Components/Tags/TagDetails";
 import { AllPostsI, getAllPosts } from "@/app/libs/Queries/Queries/allPosts";
@@ -48,12 +48,11 @@ const Tag = async ({ params }: Props) => {
 
       {!isMobile && (
         <div className="row">
-          <div className="col-md-8">
+          <div className="col-lg-8">
             <TagDetailsDesktop tag={decodedTag} />
           </div>
-          <div className="col-md-4">
+          <div className="col-lg-4">
             <Popularno />
-            <Promo />
           </div>
         </div>
       )}

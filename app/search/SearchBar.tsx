@@ -18,16 +18,16 @@ export default function NavbarSearch({
   };
 
   return (
-    <div style={{ width: "100%" }}>
+    <div style={{ width: "100%", padding: "1px 0 0 0" }}>
       <input
         type="text"
-        placeholder="Search..."
+        placeholder="Pretražuj..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         onKeyDown={(e) => {
           if (e.key === "Enter") handleSearch();
         }}
-        className="border rounded px-2 py-1"
+        className="border rounded  py-1 px-2"
       />
     </div>
   );

@@ -64,20 +64,20 @@ const Navbar = () => {
                   isMobileMenuOpen ? navStyles.mobileOpen : ""
                 }`}
               >
-                {!isSearch && windowSize.width > 993 && (
+                {!isSearch && windowSize.width > 1200 && (
                   <Categoires toggle={cancelMobileMenu} />
                 )}
                 {isMobileMenuOpen && <Categoires toggle={cancelMobileMenu} />}
               </div>
             </div>
             {/**/}
-            {isSearch && windowSize.width > 993 && (
+            {isSearch && windowSize.width > 1200 && (
               //<SearchBar setMenu={setIsMobileMenuOpen} />
               <NavbarSearch setMenu={setIsMobileMenuOpen} />
             )}
             {isMobileMenuOpen && <NavbarSearch setMenu={setIsMobileMenuOpen} />}
 
-            {!isSearch && windowSize.width > 993 && (
+            {!isSearch && windowSize.width > 1200 && (
               <span
                 className={navStyles.navMarginLeft}
                 style={{ cursor: "pointer" }}
@@ -86,7 +86,7 @@ const Navbar = () => {
                 <i className="bi bi-search"></i>
               </span>
             )}
-            {isSearch && windowSize.width > 993 && (
+            {isSearch && windowSize.width > 1200 && (
               <span
                 className={navStyles.navMarginLeft}
                 onClick={() => setIsSearch(false)}

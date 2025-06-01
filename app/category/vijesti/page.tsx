@@ -7,7 +7,6 @@ import MobilePostListByCategoryClient from "@/app/Components/MobileComponents/Mo
 import PostListCategory from "@/app/Components/DesktopComponents/PostListCategory/PostListCategory";
 import PostListCategoryClient from "@/app/Components/DesktopComponents/PostListCategory/PostListCategoryClient";
 import Popularno from "@/app/Components/DesktopComponents/Popularno/Popularno";
-import Promo from "@/app/Components/DesktopComponents/Promo/Promo";
 
 export const metadata: Metadata = {
   title: "Arhiva Vijesti - Grude Online",
@@ -39,14 +38,13 @@ const Vijesti = async () => {
 
       {!isMobile && (
         <div className="row mt-4">
-          <div className="col-md-8">
+          <div className="col-lg-8">
             <h1 className={style.h2Desktop}>Vijesti</h1>
             <PostListCategory data={data} />
             <PostListCategoryClient category="Vijesti" />
           </div>
-          <div className="col-md-4">
+          <div className="col-lg-4">
             <Popularno />
-            <Promo />
           </div>
         </div>
       )}

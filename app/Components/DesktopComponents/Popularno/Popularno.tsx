@@ -5,12 +5,13 @@ import { decodeHTMLEntities } from "@/app/functions/decodeHtml";
 import Link from "next/link";
 import CommentCount from "../../CommentCount/CommentCount";
 import defaultImage from "../../../../public/noImage.jpg";
+import desktopStyle from "../../DesktopComponents/css/desktop.module.css";
 
 const Popularno = async () => {
   const popular = await fetchPopularPosts();
 
   return (
-    <div>
+    <div className={desktopStyle.desktopPopularno}>
       <h1 className={styles.h4Desktop}>Popularno</h1>
       <div>
         {/*eslint-disable-next-line @typescript-eslint/no-explicit-any*/}
