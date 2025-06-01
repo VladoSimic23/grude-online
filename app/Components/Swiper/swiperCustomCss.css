@@ -86,4 +86,10 @@ h4 {
     right: 0px !important;
     width: 30px !important;
   }
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    font-size: 0px !important;
+    position: absolute !important;
+    /* top: 120px !important; */
+  }
 }
