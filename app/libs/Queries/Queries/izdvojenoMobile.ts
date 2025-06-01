@@ -1,9 +1,11 @@
+import { TagsI } from "../../types/tsTypes";
 import { fetchAPI } from "../FetchFunction/fetchGrudeOnlineData";
 
 export interface IzdvojenoMobileI {
   slug: string;
   title: string;
   content: string;
+  tags: TagsI;
   featuredImage: {
     node: {
       sourceUrl: string;
@@ -16,6 +18,7 @@ export interface IzdvojenoSourceMobileI {
       slug: string;
       title: string;
       content: string;
+      tags: TagsI;
       featuredImage: {
         node: {
           sourceUrl: string;
@@ -31,7 +34,12 @@ export async function getMobileIzdvojeno(category: string, numOfPosts: number) {
           nodes {
             slug
             title
-            content 
+            content
+             tags {
+                nodes {
+                name
+                }
+            } 
             featuredImage {
               node {
                 sourceUrl(size: LARGE)

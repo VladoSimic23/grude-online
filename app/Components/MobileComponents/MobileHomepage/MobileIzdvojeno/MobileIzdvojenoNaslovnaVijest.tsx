@@ -14,12 +14,13 @@ const MobileIzdvojenoNaslovnaVijest = ({
     title,
     slug,
     content,
+    tags,
     featuredImage: {
       node: { sourceUrl },
     },
   } = vijest;
 
-  const { hasIframe, hasImages, hasVideo } = cheerioCheck(content);
+  const { hasImages, hasVideo } = cheerioCheck(content, tags);
 
   return (
     <div className="col-12">
@@ -51,7 +52,7 @@ const MobileIzdvojenoNaslovnaVijest = ({
             <i
               style={{
                 position: "absolute",
-                right: !hasIframe && !hasVideo ? "0" : "26px",
+                right: !hasVideo ? "0" : "26px",
                 bottom: "0",
                 color: "white",
                 background: "#4d1b97",
@@ -62,22 +63,21 @@ const MobileIzdvojenoNaslovnaVijest = ({
               className="bi bi-camera"
             ></i>
           )}
-          {hasIframe ||
-            (hasVideo && (
-              <i
-                style={{
-                  position: "absolute",
-                  right: "0",
-                  bottom: "0",
-                  color: "white",
-                  background: "#4d1b97",
-                  display: "inline-grid",
-                  padding: "3px 5px",
-                  zIndex: "5",
-                }}
-                className="bi bi-youtube"
-              ></i>
-            ))}
+          (hasVideo && (
+          <i
+            style={{
+              position: "absolute",
+              right: "0",
+              bottom: "0",
+              color: "white",
+              background: "#4d1b97",
+              display: "inline-grid",
+              padding: "3px 5px",
+              zIndex: "5",
+            }}
+            className="bi bi-youtube"
+          ></i>
+          ))
         </div>
         <div>
           <h1 className={style.h3Mobile}>{title}</h1>
