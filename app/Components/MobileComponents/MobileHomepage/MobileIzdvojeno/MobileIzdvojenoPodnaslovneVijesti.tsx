@@ -40,7 +40,7 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
       style={{ borderRadius: "10px" }}
     >
       {vijesti.map((item: IzdvojenoMobileI, index: number) => {
-        const { hasIframe, hasImages, hasVideo } = cheerioCheck(item.content);
+        const { hasImages, hasVideo } = cheerioCheck(item?.content, item?.tags);
         return (
           <SwiperSlide
             key={index}
@@ -109,7 +109,7 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
                   }}
                 >
                   {hasImages && <i className="bi bi-camera"></i>}
-                  {hasVideo || (hasIframe && <i className="bi bi-youtube"></i>)}
+                  {hasVideo && <i className="bi bi-youtube"></i>}
                 </div>
               </div>
               {/* <div
