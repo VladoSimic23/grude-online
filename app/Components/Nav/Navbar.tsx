@@ -51,7 +51,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className={navStyles.navWrap}>
+      <div className={navStyles.navWrap} style={{ marginTop: "-1px" }}>
         <div className="container">
           <div className={navStyles.navbar}>
             {/**/}

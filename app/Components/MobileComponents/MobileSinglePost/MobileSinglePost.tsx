@@ -115,7 +115,8 @@ const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
             width={500}
             height={250}
             alt={`post image ${postId}`}
-            priority={false}
+            priority={true}
+            fetchPriority="high"
             quality={75}
             id={`post-image-${postId}`}
           />
