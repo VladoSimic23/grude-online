@@ -23,12 +23,13 @@ const MobileHomepageClientDetails = ({
     date,
     content,
     slug,
+    tags,
     categories: { edges },
     comments: { nodes },
   } = props;
 
   const theCategoryColor = edges[0]?.node?.slug;
-  const { hasIframe, hasImages, hasVideo } = cheerioCheck(content);
+  const { hasImages, hasVideo } = cheerioCheck(content, tags);
 
   return (
     <a href={`/${slug}`} style={{ textDecoration: "none" }}>
@@ -56,7 +57,7 @@ const MobileHomepageClientDetails = ({
             style={{ background: matchColors(theCategoryColor) }}
           >
             {hasImages && <i className="bi bi-camera"></i>}
-            {hasVideo || (hasIframe && <i className="bi bi-youtube"></i>)}
+            {hasVideo && <i className="bi bi-youtube"></i>}
           </div>
         </div>
         <div className={mobileStyle.landscapeViewChild}>

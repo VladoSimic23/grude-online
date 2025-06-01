@@ -1,4 +1,9 @@
-import { CategoriesI, CommentsI, FeaturedImageI } from "../../types/tsTypes";
+import {
+  CategoriesI,
+  CommentsI,
+  FeaturedImageI,
+  TagsI,
+} from "../../types/tsTypes";
 import { fetchAPI } from "../FetchFunction/fetchGrudeOnlineData";
 
 export interface RecentPostsSourceI {
@@ -11,6 +16,7 @@ export interface RecentPostsSourceI {
       featuredImage: FeaturedImageI;
       comments: CommentsI;
       categories: CategoriesI;
+      tags: TagsI;
     }[];
   };
 }
@@ -22,6 +28,7 @@ export interface RecentPostsI {
   featuredImage: FeaturedImageI;
   comments: CommentsI;
   categories: CategoriesI;
+  tags: TagsI;
 }
 
 export const getRecentPostsHomepage = async (numOfPosts: number) => {
@@ -32,6 +39,11 @@ export const getRecentPostsHomepage = async (numOfPosts: number) => {
             slug
             date
             content
+            tags {
+                nodes {
+                name
+                }
+            }
             featuredImage {
               node {
                 sourceUrl(size: LARGE)

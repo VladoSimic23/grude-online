@@ -114,8 +114,9 @@ const MobileCarousel = ({
         width={500}
         height={250}
         alt={`post image ${postId}`}
-        priority={false}
-        quality={50}
+        priority={true}
+        quality={75}
+        fetchPriority="high"
         id={`post-image-${postId}`}
       />
       {/* Preview Thumbnails */}

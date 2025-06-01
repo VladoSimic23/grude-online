@@ -12,24 +12,26 @@ const MobileSinglePostTags = ({ tags }: { tags: TagsI }) => {
 
   return (
     <div className="d-flex mt-4 flex-wrap" style={{ padding: "0 5px" }}>
-      {nodes.map((item, index) => {
-        const tagEdit = item.name.split(" ").join("-").toLowerCase();
-        return (
-          <div key={index} className="border px-2 py-1 me-2 mb-2 d-flex">
-            <Link
-              href={`/tag/${tagEdit}`}
-              style={{
-                color: "white",
-                textDecoration: "none",
-                fontSize: "14px",
-                fontWeight: "600",
-              }}
-            >
-              {item.name}
-            </Link>
-          </div>
-        );
-      })}
+      {nodes
+        .filter((item) => item.name.toLowerCase() !== "video")
+        .map((item, index) => {
+          const tagEdit = item.name.split(" ").join("-").toLowerCase();
+          return (
+            <div key={index} className="border px-2 py-1 me-2 mb-2 d-flex">
+              <Link
+                href={`/tag/${tagEdit}`}
+                style={{
+                  color: "white",
+                  textDecoration: "none",
+                  fontSize: "14px",
+                  fontWeight: "600",
+                }}
+              >
+                {item.name}
+              </Link>
+            </div>
+          );
+        })}
     </div>
   );
 };

@@ -23,12 +23,13 @@ const MobileNajnovijeDetails = ({
     date,
     content,
     slug,
+    tags,
     categories: { edges },
     comments: { nodes },
   } = props;
 
   const theCategoryColor = edges[0]?.node?.slug;
-  const { hasIframe, hasImages, hasVideo } = cheerioCheck(content);
+  const { hasImages, hasVideo } = cheerioCheck(content, tags);
 
   return (
     <>
@@ -84,7 +85,7 @@ const MobileNajnovijeDetails = ({
               style={{ background: matchColors(theCategoryColor), zIndex: "5" }}
             >
               {hasImages && <i className="bi bi-camera"></i>}
-              {hasVideo || (hasIframe && <i className="bi bi-youtube"></i>)}
+              {hasVideo && <i className="bi bi-youtube"></i>}
             </div>
           </div>
           <div className={mobileStyle.landscapeViewChild}>
