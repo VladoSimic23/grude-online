@@ -29,22 +29,6 @@ const SinglePost = ({ post }: { post: SinglePostI }) => {
     // },
   } = post;
   const $ = cheerio.load(content);
-  //   const $ = cheerio.load(content);
-  //   const images = $("img");
-
-  //   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  //   const extraImages: any = [];
-
-  //   // If there are more than 3 images, remove the extras and save their src
-  //   if (images.length > 3) {
-  //     images.each((index, img) => {
-  //       extraImages.push($(img).attr("src"));
-  //       $(img).remove();
-  //     });
-  //   }
-
-  // Get the updated content as HTML
-  //const updatedContent = $.html();
 
   const images = $("img");
   $("img.wp-caption, div.wp-caption").each((index, element) => {
@@ -57,8 +41,6 @@ const SinglePost = ({ post }: { post: SinglePostI }) => {
       extraImages.push($(img).attr("src") || "");
     });
   }
-
-  console.log(extraImages);
 
   // Zamjena WP embedded postova sa custom previewom
   $("blockquote.wp-embedded-content").each((i, el) => {

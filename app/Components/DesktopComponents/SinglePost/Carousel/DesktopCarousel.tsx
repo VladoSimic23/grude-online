@@ -298,6 +298,9 @@ const DesktopCarousel = ({
                             height: "auto !important",
                             marginTop: "200px",
                             width: "auto !important",
+                            aspectRatio: "16/9",
+                            maxHeight: "80vh",
+                            borderRadius: "0",
                           }}
                           className={style.imageContain}
                           src={src}

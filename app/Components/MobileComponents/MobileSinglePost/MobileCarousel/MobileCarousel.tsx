@@ -166,6 +166,7 @@ const MobileCarousel = ({
       {displayGallery && (
         <>
           <div
+            className="custom-swiper"
             style={{
               position: "fixed",
               top: 0,
@@ -177,67 +178,7 @@ const MobileCarousel = ({
               padding: "15px",
             }}
           >
-            {/* <div className={mobileStyle.mobCarousel}>
-              <span
-                style={{
-                  //position: "absolute",
-                  //top: "20px",
-                  right: "60px",
-                  border: "none",
-                  color: "#008aa1",
-                  fontSize: "20px",
-                  borderRadius: "6px",
-                  cursor: "pointer",
-                  zIndex: 10001,
-                }}
-                onClick={() => {
-                  const imageUrl = `/api/image-download?src=${encodeURIComponent(
-                    currentSrc
-                  )}`;
-                  window.open(imageUrl, "_blank");
-                }}
-              >
-                <i className="bi bi-download"></i>
-              </span>
-              <Image
-                src="/Grude_online_Logotip2.png"
-                alt="grudeOnlineLogo"
-                width={330}
-                height={42}
-              />
-
-              <i
-                onClick={closeGallery} // Close gallery when clicked
-                className="bi bi-x-lg"
-                style={{
-                  color: "#008aa1",
-                  cursor: "pointer",
-                  fontWeight: 700,
-                  fontSize: 24,
-                }}
-              ></i>
-            </div> */}
-            <div className={mobileStyle.mobCarousel}>
-              {/* <span
-                style={{
-                  right: "60px",
-                  border: "none",
-                  color: "#008aa1",
-                  fontSize: "20px",
-                  borderRadius: "6px",
-                  cursor: "pointer",
-                  zIndex: 10001,
-                }}
-                onClick={() => {
-                  const imageUrl = `/api/image-download?src=${encodeURIComponent(
-                    currentSrc
-                  )}`;
-                  window.open(imageUrl, "_blank");
-                }}
-              >
-                <i className="bi bi-download"></i>
-              </span> */}
-
+            <div className={`${mobileStyle.mobCarousel} carousel-nav`}>
               <button
                 onClick={shareImageViaWhatsApp}
                 style={{
@@ -335,7 +276,7 @@ const MobileCarousel = ({
                         marginTop: "-15%",
                       }}
                     >
-                      <div className="swiper-zoom-container">
+                      <div className="swiper-zoom-container image-style">
                         <Image
                           style={{
                             position: "relative",
@@ -360,6 +301,7 @@ const MobileCarousel = ({
 
           {/* Thumbnails */}
           <div
+            className="custom-thumb"
             style={{
               position: "fixed",
               bottom: 0,

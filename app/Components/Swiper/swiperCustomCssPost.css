@@ -23,7 +23,7 @@
 }
 .swiper-button-prev::after,
 .swiper-button-next::after {
-  font-size: 0px !important;
+  font-size: 30px !important;
   position: absolute !important;
   top: 48% !important;
   color: rgb(0, 138, 161) !important;
