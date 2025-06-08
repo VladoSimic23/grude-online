@@ -71,8 +71,8 @@ const MobileNajnovijeDetails = ({
               height={200}
               alt={title}
               quality={50}
-              priority={index < 1 ? true : false}
-              fetchPriority={index < 1 ? "high" : "low"}
+              priority={index < 2 ? true : false}
+              fetchPriority={index < 2 ? "high" : "low"}
             />
             {/* <div
             className={mobileStyle.mobileCategoryOverlay}
