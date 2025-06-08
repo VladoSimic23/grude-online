@@ -18,6 +18,12 @@ const PostSharingDetails = ({ slug }: { slug: string }) => {
     }
   };
 
+  const shareImageViaWhatsApp = (currentSrc: string) => {
+    const message = `${currentSrc}`;
+    const whatsappLink = `https://wa.me/?text=${encodeURIComponent(message)}`;
+    window.open(whatsappLink, "_blank");
+  };
+
   return (
     <div
       className={mobileStyle.PostSharing}
@@ -47,21 +53,7 @@ const PostSharingDetails = ({ slug }: { slug: string }) => {
         </Link>
 
         <span
-          onClick={() => {
-            if (navigator.share) {
-              navigator
-                .share({
-                  url: `${grOnlineMainPath}/${slug}`,
-                })
-                .catch((error) => console.log("Error sharing", error));
-            } else {
-              window.open(
-                `https://wa.me/?text=${encodeURIComponent(
-                  `${grOnlineMainPath}/${slug}`
-                )}`
-              );
-            }
-          }}
+          onClick={() => shareImageViaWhatsApp(`${grOnlineMainPath}/${slug}`)}
           className="me-3"
           style={{
             color: "rgb(40, 182, 40)",

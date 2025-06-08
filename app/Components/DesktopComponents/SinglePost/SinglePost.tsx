@@ -81,7 +81,7 @@ const SinglePost = ({ post }: { post: SinglePostI }) => {
   return (
     <div style={{ marginTop: "30px" }}>
       <div className="row">
-        <div className="col-md-8">
+        <div className="col-lg-8">
           <h1 className={`text-center fw-bold mb-0 ${style.h2Desktop}`}>
             {title}
           </h1>
@@ -123,7 +123,7 @@ const SinglePost = ({ post }: { post: SinglePostI }) => {
           <DesktopSinglePostTags tags={tags} />
           <PostSharingDesktop slug={slug} />
         </div>
-        <div className="col-md-4">
+        <div className="col-lg-4">
           <Popularno />
         </div>
       </div>

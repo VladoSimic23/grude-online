@@ -1,5 +1,5 @@
 import GoogleAds from "../GoogleAds/GoogleAds";
-import GalerijeNaslovna from "./GalerijeNaslovna/GalerijeNaslovna";
+//import GalerijeNaslovna from "./GalerijeNaslovna/GalerijeNaslovna";
 import GospodarstvoNaslovna from "./Gospodarstvo/GospodarstvoNaslovna";
 import GrudeOnline from "./GrudeOnline/GrudeOnline";
 import LifestyleNaslovna from "./Lifestyle/LifestyleNaslovna";
@@ -14,10 +14,10 @@ const DesktopContainer = () => {
     <div>
       <NaslovneVijesti />
       <div className="container">
-        <Promo />
         <div className="row mt-4">
           <div className="col-xl-9">
             <GrudeOnline />
+            <Promo />
             <OstaleVijesti />
             <div className="row g-0 gx-2">
               <div className="col-md-6">
@@ -28,7 +28,7 @@ const DesktopContainer = () => {
               </div>
             </div>
             <LifestyleNaslovna />
-            <GalerijeNaslovna />
+            {/* <GalerijeNaslovna /> */}
           </div>
           <div className="col-xl-3">
             <GoogleAds

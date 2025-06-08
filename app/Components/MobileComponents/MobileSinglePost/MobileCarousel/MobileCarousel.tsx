@@ -94,11 +94,11 @@ const MobileCarousel = ({
     };
   }, []);
 
-  const shareImageViaWhatsApp = () => {
-    const message = `Pogledaj ovu sliku: ${currentSrc}`;
-    const whatsappLink = `https://wa.me/?text=${encodeURIComponent(message)}`;
-    window.open(whatsappLink, "_blank");
-  };
+  // const shareImageViaWhatsApp = () => {
+  //   const message = `Pogledaj ovu sliku: ${currentSrc}`;
+  //   const whatsappLink = `https://wa.me/?text=${encodeURIComponent(message)}`;
+  //   window.open(whatsappLink, "_blank");
+  // };
 
   return (
     <div>
@@ -180,7 +180,21 @@ const MobileCarousel = ({
           >
             <div className={`${mobileStyle.mobCarousel} carousel-nav`}>
               <button
-                onClick={shareImageViaWhatsApp}
+                onClick={() => {
+                  if (navigator.share) {
+                    navigator
+                      .share({
+                        url: `${currentSrc}`,
+                      })
+                      .catch((error) => console.log("Error sharing", error));
+                  } else {
+                    window.open(
+                      `https://wa.me/?text=${encodeURIComponent(
+                        `${currentSrc}`
+                      )}`
+                    );
+                  }
+                }}
                 style={{
                   // position: "absolute",
                   // top: "15px",
