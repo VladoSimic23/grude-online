@@ -5,8 +5,11 @@
   padding: 0 10px !important;
 }
 .websiteBgDark {
-  background: rgba(30, 27, 27, 0.93);
-  margin-top: 75px;
+  background: rgba(43, 38, 38, 0.93);
+  //margin-top: 75px;
+  p,span,h1,h2,h3,h4,h5,a,li {
+    color:  #ececec;
+  }
   p, span, button {
     font-family: sans-serif;
   }

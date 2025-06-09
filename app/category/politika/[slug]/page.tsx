@@ -121,11 +121,7 @@ const SinglePolitika = async ({ params }: Props) => {
                     postId={Number(postId)}
                     color={isMobile ? "white" : "black"}
                   />
-                  <CommentForm
-                    color={isMobile ? "white" : "black"}
-                    slug={slug}
-                    id={postId}
-                  />
+                  <CommentForm color={"white"} slug={slug} id={postId} />
                 </>
               }
             </div>

@@ -116,9 +116,9 @@ export default function SearchResultsWrapDesktop() {
                     height={220}
                   />
                 </div>
-                <div className="col-6 text-black">
-                  <h1 className={`${style.h3Desktop} text-black`}>{title}</h1>
-                  <p className="text-black">{formatDateToCroatian(date)}</p>
+                <div className="col-6">
+                  <h1 className={`${style.h3Desktop}`}>{title}</h1>
+                  <p>{formatDateToCroatian(date)}</p>
                 </div>
               </li>
             </Link>

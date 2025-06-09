@@ -26,10 +26,7 @@ const Promo = async () => {
           const { slug, featuredImage, title, date } = item;
           return (
             <div key={index} className="col-4">
-              <Link
-                href={`/${slug}`}
-                className="text-black text-decoration-none"
-              >
+              <Link href={`/${slug}`} className="text-decoration-none">
                 <Image
                   className={style.imageCover}
                   src={
@@ -43,7 +40,7 @@ const Promo = async () => {
                   alt={`Lifestyle ${index + 1}`}
                 />
                 <h1 className={`${style.h5Desktop}`}>{title}</h1>
-                <p className="text-black mt-2">{formatDateToCroatian(date)}</p>
+                <p className="mt-2">{formatDateToCroatian(date)}</p>
               </Link>
             </div>
           );

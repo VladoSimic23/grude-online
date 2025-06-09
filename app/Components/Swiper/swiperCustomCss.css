@@ -1,8 +1,11 @@
 .swiper-pagination {
-  top: 0 !important;
+  top: 10px !important;
+  left: 70px;
   text-align: left !important;
   padding-left: 8px;
   height: 2px !important;
+  color: white;
+  font-size: 22px;
 }
 .swiper-button-prev,
 .swiper-button-next {
@@ -91,6 +94,9 @@ h4 {
     font-size: 0px !important;
     position: absolute !important;
     /* top: 120px !important; */
+  }
+  .swiper-pagination {
+    top: -7px !important;
   }
 }
 

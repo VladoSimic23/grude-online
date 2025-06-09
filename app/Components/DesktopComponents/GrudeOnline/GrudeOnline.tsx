@@ -21,10 +21,7 @@ const GrudeOnline = async () => {
       </div>
       <div className="row">
         <div className="col-md-6">
-          <Link
-            href={`/${nodes[0]?.slug}`}
-            className="text-black text-decoration-none"
-          >
+          <Link href={`/${nodes[0]?.slug}`} className="text-decoration-none">
             <Image
               className={style.imageCover}
               src={
@@ -38,9 +35,7 @@ const GrudeOnline = async () => {
               alt={"Grude Online 1."}
             />
             <h1 className={`${style.h3Desktop}`}>{nodes[0]?.title}</h1>
-            <p className="text-black mt-2">
-              {formatDateToCroatian(nodes[0]?.date)}
-            </p>
+            <p className="mt-2">{formatDateToCroatian(nodes[0]?.date)}</p>
           </Link>
         </div>
         <div className="col-md-6">
@@ -51,10 +46,7 @@ const GrudeOnline = async () => {
               if (index !== 0) {
                 return (
                   <div key={index}>
-                    <Link
-                      href={`/${slug}`}
-                      className="text-black text-decoration-none"
-                    >
+                    <Link href={`/${slug}`} className="text-decoration-none">
                       <div className="row p-2">
                         <div className="col-4">
                           <Image
@@ -77,9 +69,7 @@ const GrudeOnline = async () => {
                             {title}
                           </h1>
                           <div>
-                            <p className="text-black mt-2">
-                              {formatDateToCroatian(date)}
-                            </p>
+                            <p className="mt-2">{formatDateToCroatian(date)}</p>
                           </div>
                         </div>
                       </div>

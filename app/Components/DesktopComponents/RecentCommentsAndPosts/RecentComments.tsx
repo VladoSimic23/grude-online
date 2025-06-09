@@ -15,7 +15,7 @@ const RecentComments = async () => {
           return (
             <div key={index}>
               <p>
-                <span className="text-black fw-bold">
+                <span className="fw-bold">
                   {item?.author?.node?.name
                     ? item?.author?.node?.name
                     : "Anonimno"}{" "}
@@ -24,7 +24,7 @@ const RecentComments = async () => {
                 <Link
                   href={`/${item?.commentedOn?.node?.slug}`}
                   aria-label={item?.commentedOn?.node?.title}
-                  className="text-black text-decoration-none"
+                  className="text-decoration-none"
                 >
                   {item?.commentedOn?.node?.title}
                 </Link>

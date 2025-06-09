@@ -77,7 +77,7 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
                     width={300}
                     height={220}
                     alt={item.title}
-                    quality={50}
+                    quality={30}
                     priority={true}
                     fetchPriority={"high"}
                   />

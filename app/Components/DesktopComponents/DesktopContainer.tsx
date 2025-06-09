@@ -1,4 +1,5 @@
 import GoogleAds from "../GoogleAds/GoogleAds";
+//import TestAd from "../GoogleAds/TestAd";
 //import GalerijeNaslovna from "./GalerijeNaslovna/GalerijeNaslovna";
 import GospodarstvoNaslovna from "./Gospodarstvo/GospodarstvoNaslovna";
 import GrudeOnline from "./GrudeOnline/GrudeOnline";
@@ -15,7 +16,7 @@ const DesktopContainer = () => {
       <NaslovneVijesti />
       <div className="container">
         <div className="row mt-4">
-          <div className="col-xl-9">
+          <div className="col-xl-8">
             <GrudeOnline />
             <Promo />
             <OstaleVijesti />
@@ -30,7 +31,7 @@ const DesktopContainer = () => {
             <LifestyleNaslovna />
             {/* <GalerijeNaslovna /> */}
           </div>
-          <div className="col-xl-3">
+          <div className="col-xl-4">
             <GoogleAds
               slot="/31722200/desktop_prvi_desno"
               id="div-gpt-ad-1748176938350-0"
@@ -40,6 +41,7 @@ const DesktopContainer = () => {
                 [336, 280],
               ]}
             />
+            {/* <TestAd /> */}
             <Popularno />
           </div>
         </div>

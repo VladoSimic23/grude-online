@@ -58,7 +58,6 @@
   font-size: 12px;
   text-transform: uppercase;
   font-weight: 500;
-  color: #313131;
 }
 
 .navWrap {
@@ -233,7 +232,7 @@
 }
 
 .active {
-  color: #095479 !important;
+  color: #e18224 !important;
   font-weight: 700 !important;
 }
 

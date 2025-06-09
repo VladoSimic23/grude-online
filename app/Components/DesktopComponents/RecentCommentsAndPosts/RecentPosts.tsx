@@ -19,7 +19,7 @@ const RecentPosts = async () => {
                 <Link
                   href={`/${item?.slug}`}
                   aria-label={item?.title}
-                  className="text-black text-decoration-none"
+                  className="text-decoration-none"
                 >
                   {item?.title}
                 </Link>

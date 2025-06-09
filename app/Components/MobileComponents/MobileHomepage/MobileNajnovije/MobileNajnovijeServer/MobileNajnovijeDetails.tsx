@@ -30,6 +30,7 @@ const MobileNajnovijeDetails = ({
 
   const theCategoryColor = edges[0]?.node?.slug;
   const { hasImages, hasVideo } = cheerioCheck(content, tags);
+  const hasPromo = edges.some((item) => item.node.slug === "promo");
 
   return (
     <>
@@ -74,12 +75,14 @@ const MobileNajnovijeDetails = ({
               priority={index < 2 ? true : false}
               fetchPriority={index < 2 ? "high" : "low"}
             />
-            {/* <div
-            className={mobileStyle.mobileCategoryOverlay}
-            style={{ background: matchColors(theCategoryColor), zIndex: "5" }}
-          >
-            <span>{theCategoryColor}</span>
-          </div> */}
+            {hasPromo && (
+              <div
+                className={mobileStyle.mobileCategoryOverlay}
+                style={{ background: "royalblue", zIndex: "5" }}
+              >
+                <span>Oglas</span>
+              </div>
+            )}
             <div
               className={mobileStyle.mobileCommentCount}
               style={{ background: matchColors(theCategoryColor), zIndex: "5" }}
@@ -94,38 +97,24 @@ const MobileNajnovijeDetails = ({
               <span
                 className={mobileStyle.mobileSpan}
                 style={{
-                  borderBottom: `2px solid ${matchColors(theCategoryColor)}`,
+                  borderBottom: `2px solid ${
+                    hasPromo ? "royalblue" : matchColors(theCategoryColor)
+                  }`,
+                  paddingBottom: "5px",
                 }}
               >
                 {formatDateToCroatian(date)}
               </span>
 
-              <CommentLink
-                slug={slug}
-                color={theCategoryColor}
-                length={nodes?.length}
-              />
-              {/* <div
-            className={mobileStyle.mobileComments}
-            onClick={handleClick}
-            style={{
-              borderBottom: `2px solid ${matchColors(theCategoryColor)}`,
-            }}
-          >
-            <span
-              style={{
-                color: "white",
-              }}
-            >
-              {nodes.length}
-            </span>
-            <i
-              style={{
-                color: "white",
-              }}
-              className="bi bi-chat-left-text"
-            ></i>
-          </div> */}
+              {hasPromo ? (
+                ""
+              ) : (
+                <CommentLink
+                  slug={slug}
+                  color={theCategoryColor}
+                  length={nodes?.length}
+                />
+              )}
             </div>
           </div>
         </div>

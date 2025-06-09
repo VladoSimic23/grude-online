@@ -21,7 +21,7 @@ const DesktopSinglePostTags = ({ tags }: { tags: TagsI }) => {
               <Link
                 href={`/tag/${tagEdit}`}
                 style={{
-                  color: "black",
+                  color: "white",
                   textDecoration: "none",
                   fontSize: "14px",
                   fontWeight: "600",

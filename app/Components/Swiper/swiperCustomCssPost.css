@@ -1,8 +1,11 @@
 .swiper-pagination {
-  top: 0 !important;
-  height: 2px !important;
+  top: 0px !important;
+  left: 70px;
   text-align: left !important;
   padding-left: 8px;
+  height: 2px !important;
+  color: white;
+  font-size: 22px;
 }
 .swiper-pagination-progressbar-fill {
   background: #cb7623 !important;

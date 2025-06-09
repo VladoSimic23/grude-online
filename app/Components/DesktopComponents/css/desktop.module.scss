@@ -13,10 +13,10 @@
     }
 }
 .decorUnderline {
-    border-bottom: 3px solid #125557;
+    border-bottom: 3px solid #ec8324;
     margin-bottom: 30px;
     h1 {
-        background: #125557;
+        background: #ec8324;
         color: white;
         display: inline-block;
         padding: 5px 15px;
@@ -45,10 +45,20 @@
         margin-bottom: 20px;
         height: auto;
     }
+    p {
+        font-size: 18px;
+    }
 }
 
 .dateAndComment {
     z-index: 1000;
+}
+.desktopPopularno {
+    background: #323746;
+    padding: 15px ;
+    h1 {
+        font-family: sans-serif
+    }
 }
 
 @media only screen and (max-width: 992px) {

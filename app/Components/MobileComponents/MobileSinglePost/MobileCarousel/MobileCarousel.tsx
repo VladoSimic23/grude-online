@@ -154,7 +154,12 @@ const MobileCarousel = ({
           }}
         >
           <h1
-            style={{ margin: "0", fontSize: "20px", fontWeight: "bold" }}
+            style={{
+              margin: "0",
+              fontSize: "20px",
+              fontWeight: "bold",
+              color: "black",
+            }}
             className={mobileStyle.h2Mobile}
           >
             {images.length}

@@ -60,9 +60,8 @@ export default async function RootLayout({
         />
       </head>
       <body
-        className={`${geistMono.className} ${
-          isMobile ? style.websiteBgDark : style.websiteBgWhite
-        }`}
+        className={`${geistMono.className} ${style.websiteBgDark}`}
+        style={isMobile ? { marginTop: "75px" } : { marginTop: "0" }}
       >
         {/* <OneSignalComp /> */}
 

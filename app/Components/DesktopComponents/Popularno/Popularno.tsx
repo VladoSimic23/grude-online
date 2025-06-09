@@ -22,7 +22,7 @@ const Popularno = async () => {
                 href={`/${item?.slug}`}
                 className="text-black text-decoration-none"
               >
-                <div className="row mt-3 border-bottom">
+                <div className="row mt-3">
                   <div className="col-4 mb-3">
                     <Image
                       src={
@@ -48,7 +48,7 @@ const Popularno = async () => {
                     </h1>
                     <CommentCount
                       slug={item?.slug}
-                      color="black"
+                      color="#ececec"
                       fontSize="12px"
                     />
                   </div>

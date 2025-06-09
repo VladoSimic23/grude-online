@@ -30,6 +30,7 @@ const MobileHomepageClientDetails = ({
 
   const theCategoryColor = edges[0]?.node?.slug;
   const { hasImages, hasVideo } = cheerioCheck(content, tags);
+  const hasPromo = edges.some((item) => item.node.slug === "promo");
 
   return (
     <a href={`/${slug}`} style={{ textDecoration: "none" }}>
@@ -46,12 +47,14 @@ const MobileHomepageClientDetails = ({
             height={200}
             alt={title}
           />
-          {/* <div
-            className={mobileStyle.mobileCategoryOverlay}
-            style={{ background: matchColors(theCategoryColor) }}
-          >
-            <span>{theCategoryColor}</span>
-          </div> */}
+          {hasPromo && (
+            <div
+              className={mobileStyle.mobileCategoryOverlay}
+              style={{ background: "royalblue", zIndex: "5" }}
+            >
+              <span>Oglas</span>
+            </div>
+          )}
           <div
             className={mobileStyle.mobileCommentCount}
             style={{ background: matchColors(theCategoryColor) }}
@@ -66,16 +69,23 @@ const MobileHomepageClientDetails = ({
             <span
               className={mobileStyle.mobileSpan}
               style={{
-                borderBottom: `2px solid ${matchColors(theCategoryColor)}`,
+                borderBottom: `2px solid ${
+                  hasPromo ? "royalblue" : matchColors(theCategoryColor)
+                }`,
+                paddingBottom: "5px",
               }}
             >
               {formatDateToCroatian(date)}
             </span>
-            <CommentLink
-              slug={slug}
-              color={theCategoryColor}
-              length={nodes?.length}
-            />
+            {hasPromo ? (
+              ""
+            ) : (
+              <CommentLink
+                slug={slug}
+                color={theCategoryColor}
+                length={nodes?.length}
+              />
+            )}
           </div>
         </div>
       </div>
