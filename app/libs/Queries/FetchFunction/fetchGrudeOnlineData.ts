@@ -14,7 +14,7 @@ export async function fetchAPI<TData>(
   };
 
   const res = await fetch(temporaryApiUrl, {
-    next: { revalidate: 7200, tags: ["collection"] },
+    next: { revalidate: 14400, tags: ["collection"] },
     //cache: "no-store",
     method: "POST",
     headers,

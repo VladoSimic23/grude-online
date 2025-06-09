@@ -3,7 +3,7 @@ import { gonlinePopularPosts } from "../../GrudeOnlineURLs/grudeOnlineURLs";
 export const fetchPopularPosts = async () => {
   try {
     const response = await fetch(gonlinePopularPosts, {
-      next: { revalidate: 120000, tags: ["collection"] },
+      next: { revalidate: 14400, tags: ["collection"] },
     });
 
     if (!response.ok) {
@@ -20,7 +20,6 @@ export const fetchPopularPosts = async () => {
         );
 
         const mediaData = await mediaResponse.json();
-        //console.log(mediaData);
         return { ...post, featured_image: mediaData };
       })
     );

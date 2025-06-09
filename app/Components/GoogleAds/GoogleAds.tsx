@@ -37,7 +37,7 @@ export default function GoogleAds({
       // Prikaži oglas
       window.googletag.display(id);
     });
-  }, []);
+  }, [id, sizes, slot]);
 
   return (
     <>

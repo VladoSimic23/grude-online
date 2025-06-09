@@ -10,22 +10,10 @@ import dynamic from "next/dynamic";
 import TopNavbar from "./Components/Nav/TopNavbar";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 import MobilePopularno from "./Components/MobileComponents/MobilePopularno/MobilePopularno";
-//import Script from "next/script";
-
 import Script from "next/script";
+import OneSignalComp from "./Components/OneSIgnal/OneSignal";
 
-//import OneSignalComp from "./Components/OneSIgnal/OneSignal";
-
-//import MobilePromo from "./Components/MobileComponents/MobilePromo/MobilePromo";
-
-//import Script from "next/script";
-//import DelayedScriptLoader from "./functions/scriptLoader";
 const NavWrap = dynamic(() => import("./Components/Nav/NavWarp"));
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
 
 const geistMono = Barlow_Condensed({
   weight: ["100", "400", "600", "700"],
@@ -55,6 +43,7 @@ export default async function RootLayout({
       <head>
         {/* Google Publisher Tag script */}
         <Script
+          async
           src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
           strategy="afterInteractive"
         />
@@ -63,10 +52,11 @@ export default async function RootLayout({
         className={`${geistMono.className} ${style.websiteBgDark}`}
         style={isMobile ? { marginTop: "75px" } : { marginTop: "0" }}
       >
-        {/* <OneSignalComp /> */}
-
         {!isMobile && <TopNavbar />}
         <NavWrap />
+        {/* <div className="onesignal-customlink-container">
+        </div> */}
+        <OneSignalComp />
 
         {children}
 
