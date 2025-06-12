@@ -56,3 +56,9 @@
   border: 2px solid #e68423; /* or any style you want */
   opacity: 1;
 }
+
+/* @media only screen and (max-width: 992px) {
+  .swiper-pagination {
+    top: 0px !important;
+  }
+} */
