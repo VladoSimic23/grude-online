@@ -1,4 +1,14 @@
+# *
 User-agent: *
-Disallow: /admin/
 Allow: /
-Sitemap: http://localhost:3000/sitemap.xml
+
+# *
+User-agent: *
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+
+# Host
+Host: https://www.grude-online.info
+
+# Sitemaps
+Sitemap: https://www.grude-online.info/sitemap.xml
