@@ -26,6 +26,9 @@ const CommentForm = ({
   const handleUsernameChange = (e: {
     target: { value: SetStateAction<string> };
   }) => {
+    if (e.target.value === "") {
+      setUsername("Anonimno");
+    }
     setUsername(e.target.value);
   };
 
@@ -33,7 +36,8 @@ const CommentForm = ({
     e.preventDefault();
 
     try {
-      await submitComment(Number(id), formattedComment, username);
+      const finalUsername = username === "" ? "Anonimno" : username;
+      await submitComment(Number(id), formattedComment, finalUsername);
       window.location.reload();
     } catch (error) {
       console.error("Error submitting comment:", error);
