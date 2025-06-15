@@ -46,6 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${title} - Grude Online`,
     description: removeHtmlTags(content?.slice(0, 190) + " ..."),
+
     openGraph: {
       description: removeHtmlTags(content?.slice(0, 190) + " ..."),
       images: post?.postBy?.featuredImage?.node?.sourceUrl
@@ -56,6 +57,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       tags: nodes?.map((item) => item?.name) || [],
       siteName: "Grude Online",
       url: `${grOnlineMainPath}/${slug}`,
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} - Grude Online`,
+      description: removeHtmlTags(content?.slice(0, 190) + " ..."),
+      images: post?.postBy?.featuredImage?.node?.sourceUrl
+        ? [post?.postBy?.featuredImage?.node?.sourceUrl]
+        : "",
     },
   };
 }

@@ -30,7 +30,7 @@ export async function getPostsByCategorySmall2(
   //excludedSlugs: string[]
 ) {
   const data = await fetchAPI<PostsByCategorySourceI>(`query {
-    posts(first: 20, where: {categoryName: "${category}"}) {
+    posts(first: ${numOfPosts}, where: {categoryName: "${category}"}) {
       nodes {
         slug
         title

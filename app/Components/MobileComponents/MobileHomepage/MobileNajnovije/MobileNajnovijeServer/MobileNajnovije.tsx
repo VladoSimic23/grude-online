@@ -3,8 +3,6 @@ import {
   RecentPostsSourceI,
 } from "@/app/libs/Queries/Queries/recentPosts";
 import MobileNajnovijeDetails from "../MobileNajnovijeServer/MobileNajnovijeDetails";
-//import style from "../../../../../css/style.module.css";
-//import MobilePromoTest from "../../../MobilePromo/MobilePromoTest";
 import MobilePromo from "../../../MobilePromo/MobilePromo";
 
 const MobileNajnovije = async () => {
@@ -16,19 +14,6 @@ const MobileNajnovije = async () => {
 
   return (
     <div style={{ marginTop: "20px" }}>
-      {/* <h1 className={`${style.h2Mobile} ${style.orangeBorder}`}>
-        <span
-          style={{
-            color: "#ea8624",
-            fontFamily: "Barlow Condensed",
-            fontSize: "28px",
-          }}
-        >
-          N
-        </span>
-        ajnovije
-      </h1> */}
-
       <div className="container px-3">
         {nodes.slice(0, 5).map((item, index) => {
           return (

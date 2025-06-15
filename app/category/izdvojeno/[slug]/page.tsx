@@ -55,6 +55,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: "Grude Online",
       url: `${grOnlineMainPath}/${slug}`,
     },
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} - Grude Online`,
+      description: removeHtmlTags(content?.slice(0, 190) + " ..."),
+      images: post?.postBy?.featuredImage?.node?.sourceUrl
+        ? [post?.postBy?.featuredImage?.node?.sourceUrl]
+        : "",
+    },
   };
 }
 
