@@ -7,6 +7,7 @@ import commentStyles from "./../commentsCss/comments.module.css";
 import style from "../../../css/style.module.css";
 import Image from "next/image";
 import parse from "html-react-parser";
+import { formatCroatianDateWithClock } from "@/app/functions/formatDateSaSatima";
 
 type Comment = {
   id: number;
@@ -178,7 +179,7 @@ export default function RestComments({
                         ? comment.author_name
                         : "Anonymus"}{" "}
                     </h4>
-                    <span>{comment?.date}</span>
+                    <span>{formatCroatianDateWithClock(comment?.date)}</span>
                   </div>{" "}
                 </div>
                 <div className={commentStyles.mobileCommentsContent}>
@@ -202,7 +203,9 @@ export default function RestComments({
                         ? comment.author_name
                         : "Anonymus"}{" "}
                     </h4>
-                    <span>{comment?.date}</span>
+                    <span style={{ marginBottom: "10px", display: "block" }}>
+                      {formatCroatianDateWithClock(comment?.date)}
+                    </span>
                     {parse(comment?.content.rendered)}
                   </div>
                 </div>
@@ -210,7 +213,7 @@ export default function RestComments({
               {/* )} */}
             </div>
 
-            <div>
+            <div style={{ fontSize: "14px" }}>
               {/* <button onClick={handleLike}> */}
               <button
                 style={{ background: "white", border: "1px solid black" }}

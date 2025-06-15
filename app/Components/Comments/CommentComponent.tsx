@@ -13,6 +13,7 @@ const CommentComponent = ({ post, color }: { post: string; color: string }) => {
   const [theComments, setComments] = useState<ClientCommentsDetailedI | null>(
     null
   );
+  console.log(theComments);
 
   useEffect(() => {
     const getData = async () => {

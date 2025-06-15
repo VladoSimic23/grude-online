@@ -82,7 +82,7 @@
         width: 45px;
     }
     span {
-        font-size: 12px;
+        font-size: 14px;
     }
 }
 .mobileCommentsContent {
@@ -115,6 +115,7 @@
     font-family: sans-serif;
     h4 {
         font-size: 22px;
+        font-weight: bold;
     }
 }
 .desktopLogo {
@@ -128,7 +129,9 @@
     .isMobileComments {
         display: block;
         h4 {
-            font-size: 18px;
+            font-size: 20px;
+            margin-top: 0;
+            font-weight: bold;
         }
     }
     .isDesktopComments {

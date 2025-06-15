@@ -97,7 +97,7 @@ export const fetchClientCommentsDetailed = async (contentName: string) => {
 
 export async function getCommentsForPost(postId: number) {
   const res = await fetch(
-    `https://grude-online.info/wp-json/wp/v2/comments?post=${postId}`
+    `https://grude-online.info/wp-json/wp/v2/comments?post=${postId}&per_page=100`
   );
   if (!res.ok) throw new Error("Failed to fetch comments");
   return res.json();
