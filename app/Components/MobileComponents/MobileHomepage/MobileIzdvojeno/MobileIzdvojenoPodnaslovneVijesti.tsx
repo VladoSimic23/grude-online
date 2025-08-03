@@ -60,8 +60,8 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
                     width={300}
                     height={220}
                     alt={item.title}
-                    priority={index < 3 ? true : false}
-                    fetchPriority={index < 3 ? "high" : "low"}
+                    priority={index < 1 ? true : false}
+                    fetchPriority={index < 1 ? "high" : "low"}
                     quality={1}
                   />
                 )}
@@ -79,7 +79,7 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
                     alt={item.title}
                     quality={30}
                     priority={true}
-                    fetchPriority={"high"}
+                    fetchPriority={index < 1 ? "high" : "low"}
                   />
                   <h1
                     style={{
