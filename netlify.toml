@@ -1,0 +1,12 @@
+[[headers]]
+for = "/*.html"
+[headers.values]
+Cache-Control = "public, max-age=3600"
+Content-Encoding = "gzip"
+
+[[redirects]]
+from = "http://grude-online.netlify.app/*"
+to = "https://grude-online.netlify.app/:splat"
+status = 301
+force = true
+
