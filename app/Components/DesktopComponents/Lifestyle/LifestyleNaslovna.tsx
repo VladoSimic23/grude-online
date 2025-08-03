@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import defaultImage from "../../../../public/noImage.jpg";
 import style from "../../../css/style.module.css";
-import desktopStyle from "../css/desktop.module.css";
+//import desktopStyle from "../css/desktop.module.css";
 import { formatDateToCroatian } from "@/app/functions/formatDateToCroatian";
 
 const LifestyleNaslovna = async () => {
@@ -14,12 +14,21 @@ const LifestyleNaslovna = async () => {
 
   return (
     <div className="mt-4">
-      <div className={desktopStyle.decorUnderline}>
-        <Link href="/category/lifestyle">
-          <h1>Lifestyle</h1>
+      <div>
+        <Link href="/category/lifestyle" className="text-decoration-none">
+          <h1
+            className={`${style.h2Desktop}`}
+            style={{
+              borderBottom: "3px solid #731b3c",
+              display: "inline-block",
+              marginBottom: "25px",
+              paddingBottom: "5px",
+            }}
+          >
+            Lifestyle
+          </h1>
         </Link>
       </div>
-
       <div className="row g-0 gx-2">
         {nodes.map((item, index) => {
           const { slug, featuredImage, title, date } = item;
@@ -39,7 +48,9 @@ const LifestyleNaslovna = async () => {
                   alt={`Lifestyle ${index + 1}`}
                 />
                 <h1 className={`${style.h5Desktop}`}>{title}</h1>
-                <p className="mt-2">{formatDateToCroatian(date)}</p>
+                <p style={{ color: "black" }} className="mt-2">
+                  {formatDateToCroatian(date)}
+                </p>
               </Link>
             </div>
           );

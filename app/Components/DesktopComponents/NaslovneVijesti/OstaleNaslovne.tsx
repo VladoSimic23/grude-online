@@ -8,7 +8,7 @@ import { formatDateToCroatian } from "@/app/functions/formatDateToCroatian";
 import desktopStyle from "../css/desktop.module.css";
 
 const OstaleNaslovne = async () => {
-  const data = await getPostsByCategorySmall("izdvojeno", 5, "LARGE");
+  const data = await getPostsByCategorySmall("izdvojeno", 3, "LARGE");
   const {
     posts: { nodes },
   } = data;
@@ -27,28 +27,39 @@ const OstaleNaslovne = async () => {
           return (
             <div
               key={index}
-              className={`col-md-6 p-1 ${desktopStyle.ostaleNaslovneChild}`}
+              className={`col-md-12 p-1 ${desktopStyle.ostaleNaslovneChild}`}
             >
-              <Link href={`/${slug}`}>
-                <div className="position-relative">
-                  <div className={desktopStyle.desktopOverlay}></div>
-                  <Image
-                    className={style.imageCover}
-                    src={
-                      featuredImage?.node?.sourceUrl
-                        ? featuredImage?.node?.sourceUrl
-                        : defaultImage
-                    }
-                    width={350}
-                    height={246}
-                    priority={true}
-                    alt={`Naslovna ${index}`}
-                  />
+              <Link href={`/${slug}`} className="text-decoration-none">
+                <div className="row">
+                  {/* <div className={desktopStyle.desktopOverlay}></div> */}
+                  <div className="col-12">
+                    <Image
+                      className={`${style.imageCover} rounded-3`}
+                      src={
+                        featuredImage?.node?.sourceUrl
+                          ? featuredImage?.node?.sourceUrl
+                          : defaultImage
+                      }
+                      width={350}
+                      height={246}
+                      priority={true}
+                      alt={`Naslovna ${index}`}
+                    />
+                  </div>
                   <div
-                    className={`position-absolute bottom-0 p-3 ${desktopStyle.dateAndComment}`}
+                    className={`bottom-0 p-3 ${desktopStyle.dateAndComment} col-12 d-flex flex-column justify-content-center`}
                   >
-                    <h1 className={`${style.h3Mobile}`}>{title}</h1>
-                    <div style={{ color: "white", fontSize: "14px" }}>
+                    <h1
+                      className={`${style.h3Desktop}`}
+                      style={{
+                        fontSize: "22px",
+                        fontWeight: "bold",
+                        marginTop: "0",
+                      }}
+                    >
+                      {title}
+                    </h1>
+                    <div style={{ color: "black", fontSize: "14px" }}>
                       <span>{formatDateToCroatian(date)}</span> |{" "}
                       <span>
                         {nodes.length} <i className="bi bi-chat-left-text"></i>

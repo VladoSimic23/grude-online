@@ -41,7 +41,7 @@ const CrnaKronika = async () => {
       {!isMobile && (
         <div className="row mt-4">
           <div className="col-lg-8">
-            <h1 className={style.h2Desktop}>Crna Kronika</h1>
+            <h1 className={style.h2Desktop}>Gospodarstvo</h1>
             <PostListCategory data={data} />
             <PostListCategoryClient category="Gospodarstvo" />
           </div>

@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import defaultImage from "../../../../public/noImage.jpg";
 import style from "../../../css/style.module.css";
-import desktopStyle from "../css/desktop.module.css";
+//import desktopStyle from "../css/desktop.module.css";
 import { formatDateToCroatian } from "@/app/functions/formatDateToCroatian";
 
 const SportNaslovna = async () => {
@@ -14,9 +14,20 @@ const SportNaslovna = async () => {
 
   return (
     <div className="mt-4">
-      <div className={desktopStyle.decorUnderline}>
-        <Link href="/category/sport">
-          <h1>Sport</h1>
+      <div>
+        <Link href="/category/sport" className="text-decoration-none">
+          <h1
+            className={`${style.h2Desktop}`}
+            style={{
+              borderBottom: "3px solid green",
+              display: "inline-block",
+              marginBottom: "25px",
+              paddingBottom: "5px",
+              //color: "darkmagenta",
+            }}
+          >
+            Sport
+          </h1>
         </Link>
       </div>
       <div>
@@ -34,8 +45,12 @@ const SportNaslovna = async () => {
               priority={true}
               alt={"Grude Online 1."}
             />
-            <h1 className={`${style.h3Desktop}`}>{nodes[0]?.title}</h1>
-            <p className="mt-2">{formatDateToCroatian(nodes[0]?.date)}</p>
+            <h1 style={{ fontWeight: "bold" }} className={`${style.h3Desktop}`}>
+              {nodes[0]?.title}
+            </h1>
+            <p style={{ color: "black" }} className="mt-2">
+              {formatDateToCroatian(nodes[0]?.date)}
+            </p>
           </Link>
         </div>
         {nodes?.map((item, index) => {
@@ -67,7 +82,9 @@ const SportNaslovna = async () => {
                         {title}
                       </h1>
                       <div>
-                        <p className="mt-2">{formatDateToCroatian(date)}</p>
+                        <p style={{ color: "black" }} className="mt-2">
+                          {formatDateToCroatian(date)}
+                        </p>
                       </div>
                     </div>
                   </div>

@@ -74,9 +74,10 @@ const PostEmbedPreview = ({ url }: { url: string }) => {
         overflow: "hidden",
         textDecoration: "none",
         color: "inherit",
-        //backgroundColor: "#f8f9fa",
+        backgroundColor: "#1c1e20",
         padding: "15px",
         flexDirection: "column",
+        maxWidth: "500px",
       }}
     >
       <h1
@@ -88,8 +89,8 @@ const PostEmbedPreview = ({ url }: { url: string }) => {
       <Image
         src={post.featuredImage?.node?.sourceUrl || defaultImage}
         alt={post.title}
-        width={120}
-        height={50}
+        width={320}
+        height={150}
         style={{ objectFit: "cover", borderRadius: "6px" }}
       />
       <div>

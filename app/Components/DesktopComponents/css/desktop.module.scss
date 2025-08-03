@@ -52,12 +52,15 @@
 
 .dateAndComment {
     z-index: 1000;
+    span {
+        font-family: sans-serif;
+    }
 }
 .desktopPopularno {
-    background: #323746;
+    //background: #323746;
     padding: 15px ;
     h1 {
-        font-family: sans-serif
+        font-family: sans-serif;
     }
 }
 

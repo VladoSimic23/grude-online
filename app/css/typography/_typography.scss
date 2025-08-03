@@ -10,6 +10,7 @@
   p,span,h1,h2,h3,h4,h5,a,li {
     color:  #ececec;
   }
+
   p, span, button {
     font-family: sans-serif;
   }
@@ -17,9 +18,13 @@
 }
 .websiteBgWhite {
   background: white;
+    p,span,h1,h2,h3,h4,h5,a,li {
+    color:  black;
+    }
   img {
     border-radius: 8px;
   }
+  a {text-decoration: none; color: black;}
 }
 .paragraph {
   p {
@@ -97,22 +102,27 @@
 .h1Desktop {
   font-size: $font-size-h1-desktop;
   margin: 32px 0;
+  color: black;
 }
 .h2Desktop {
   font-size: $font-size-h2-desktop;
   margin: 28px 0;
+  color: black;
 }
 .h3Desktop {
   font-size: $font-size-h3-desktop;
   margin: 24px 0;
+  color: black;
 }
 .h4Desktop {
   font-size: $font-size-h4-desktop;
   margin: 20px 0;
   font-family: sans-serif;
+  color: black;
 }
 .h5Desktop {
   font-size: $font-size-h5-desktop;
   margin: 16px 0;
+  color: black;
   //font-family: sans-serif;
 }

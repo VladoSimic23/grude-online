@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import defaultImage from "../../../../public/noImage.jpg";
 import style from "../../../css/style.module.css";
-import desktopStyle from "../css/desktop.module.css";
+//import desktopStyle from "../css/desktop.module.css";
 import { formatDateToCroatian } from "@/app/functions/formatDateToCroatian";
 
 const OstaleVijesti = async () => {
@@ -14,9 +14,20 @@ const OstaleVijesti = async () => {
 
   return (
     <div className="mt-4">
-      <div className={desktopStyle.decorUnderline}>
-        <Link href="/category/ostale-vijesti">
-          <h1>Ostale Vijesti</h1>
+      <div>
+        <Link href="/category/ostale-vijesti" className="text-decoration-none">
+          <h1
+            className={`${style.h2Desktop}`}
+            style={{
+              borderBottom: "3px solid darkslateblue",
+              display: "inline-block",
+              marginBottom: "25px",
+              paddingBottom: "5px",
+              //color: "darkmagenta",
+            }}
+          >
+            Ostale Vijesti
+          </h1>
         </Link>
       </div>
 
@@ -39,7 +50,9 @@ const OstaleVijesti = async () => {
                   alt={`Ostale Vijsti ${index + 1}`}
                 />
                 <h1 className={`${style.h5Desktop}`}>{title}</h1>
-                <p className="mt-2">{formatDateToCroatian(date)}</p>
+                <p style={{ color: "black" }} className="mt-2">
+                  {formatDateToCroatian(date)}
+                </p>
               </Link>
             </div>
           );

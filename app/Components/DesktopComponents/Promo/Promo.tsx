@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getPostsByCategorySmall } from "@/app/libs/Queries/Queries/postsByCategorySmall";
-import desktopStyle from "../css/desktop.module.css";
+//import desktopStyle from "../css/desktop.module.css";
 import style from "../../../css/style.module.css";
 import defaultImage from "../../../../public/noImage.jpg";
 import { formatDateToCroatian } from "@/app/functions/formatDateToCroatian";
@@ -15,9 +15,20 @@ const Promo = async () => {
 
   return (
     <div className="mt-4">
-      <div className={desktopStyle.decorUnderline}>
+      <div className="text-decoration-none">
         <Link href="/category/lifestyle">
-          <h1>Promo</h1>
+          <h1
+            className={`${style.h2Desktop}`}
+            style={{
+              borderBottom: "3px solid royalblue",
+              display: "inline-block",
+              marginBottom: "25px",
+              paddingBottom: "5px",
+              //color: "darkmagenta",
+            }}
+          >
+            Promo
+          </h1>
         </Link>
       </div>
 
@@ -40,7 +51,9 @@ const Promo = async () => {
                   alt={`Lifestyle ${index + 1}`}
                 />
                 <h1 className={`${style.h5Desktop}`}>{title}</h1>
-                <p className="mt-2">{formatDateToCroatian(date)}</p>
+                <p style={{ color: "black" }} className="mt-2">
+                  {formatDateToCroatian(date)}
+                </p>
               </Link>
             </div>
           );

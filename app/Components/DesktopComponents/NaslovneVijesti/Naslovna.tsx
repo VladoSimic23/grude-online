@@ -14,11 +14,14 @@ const Naslovna = async () => {
 
   return (
     <div className={desktopStyle.naslovna}>
-      <Link href={`/${nodes[0]?.slug}`}>
+      <Link
+        href={`/${nodes[0]?.slug}`}
+        className="text-decoration-none text-black"
+      >
         <div className="position-relative">
-          <div className={desktopStyle.desktopOverlay}></div>
+          {/* <div className={desktopStyle.desktopOverlay}></div> */}
           <Image
-            className={style.imageCover}
+            className={`${style.imageCover} rounded-3`}
             src={
               nodes[0]?.featuredImage?.node?.sourceUrl
                 ? nodes[0]?.featuredImage?.node?.sourceUrl
@@ -29,11 +32,14 @@ const Naslovna = async () => {
             priority={true}
             alt={"Naslovna 1."}
           />
-          <div
-            className={`position-absolute bottom-0 p-3  ${desktopStyle.dateAndComment}`}
-          >
-            <h1 className={`${style.h2Mobile}`}>{nodes[0].title}</h1>
-            <div style={{ color: "white", fontSize: "14px" }}>
+          <div className={`${desktopStyle.dateAndComment}`}>
+            <h1
+              className={`${style.h1Desktop} text-black `}
+              style={{ fontSize: "50px", margin: "16px 0" }}
+            >
+              {nodes[0].title}
+            </h1>
+            <div>
               <span>{formatDateToCroatian(nodes[0].date)}</span> |{" "}
               <span>
                 {nodes.length} <i className="bi bi-chat-left-text"></i>

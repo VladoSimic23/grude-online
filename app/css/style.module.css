@@ -15,8 +15,15 @@
 .websiteBgWhite {
   background: white;
 }
+.websiteBgWhite p, .websiteBgWhite span, .websiteBgWhite h1, .websiteBgWhite h2, .websiteBgWhite h3, .websiteBgWhite h4, .websiteBgWhite h5, .websiteBgWhite a, .websiteBgWhite li {
+  color: black;
+}
 .websiteBgWhite img {
   border-radius: 8px;
+}
+.websiteBgWhite a {
+  text-decoration: none;
+  color: black;
 }
 
 .paragraph p {
@@ -101,25 +108,30 @@
 .h1Desktop {
   font-size: 38px;
   margin: 32px 0;
+  color: black;
 }
 
 .h2Desktop {
   font-size: 30px;
   margin: 28px 0;
+  color: black;
 }
 
 .h3Desktop {
   font-size: 26px;
   margin: 24px 0;
+  color: black;
 }
 
 .h4Desktop {
   font-size: 22px;
   margin: 20px 0;
   font-family: sans-serif;
+  color: black;
 }
 
 .h5Desktop {
   font-size: 20px;
   margin: 16px 0;
+  color: black;
 }/*# sourceMappingURL=style.module.css.map */

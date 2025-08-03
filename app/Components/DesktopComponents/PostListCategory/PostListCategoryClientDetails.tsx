@@ -37,11 +37,11 @@ const PostListCategoryClientDetails = ({
         <div className="col-md-6">
           <h1 className={`${style.h3Desktop} mt-0`}>{title}</h1>
           <div>
-            <span>{formatDateToCroatian(date)}</span>
+            <span className="text-black">{formatDateToCroatian(date)}</span>
 
             <div>
-              <span className="me-1">{nodes.length}</span>
-              <i className="bi bi-chat-left-text"></i>
+              <span className="me-1 text-black">{nodes.length}</span>
+              <i className="bi bi-chat-left-text text-black"></i>
             </div>
           </div>
         </div>

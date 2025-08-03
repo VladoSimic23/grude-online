@@ -12,7 +12,7 @@ export const categoryStyles = [
   { cat: "ostale-vijesti", color: "darkslateblue" },
   { cat: "promo", color: "royalblue" },
   { cat: "izdvojeno", color: "#1967bd" },
-  { cat: "nekategorizirano", color: "black" },
+  { cat: "nekategorizirano", color: "#5b3e3b" },
 ];
 
 export const matchColors = (color: string) => {

@@ -7,11 +7,11 @@ import desktopStyle from "../css/desktop.module.css";
 const NaslovneVijesti = () => {
   return (
     <div className="container" style={{ marginTop: "30px" }}>
-      <div className="row p-0 gx-3">
-        <div className="col-lg-6">
+      <div className="row p-0">
+        <div className="col-lg-8">
           <Naslovna />
         </div>
-        <div className={`col-lg-6 ${desktopStyle.ostaleNaslovne}`}>
+        <div className={`col-lg-4 ${desktopStyle.ostaleNaslovne}`}>
           <OstaleNaslovne />
         </div>
       </div>

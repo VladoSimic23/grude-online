@@ -13,7 +13,7 @@ const MobileNajnovije = async () => {
   } = najnovije;
 
   return (
-    <div style={{ marginTop: "20px" }}>
+    <div style={{ marginTop: "40px" }}>
       <div className="container px-3">
         {nodes.slice(0, 5).map((item, index) => {
           return (

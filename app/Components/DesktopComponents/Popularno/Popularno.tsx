@@ -12,7 +12,18 @@ const Popularno = async () => {
 
   return (
     <div className={desktopStyle.desktopPopularno}>
-      <h1 className={styles.h4Desktop}>Popularno</h1>
+      <h1
+        className={styles.h3Desktop}
+        style={{
+          display: "inline-block",
+          borderBottom: "3px solid #ffa700",
+          paddingBottom: "5px",
+          fontFamily: "Barlow Condensed",
+          fontWeight: "600",
+        }}
+      >
+        Popularno
+      </h1>
       <div>
         {/*eslint-disable-next-line @typescript-eslint/no-explicit-any*/}
         {popular?.slice(0, 6).map((item: any, index) => {
@@ -48,7 +59,7 @@ const Popularno = async () => {
                     </h1>
                     <CommentCount
                       slug={item?.slug}
-                      color="#ececec"
+                      color="black"
                       fontSize="12px"
                     />
                   </div>

@@ -49,7 +49,9 @@ export default async function RootLayout({
         />
       </head>
       <body
-        className={`${geistMono.className} ${style.websiteBgDark}`}
+        className={`${geistMono.className} ${
+          isMobile ? style.websiteBgDark : style.websiteBgLight
+        }`}
         style={isMobile ? { marginTop: "75px" } : { marginTop: "0" }}
       >
         {!isMobile && <TopNavbar />}

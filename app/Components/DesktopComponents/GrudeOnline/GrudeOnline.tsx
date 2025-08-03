@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import defaultImage from "../../../../public/noImage.jpg";
 import style from "../../../css/style.module.css";
-import desktopStyle from "../css/desktop.module.css";
+//import desktopStyle from "../css/desktop.module.css";
 import { formatDateToCroatian } from "@/app/functions/formatDateToCroatian";
 
 const GrudeOnline = async () => {
@@ -14,9 +14,25 @@ const GrudeOnline = async () => {
 
   return (
     <div>
-      <div className={desktopStyle.decorUnderline}>
+      {/* <div className={desktopStyle.decorUnderline}>
         <Link href="/category/grude-online">
           <h1>Grude Online</h1>
+        </Link>
+      </div> */}
+      <div>
+        <Link href="/category/grude-online" className="text-decoration-none">
+          <h1
+            className={`${style.h2Desktop}`}
+            style={{
+              borderBottom: "3px solid darkmagenta",
+              display: "inline-block",
+              marginBottom: "25px",
+
+              //color: "darkmagenta",
+            }}
+          >
+            Grude Online
+          </h1>
         </Link>
       </div>
       <div className="row">
@@ -34,8 +50,12 @@ const GrudeOnline = async () => {
               priority={true}
               alt={"Grude Online 1."}
             />
-            <h1 className={`${style.h3Desktop}`}>{nodes[0]?.title}</h1>
-            <p className="mt-2">{formatDateToCroatian(nodes[0]?.date)}</p>
+            <h1 className={`${style.h3Desktop}`} style={{ fontWeight: "bold" }}>
+              {nodes[0]?.title}
+            </h1>
+            <p style={{ color: "black" }} className="mt-2">
+              {formatDateToCroatian(nodes[0]?.date)}
+            </p>
           </Link>
         </div>
         <div className="col-md-6">
@@ -69,7 +89,9 @@ const GrudeOnline = async () => {
                             {title}
                           </h1>
                           <div>
-                            <p className="mt-2">{formatDateToCroatian(date)}</p>
+                            <p style={{ color: "black" }} className="mt-2">
+                              {formatDateToCroatian(date)}
+                            </p>
                           </div>
                         </div>
                       </div>

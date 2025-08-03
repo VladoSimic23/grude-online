@@ -11,7 +11,7 @@
 }
 
 .footerContainer {
-  background-color: #2f2f2f;
+  background-color: #c4c4c4;
   padding: 40px 0;
   margin-top: 60px;
 }
@@ -19,6 +19,10 @@
   text-align: center;
   border-bottom: 3px solid rgb(230, 229, 229);
   padding-bottom: 15px;
+}
+.footerContainer a {
+  color: #1e4b73;
+  font-size: 18px;
 }
 
 .recentContainer {
