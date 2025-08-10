@@ -5,12 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 //import { isMobileDevice } from "@/app/libs/UserAgent/UserAgent";
 import dynamic from "next/dynamic";
+import SocialMedia from "./SocialMedia";
 //import Navbar from "./Navbar";
 const Navbar = dynamic(() => import("./Navbar"), { ssr: false });
 
 const NavWrap = () => {
   return (
-    <div className="container">
+    <div className={`${navStyles.adjustNav} container`}>
       <div className={navStyles.navMobileWrap}>
         {/* {!isMob && <TopNavbar />} */}
         <div className="container">
@@ -26,7 +27,8 @@ const NavWrap = () => {
                 />
               </Link>
             </div>
-            <div className={navStyles.topNavbarSocialMedia}>
+            <SocialMedia />
+            {/* <div className={navStyles.topNavbarSocialMedia}>
               <Link
                 href={"https://www.facebook.com/GrudeOnline/"}
                 target="_blank"
@@ -53,7 +55,7 @@ const NavWrap = () => {
               >
                 Youtube <i className="bi bi-youtube"></i>
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
 

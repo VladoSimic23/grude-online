@@ -43,10 +43,11 @@ export async function getPostsByCategorySmall2(
         title
         date
         content
-         tags {
+          tags {
                 nodes {
-                name
+                  name
                 }
+              }
         featuredImage {
           node {
             sourceUrl(size: ${size})

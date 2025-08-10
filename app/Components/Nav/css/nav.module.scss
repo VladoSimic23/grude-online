@@ -157,6 +157,14 @@
     }
     
     @media (max-width: 1200px) {
+      .adjustNav {
+        margin: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      .topNavbarSocialMedia {
+        display: none;
+      }
       .navLinks {
         padding: 10px 0 ;
         a {
