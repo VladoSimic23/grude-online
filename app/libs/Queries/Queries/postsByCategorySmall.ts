@@ -1,4 +1,9 @@
-import { CategoriesI, CommentsI, FeaturedImageI } from "../../types/tsTypes";
+import {
+  CategoriesI,
+  CommentsI,
+  FeaturedImageI,
+  TagsI,
+} from "../../types/tsTypes";
 import { fetchAPI } from "../FetchFunction/fetchGrudeOnlineData";
 
 export interface PostsByCategorySourceI {
@@ -10,6 +15,8 @@ export interface PostsByCategorySourceI {
       featuredImage: FeaturedImageI;
       categories: CategoriesI;
       comments: CommentsI;
+      content: string;
+      tags: TagsI;
     }[];
   };
 }
@@ -35,6 +42,11 @@ export async function getPostsByCategorySmall2(
         slug
         title
         date
+        content
+         tags {
+                nodes {
+                name
+                }
         featuredImage {
           node {
             sourceUrl(size: ${size})
@@ -79,6 +91,13 @@ export async function getPostsByCategorySmall(
             slug
             title
             date
+            content
+              tags {
+                nodes {
+                  name
+                }
+              }
+            
             featuredImage {
               node {
                 sourceUrl(size: ${size})

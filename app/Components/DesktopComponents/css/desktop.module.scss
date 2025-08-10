@@ -4,13 +4,34 @@
     position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+
     z-index: 100;
     background: #0000004f;
     &:hover {
         background: #00000015;
     }
+}
+.desktopVideo {
+    border-radius: 8px;
+    position: absolute;
+   right: 10px;
+   bottom: 10px;
+    z-index: 100;
+    font-size: 26px;
+     padding: 0px 20px 4px 20px;
+    background:rgba(37, 35, 111, 0.8);
+    color: white;
+}
+.desktopImage {
+    border-radius: 8px;
+    position: absolute;
+    right: 10px;
+   bottom: 10px;
+    padding: 0px 20px 4px 20px;
+    font-size: 26px;
+    z-index: 100;
+   background:rgba(37, 35, 111, 0.8);
+   color: white;
 }
 .decorUnderline {
     border-bottom: 3px solid #ec8324;

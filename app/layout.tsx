@@ -7,7 +7,7 @@ import style from "./css/style.module.css";
 import BootstrapClient from "./libs/BootstrapClient/BootstrapClient";
 import FooterComponent from "./Components/Footer/FooterComponent";
 import dynamic from "next/dynamic";
-import TopNavbar from "./Components/Nav/TopNavbar";
+//import TopNavbar from "./Components/Nav/TopNavbar";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 import MobilePopularno from "./Components/MobileComponents/MobilePopularno/MobilePopularno";
 import Script from "next/script";
@@ -54,7 +54,7 @@ export default async function RootLayout({
         }`}
         style={isMobile ? { marginTop: "75px" } : { marginTop: "0" }}
       >
-        {!isMobile && <TopNavbar />}
+        {/* {!isMobile && <TopNavbar />} */}
         <NavWrap />
         {/* <div className="onesignal-customlink-container">
         </div> */}
