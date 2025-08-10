@@ -42,7 +42,7 @@ export async function getMobileIzdvojeno(category: string, numOfPosts: number) {
             } 
             featuredImage {
               node {
-                sourceUrl(size: LARGE)
+                sourceUrl(size: MEDIUM)
               }
             }
           }

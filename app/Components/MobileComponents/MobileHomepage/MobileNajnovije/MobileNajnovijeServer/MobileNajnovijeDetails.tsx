@@ -43,23 +43,6 @@ const MobileNajnovijeDetails = ({
             className={mobileStyle.mobileSingleItem}
             style={{ position: "relative" }}
           >
-            {index < 3 && (
-              <Image
-                style={{
-                  position: "absolute",
-                  zIndex: "-1",
-                  borderRadius: "10px",
-                }}
-                className={style.imageCover}
-                src={sourceUrl}
-                width={300}
-                height={200}
-                alt={title}
-                priority={index < 3 ? true : false}
-                fetchPriority={index < 3 ? "high" : "low"}
-                quality={1}
-              />
-            )}
             <Image
               style={{
                 position: "relative",

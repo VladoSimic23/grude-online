@@ -52,19 +52,6 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
                 className={mobileStyle.mobileSingleItem}
                 style={{ position: "relative" }}
               >
-                {index < 3 && (
-                  <Image
-                    style={{ position: "absolute", zIndex: "-1" }}
-                    className={style.imageCover}
-                    src={item.featuredImage.node.sourceUrl}
-                    width={300}
-                    height={220}
-                    alt={item.title}
-                    priority={index < 1 ? true : false}
-                    fetchPriority={index < 1 ? "high" : "low"}
-                    quality={1}
-                  />
-                )}
                 <div style={{ position: "relative" }}>
                   <Image
                     style={{
@@ -76,8 +63,8 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
                     src={item.featuredImage.node.sourceUrl}
                     width={300}
                     height={220}
-                    alt={item.title}
-                    quality={30}
+                    alt={item?.title}
+                    quality={75}
                     priority={true}
                     fetchPriority={index < 1 ? "high" : "low"}
                   />

@@ -88,18 +88,6 @@ const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
             {formatDateToCroatian(date)}
           </h2>
         </div>
-        <Image
-          className={`${style.imageContain} mt-4 mb-4`}
-          style={{ height: "auto", position: "absolute", zIndex: "-1" }}
-          src={post?.featuredImage?.node?.sourceUrl || defaultImage}
-          width={500}
-          height={250}
-          alt={`post image ${postId}`}
-          priority={true}
-          fetchPriority="high"
-          quality={1}
-          id={`post-image-${postId}`}
-        />
         {extraImages.length > 0 ? (
           <MobileCarousel
             images={extraImages}

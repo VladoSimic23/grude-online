@@ -27,7 +27,7 @@ const MobileIzdvojenoNaslovnaVijest = ({
       <Link href={`/${slug}`} style={{ textDecoration: "none" }}>
         <div style={{ position: "relative" }}>
           <Image
-            style={{ position: "absolute", zIndex: "-1" }}
+            style={{ position: "relative", zIndex: "1" }}
             className={style.imageCover}
             src={sourceUrl}
             width={400}
@@ -35,17 +35,6 @@ const MobileIzdvojenoNaslovnaVijest = ({
             alt={"Naslovna 1"}
             fetchPriority="high"
             priority={true}
-            quality={1}
-          />
-          <Image
-            style={{ position: "relative", zIndex: "1" }}
-            className={style.imageCover}
-            src={sourceUrl}
-            width={400}
-            height={200}
-            alt={"Naslovna 1"}
-            //fetchPriority="high"
-            //priority={true}
             quality={50}
           />
           {hasImages && (
@@ -63,21 +52,21 @@ const MobileIzdvojenoNaslovnaVijest = ({
               className="bi bi-camera"
             ></i>
           )}
-          (hasVideo && (
-          <i
-            style={{
-              position: "absolute",
-              right: "0",
-              bottom: "0",
-              color: "white",
-              background: "#4d1b97",
-              display: "inline-grid",
-              padding: "3px 5px",
-              zIndex: "5",
-            }}
-            className="bi bi-youtube"
-          ></i>
-          ))
+          {hasVideo && (
+            <i
+              style={{
+                position: "absolute",
+                right: "0",
+                bottom: "0",
+                color: "white",
+                background: "#4d1b97",
+                display: "inline-grid",
+                padding: "3px 5px",
+                zIndex: "5",
+              }}
+              className="bi bi-youtube"
+            ></i>
+          )}
         </div>
         <div>
           <h1 className={style.h3Mobile}>{title}</h1>

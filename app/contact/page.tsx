@@ -102,76 +102,88 @@
 //     </div>
 //   );
 // }
-"use client";
-import { useState } from "react";
+// "use client";
+// import { useState } from "react";
 
-export default function ContactForm() {
-  const [status, setStatus] = useState<string | null>(null);
+// export default function ContactForm() {
+//   const [status, setStatus] = useState<string | null>(null);
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setStatus(null);
+//   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+//     e.preventDefault();
+//     setStatus(null);
 
-    const formData = new FormData(e.currentTarget);
+//     const formData = new FormData(e.currentTarget);
 
-    const file = formData.get("file_upload") as File | null;
-    if (file && file.size > 5 * 1024 * 1024) {
-      setStatus("File is too large. Max 5MB.");
-      return;
-    }
+//     const file = formData.get("file_upload") as File | null;
+//     if (file && file.size > 5 * 1024 * 1024) {
+//       setStatus("File is too large. Max 5MB.");
+//       return;
+//     }
 
-    const res = await fetch(
-      "https://your-site.com/wp-json/wpforms/v1/forms/12/entries",
-      {
-        method: "POST",
-        body: formData,
-      }
-    );
+//     const res = await fetch(
+//       "https://your-site.com/wp-json/wpforms/v1/forms/12/entries",
+//       {
+//         method: "POST",
+//         body: formData,
+//       }
+//     );
 
-    if (res.ok) {
-      setStatus("Message sent successfully!");
-    } else {
-      setStatus("Error sending message.");
-    }
+//     if (res.ok) {
+//       setStatus("Message sent successfully!");
+//     } else {
+//       setStatus("Error sending message.");
+//     }
 
-    e.currentTarget.reset();
-  }
+//     e.currentTarget.reset();
+//   }
 
-  return (
-    <div className="container mt-5">
-      <h1>Contact Us</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <label className="form-label">Name</label>
-          <input name="name" type="text" className="form-control" required />
-        </div>
-        <div className="mb-3">
-          <label className="form-label">Email</label>
-          <input name="email" type="email" className="form-control" required />
-        </div>
-        <div className="mb-3">
-          <label className="form-label">Message</label>
-          <textarea
-            name="message"
-            className="form-control"
-            rows={5}
-            required
-          ></textarea>
-        </div>
-        <div className="mb-3">
-          <label className="form-label">Optional media</label>
-          <input
-            name="file_upload"
-            type="file"
-            className="form-control"
-            accept="image/*,video/*"
-          />
-        </div>
-        <button type="submit" className="btn btn-primary">
-          Send
-        </button>
-      </form>
-      {status && <div className="alert mt-3">{status}</div>}
-    </div>
-  );
-}
+//   return (
+//     <div className="container mt-5">
+//       <h1>Contact Us</h1>
+//       <form onSubmit={handleSubmit}>
+//         <div className="mb-3">
+//           <label className="form-label">Name</label>
+//           <input name="name" type="text" className="form-control" required />
+//         </div>
+//         <div className="mb-3">
+//           <label className="form-label">Email</label>
+//           <input name="email" type="email" className="form-control" required />
+//         </div>
+//         <div className="mb-3">
+//           <label className="form-label">Message</label>
+//           <textarea
+//             name="message"
+//             className="form-control"
+//             rows={5}
+//             required
+//           ></textarea>
+//         </div>
+//         <div className="mb-3">
+//           <label className="form-label">Optional media</label>
+//           <input
+//             name="file_upload"
+//             type="file"
+//             className="form-control"
+//             accept="image/*,video/*"
+//           />
+//         </div>
+//         <button type="submit" className="btn btn-primary">
+//           Send
+//         </button>
+//       </form>
+//       {status && <div className="alert mt-3">{status}</div>}
+//     </div>
+//   );
+// }
+
+import React from "react";
+import { isMobileDevice } from "../libs/UserAgent/UserAgent";
+import DesktopForm from "./DesktopForm";
+import MobileForm from "./MobileForm";
+
+const Contact = async () => {
+  const isMobile = await isMobileDevice();
+  return <div>{isMobile ? <MobileForm /> : <DesktopForm />}</div>;
+};
+
+export default Contact;
