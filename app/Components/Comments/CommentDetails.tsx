@@ -14,12 +14,12 @@ const CommentDetails = ({ item }: { item: ClientCommentsContent }) => {
           <div className={commentStyles.mobileComments}>
             <Image src={"/none.jpg"} width={60} height={60} alt="commentIcon" />{" "}
             <div>
-              <h4>
+              <h1>
                 {" "}
                 {item?.author?.node?.name !== null
                   ? item?.author?.node?.name
                   : "Anonymus"}{" "}
-              </h4>
+              </h1>
               <span>{item?.date}</span>
             </div>{" "}
           </div>
@@ -39,11 +39,11 @@ const CommentDetails = ({ item }: { item: ClientCommentsContent }) => {
               />
             </div>
             <div className={commentStyles.commentDetails}>
-              <h4>
+              <h1>
                 {item?.author?.node?.name !== null
                   ? item?.author?.node?.name
                   : "Anonymus"}{" "}
-              </h4>
+              </h1>
               <span>{item?.date}</span>
               {parse(item?.content)}
             </div>
@@ -56,6 +56,7 @@ const CommentDetails = ({ item }: { item: ClientCommentsContent }) => {
         {/* <button onClick={handleLike}> */}
         <button style={{ background: "white", border: "1px solid black" }}>
           <i style={{ fontSize: "14px" }} className="bi bi-hand-thumbs-up"></i>
+
           {/* <span>{likes}</span> */}
         </button>
         <button style={{ background: "white", border: "1px solid black" }}>

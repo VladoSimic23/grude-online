@@ -4,9 +4,11 @@ import style from "../../../css/style.module.css";
 
 const RecentComments = async () => {
   const data = await getRecentComments(5);
+
   const {
     comments: { nodes },
   } = data;
+
   return (
     <div>
       <h1 className={style.h5Desktop}>NOVI KOMENTARI</h1>

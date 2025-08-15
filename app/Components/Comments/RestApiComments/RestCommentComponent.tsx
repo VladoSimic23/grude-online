@@ -173,12 +173,18 @@ export default function RestComments({
                     alt="commentIcon"
                   />{" "}
                   <div>
-                    <h4>
+                    <h1
+                      style={{
+                        fontSize: "22px",
+                        fontWeight: "bold",
+                        letterSpacing: "1px",
+                      }}
+                    >
                       {" "}
                       {comment.author_name !== ""
                         ? comment.author_name
                         : "Anonymus"}{" "}
-                    </h4>
+                    </h1>
                     <span>{formatCroatianDateWithClock(comment?.date)}</span>
                   </div>{" "}
                 </div>
@@ -198,11 +204,17 @@ export default function RestComments({
                     />
                   </div>
                   <div className={commentStyles.commentDetails}>
-                    <h4>
+                    <h1
+                      style={{
+                        fontSize: "26px",
+                        fontWeight: "bold",
+                        letterSpacing: "1px",
+                      }}
+                    >
                       {comment.author_name !== ""
                         ? comment.author_name
                         : "Anonymus"}{" "}
-                    </h4>
+                    </h1>
                     <span style={{ marginBottom: "10px", display: "block" }}>
                       {formatCroatianDateWithClock(comment?.date)}
                     </span>
