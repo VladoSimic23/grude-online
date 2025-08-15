@@ -62,3 +62,7 @@
     top: 0px !important;
   }
 } */
+iframe.wp-embedded-content[src^="https://www.grude-online.info/"]
+{
+  display: none !important;
+}

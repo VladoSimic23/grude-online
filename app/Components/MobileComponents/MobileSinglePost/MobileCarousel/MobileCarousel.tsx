@@ -176,7 +176,7 @@ const MobileCarousel = ({
               position: "fixed",
               top: 0,
               left: 0,
-              height: "88vh",
+              height: "93vh",
               width: "100%",
               background: "rgba(34, 32, 32)",
               zIndex: 10000,

@@ -30,14 +30,18 @@ const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
 
   // Zamjena WP embedded postova sa custom previewom
   $("blockquote.wp-embedded-content").each((i, el) => {
-    const link = $(el).find("a").attr("href");
+    // const link = $(el).find("a").attr("href");
+    const link =
+      $(el).find("a").attr("href") || // za blockquote
+      $(el).attr("src"); // za iframe
+
     if (link && link.startsWith("https://www.grude-online.info/")) {
       // Zamijenimo cijeli blockquote sa custom wrapper divom i data-url
       $(el).replaceWith(`<div class="post-embed" data-url="${link}"></div>`);
     }
   });
 
-  const updatedContent = $.html();
+  const updatedContent = $("body").html() || "";
 
   // Parsiramo embedove nakon rendera
   const renderWithEmbeds = () => {
@@ -47,22 +51,75 @@ const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
     $("body")
       .contents()
       .each((i, el) => {
+        // Ako je naš custom embed div
         if (
           el.type === "tag" &&
           el.name === "div" &&
           $(el).hasClass("post-embed")
         ) {
           const url = $(el).attr("data-url");
-          if (url) elements.push(<PostEmbedPreview key={i} url={url} />);
-        } else {
+          if (url) {
+            elements.push(<PostEmbedPreview key={`embed-${i}`} url={url} />);
+          }
+        }
+        // Inače dodaj HTML samo ako NIJE wp-embedded-content
+        else if (
+          !(
+            el.type === "tag" &&
+            el.name === "blockquote" &&
+            $(el).hasClass("wp-embedded-content")
+          )
+        ) {
           elements.push(
-            <div key={i} dangerouslySetInnerHTML={{ __html: $.html(el) }} />
+            <div
+              key={`html-${i}`}
+              dangerouslySetInnerHTML={{ __html: $.html(el) }}
+            />
           );
         }
       });
 
     return elements;
   };
+
+  // Zamjena WP embedded postova sa custom previewom
+  // $("blockquote.wp-embedded-content").each((i, el) => {
+  //   const link = $(el).find("a").attr("href");
+
+  //   if (link && link.startsWith("https://www.grude-online.info/")) {
+  //     // Zamijenimo cijeli blockquote sa custom wrapper divom i data-url
+
+  //     $(el).replaceWith(`<div class="post-embed" data-url="${link}"></div>`);
+  //   }
+  // });
+  // //$("blockquote.wp-embedded-content").remove();
+  // const updatedContent = $("body").html() || "";
+
+  // // Parsiramo embedove nakon rendera
+  // const renderWithEmbeds = () => {
+  //   const $ = cheerio.load(updatedContent);
+  //   const elements: JSX.Element[] = [];
+
+  //   $("body")
+  //     .contents()
+  //     .each((i, el) => {
+  //       if (
+  //         el.type === "tag" &&
+  //         el.name === "div" &&
+  //         $(el).hasClass("post-embed")
+  //       ) {
+  //         const url = $(el).attr("data-url");
+
+  //         if (url) elements.push(<PostEmbedPreview key={i} url={url} />);
+  //       } else {
+  //         elements.push(
+  //           <div key={i} dangerouslySetInnerHTML={{ __html: $.html(el) }} />
+  //         );
+  //       }
+  //     });
+
+  //   return elements;
+  // };
 
   return (
     <div style={{ marginTop: "30px", overflow: "hidden", padding: "0 5px" }}>
