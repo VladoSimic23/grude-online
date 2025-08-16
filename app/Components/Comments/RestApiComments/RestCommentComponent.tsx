@@ -47,7 +47,7 @@ export default function RestComments({
     // Ako je korisnik već glasao isti tip za ovaj komentar, blokiraj
     if (votedComments[commentId] === type) return;
 
-    // Ako je glasao suprotno, nemoj dozvoliti ponovno
+
 
     // Lokalno povećaj broj
     setComments((prev) =>
