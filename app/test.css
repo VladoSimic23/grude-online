@@ -1,0 +1,64 @@
+:root {
+  --bs-body-bg: transparent !important;
+}
+html {
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Light Mode */
+html.light {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4,
+html.light h5,
+html.light h6 {
+  color: #111111;
+}
+
+html.light p,
+html.light li,
+html.light span,
+html.light i {
+  color: #333333 !important;
+}
+
+html.light a {
+  color: #2563eb !important;
+}
+html.light a:hover {
+  color: #1e40af !important;
+}
+
+/* Dark Mode */
+html.dark {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6 {
+  color: #f1f1f1 !important;
+}
+
+html.dark p,
+html.dark li,
+html.dark span,
+html.dark i {
+  color: #cccccc !important;
+}
+
+html.dark a {
+  color: #60a5fa !important;
+}
+html.dark a:hover {
+  color: #93c5fd !important;
+}

@@ -46,7 +46,7 @@ const Naslovna = async () => {
               }
               width={400}
               height={500}
-              priority={true}
+              priority
               alt={"Naslovna 1."}
             />
           </div>
