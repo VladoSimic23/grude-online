@@ -47,7 +47,7 @@ const Naslovna = async () => {
               width={400}
               height={500}
               priority
-              alt={"Naslovna 1."}
+              alt={"Ilustracija članka: " + nodes[0].title}
             />
           </div>
           <div className={`${desktopStyle.dateAndComment}`}>

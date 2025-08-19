@@ -43,7 +43,9 @@ const Popularno = async () => {
                       }
                       width={150}
                       height={80}
-                      alt={`Popular Post Image ${index}`}
+                      alt={`Ilustracija članka: ${decodeHTMLEntities(
+                        item?.title?.rendered
+                      )}`}
                       quality={40}
                       priority={false}
                       loading={"lazy"}

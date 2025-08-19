@@ -38,7 +38,7 @@ const PostListCategory = ({ data }: { data: PostsByCategorySourceI }) => {
                   src={sourceUrl}
                   width={300}
                   height={220}
-                  alt={title}
+                  alt={`Ilustracija članka: ${title}`}
                   priority={index < 3 ? true : false}
                 />
               </div>

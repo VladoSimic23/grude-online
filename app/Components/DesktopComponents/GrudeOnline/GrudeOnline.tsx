@@ -48,7 +48,7 @@ const GrudeOnline = async () => {
               width={300}
               height={270}
               priority={true}
-              alt={"Grude Online 1."}
+              alt={`Ilustracija članka: ${nodes[0]?.title}`}
             />
             <h1 className={`${style.h3Desktop}`} style={{ fontWeight: "bold" }}>
               {nodes[0]?.title}
@@ -79,7 +79,7 @@ const GrudeOnline = async () => {
                             width={150}
                             height={100}
                             priority={true}
-                            alt={`Grude Online ${index}`}
+                            alt={`Ilustracija članka: ${title}`}
                           />
                         </div>
                         <div className="col-8">

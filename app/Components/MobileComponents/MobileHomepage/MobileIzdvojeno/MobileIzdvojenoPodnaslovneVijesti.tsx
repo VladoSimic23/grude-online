@@ -60,10 +60,10 @@ const MobileIzdvojenoPodnaslovneVijesti = ({
                       borderRadius: "0",
                     }}
                     className={style.imageCover}
-                    src={item.featuredImage.node.sourceUrl}
+                    src={item?.featuredImage?.node?.sourceUrl}
                     width={300}
                     height={220}
-                    alt={item?.title}
+                    alt={`Ilustracija članka: ${item?.title}`}
                     quality={75}
                     priority={true}
                     fetchPriority={index < 1 ? "high" : "low"}

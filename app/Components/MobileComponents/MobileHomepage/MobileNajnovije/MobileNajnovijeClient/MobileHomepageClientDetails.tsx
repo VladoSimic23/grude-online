@@ -45,7 +45,7 @@ const MobileHomepageClientDetails = ({
             src={sourceUrl}
             width={300}
             height={200}
-            alt={title}
+            alt={`Ilustracija članka: ${title}`}
           />
           {hasPromo && (
             <div

@@ -72,7 +72,7 @@ const OstaleNaslovne = async () => {
                         width={350}
                         height={246}
                         priority={true}
-                        alt={`Naslovna ${index}`}
+                        alt={`Ilustracija članka: ${title}`}
                       />
                     </div>
                   </div>

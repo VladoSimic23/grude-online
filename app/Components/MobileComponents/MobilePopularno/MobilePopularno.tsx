@@ -42,7 +42,7 @@ const MobilePopularno = async () => {
                       }
                       width={80}
                       height={80}
-                      alt={`Popular Post Image ${index}`}
+                      alt={`Ilustracija članka: ${item?.title.rendered}`}
                       quality={20}
                       priority={false}
                       loading={"lazy"}

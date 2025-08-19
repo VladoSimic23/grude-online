@@ -40,7 +40,7 @@ const MobilePostListByCategory = ({
                   src={sourceUrl}
                   width={300}
                   height={200}
-                  alt={title}
+                  alt={`Ilustracija članka: ${title}`}
                   priority={index < 3 ? true : false}
                 />
               </div>

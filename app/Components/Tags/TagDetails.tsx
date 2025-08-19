@@ -40,7 +40,7 @@ const TagDetails = async ({ tag }: { tag: string }) => {
                         ? featuredImage?.node?.sourceUrl
                         : defaultImage
                     }
-                    alt={title}
+                    alt={`Ilustracija članka: ${title}`}
                     width={200}
                     height={130}
                   />

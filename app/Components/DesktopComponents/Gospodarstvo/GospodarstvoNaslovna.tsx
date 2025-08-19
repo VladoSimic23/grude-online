@@ -43,7 +43,7 @@ const GospodarstvoNaslovna = async () => {
               width={300}
               height={270}
               priority={true}
-              alt={"Gospodarstvo 1."}
+              alt={`Ilustracija članka: ${nodes[0]?.title}`}
             />
             <h1 style={{ fontWeight: "bold" }} className={`${style.h3Desktop}`}>
               {nodes[0]?.title}
@@ -72,7 +72,7 @@ const GospodarstvoNaslovna = async () => {
                         width={150}
                         height={100}
                         priority={true}
-                        alt={`Gospodarstvo ${index}`}
+                        alt={`Ilustracija članka: ${title}`}
                       />
                     </div>
                     <div className="col-8">

@@ -159,7 +159,7 @@ const MobileSinglePost = ({ post }: { post: SinglePostI }) => {
             src={post?.featuredImage?.node?.sourceUrl || defaultImage}
             width={500}
             height={250}
-            alt={`post image ${postId}`}
+            alt={`Ilustracija članka: ${title}`}
             priority={true}
             fetchPriority="high"
             quality={75}

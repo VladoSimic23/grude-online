@@ -45,7 +45,7 @@ const GalerijeNaslovna = async () => {
                     width={350}
                     height={246}
                     priority={true}
-                    alt={`Galerije ${index}`}
+                    alt={`Ilustracija članka: ${title}`}
                   />
                   <div
                     className={`position-absolute bottom-0 p-3 ${desktopStyle.dateAndComment}`}

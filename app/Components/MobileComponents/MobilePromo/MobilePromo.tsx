@@ -46,7 +46,7 @@ const MobilePromo = async () => {
                     }
                     width={200}
                     height={130}
-                    alt={`Popular Post Image ${index}`}
+                    alt={`Ilustracija članka: ${item?.title}`}
                     quality={20}
                     priority={false}
                     loading={"lazy"}

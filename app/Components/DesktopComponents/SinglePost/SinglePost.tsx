@@ -106,7 +106,7 @@ const SinglePost = ({ post }: { post: SinglePostI }) => {
                 }
                 width={1024}
                 height={550}
-                alt={title}
+                alt={`Ilustracija članka: ${title}`}
                 priority={true}
                 style={{ borderRadius: "0px" }}
               />

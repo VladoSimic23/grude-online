@@ -47,7 +47,7 @@ const OstaleVijesti = async () => {
                   width={300}
                   height={220}
                   priority={true}
-                  alt={`Ostale Vijsti ${index + 1}`}
+                  alt={`Ilustracija članka: ${title}`}
                 />
                 <h1 className={`${style.h5Desktop}`}>{title}</h1>
                 <p style={{ color: "black" }} className="mt-2">

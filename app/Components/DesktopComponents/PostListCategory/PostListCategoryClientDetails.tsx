@@ -31,7 +31,7 @@ const PostListCategoryClientDetails = ({
             src={sourceUrl}
             width={300}
             height={220}
-            alt={title}
+            alt={`Ilustracija članka: ${title}`}
           />
         </div>
         <div className="col-md-6">

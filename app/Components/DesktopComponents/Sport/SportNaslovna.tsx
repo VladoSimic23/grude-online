@@ -72,7 +72,7 @@ const SportNaslovna = async () => {
                         width={150}
                         height={100}
                         priority={true}
-                        alt={`Sport ${index}`}
+                        alt={`Ilustracija članka: ${title}`}
                       />
                     </div>
                     <div className="col-8">

@@ -111,7 +111,7 @@ export default function SearchResultsWrapDesktop() {
                         ? featuredImage?.node?.sourceUrl
                         : defaultImage
                     }
-                    alt={title}
+                    alt={`Ilustracija članka: ${title}`}
                     width={400}
                     height={220}
                   />
