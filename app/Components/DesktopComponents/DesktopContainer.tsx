@@ -15,6 +15,7 @@ import OstaleVijesti from "./OstaleVijesti/OstaleVijesti";
 import Popularno from "./Popularno/Popularno";
 import Promo from "./Promo/Promo";
 import SportNaslovna from "./Sport/SportNaslovna";
+import NajnovijeDesktop from "./Najnovije/NajnovijeDesktop";
 
 const DesktopContainer = () => {
   return (
@@ -23,6 +24,7 @@ const DesktopContainer = () => {
       <div className="container">
         <div className="row mt-4">
           <div className="col-xl-8">
+            <NajnovijeDesktop />
             <GrudeOnline />
             <Promo />
             <OstaleVijesti />

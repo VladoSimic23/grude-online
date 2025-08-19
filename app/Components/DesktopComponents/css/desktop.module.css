@@ -18,7 +18,7 @@
   z-index: 100;
   font-size: 26px;
   padding: 0px 20px 4px 20px;
-  background: rgba(37, 35, 111, 0.8);
+  background: rgba(255, 120, 0, 0.8);
   color: white;
 }
 
@@ -30,7 +30,7 @@
   padding: 0px 20px 4px 20px;
   font-size: 26px;
   z-index: 100;
-  background: rgba(37, 35, 111, 0.8);
+  background: rgba(255, 120, 0, 0.8);
   color: white;
 }
 
@@ -79,10 +79,13 @@
 }
 
 .desktopPopularno {
+  margin-top: 28px;
   padding: 15px;
+  background: #f2f2f2;
 }
 .desktopPopularno h1 {
   font-family: sans-serif;
+  margin: 10px 0;
 }
 
 @media only screen and (max-width: 992px) {

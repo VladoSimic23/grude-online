@@ -39,7 +39,7 @@ const Home = async () => {
               [336, 280],
             ]}
           />
-          <GoogleAds
+          {/* <GoogleAds
             slot="(/31722200/mobilna_naslovna_drugi"
             id="div-gpt-ad-1748178301870-0"
             sizes={[
@@ -47,7 +47,7 @@ const Home = async () => {
               [336, 280],
               [300, 600],
             ]}
-          />
+          /> */}
         </div>
       )}
       {isMobile && <MobileContainer />}

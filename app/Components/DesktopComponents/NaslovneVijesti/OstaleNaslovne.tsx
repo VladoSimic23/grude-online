@@ -14,10 +14,6 @@ const OstaleNaslovne = async () => {
     posts: { nodes },
   } = data;
 
-  const { hasImages, hasVideo } = cheerioCheck(
-    nodes[0]?.content,
-    nodes[0]?.tags
-  );
   // const isVideo = true;
   // const isImage = true;
 
@@ -29,8 +25,11 @@ const OstaleNaslovne = async () => {
           featuredImage,
           slug,
           date,
+          content,
+          tags,
           comments: { nodes },
         } = item;
+        const { hasImages, hasVideo } = cheerioCheck(content, tags);
         if (index !== 0) {
           return (
             <div
@@ -47,7 +46,7 @@ const OstaleNaslovne = async () => {
                           style={{ fontSize: "20px" }}
                           className={desktopStyle.desktopImage}
                         >
-                          Foto
+                          <i className="bi bi-camera"></i>
                         </div>
                       )}
                       {hasVideo && (
@@ -59,7 +58,7 @@ const OstaleNaslovne = async () => {
                               : { right: "10px", fontSize: "20px" }
                           }
                         >
-                          Video
+                          <i className="bi bi-youtube"></i>
                         </div>
                       )}
                       <Image

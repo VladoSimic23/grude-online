@@ -1,17 +1,23 @@
 //import styles from "../../../css/style.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { getPostsByCategorySmall } from "@/app/libs/Queries/Queries/postsByCategorySmall";
 //import desktopStyle from "../css/desktop.module.css";
 import style from "../../../css/style.module.css";
 import defaultImage from "../../../../public/noImage.jpg";
 import { formatDateToCroatian } from "@/app/functions/formatDateToCroatian";
+import {
+  getRecentPostsHomepage,
+  RecentPostsSourceI,
+} from "@/app/libs/Queries/Queries/recentPosts";
+import { cheerioCheck } from "@/app/functions/cheerioCheck";
+import desktopStyle from "./../css/desktop.module.css";
 
-const Promo = async () => {
-  const promoNews = await getPostsByCategorySmall("promo", 6, "LARGE");
+const NajnovijeDesktop = async () => {
+  const najnovije: RecentPostsSourceI = await getRecentPostsHomepage(6);
+
   const {
     posts: { nodes },
-  } = promoNews;
+  } = najnovije;
 
   return (
     <div className="mt-4">
@@ -19,37 +25,77 @@ const Promo = async () => {
         <h1
           className={`${style.h2Desktop}`}
           style={{
-            borderBottom: "3px solid royalblue",
+            borderBottom: "3px solid #362295",
             display: "inline-block",
             marginBottom: "25px",
             paddingBottom: "5px",
             //color: "darkmagenta",
           }}
         >
-          Promo
+          Najnovije
         </h1>
       </div>
 
       <div className="row g-0 gx-2">
         {nodes.map((item, index) => {
-          const { slug, featuredImage, title, date } = item;
+          const { slug, featuredImage, title, date, content, tags } = item;
+          const { hasImages, hasVideo } = cheerioCheck(content, tags);
           return (
             <div key={index} className="col-4">
               <Link href={`/${slug}`} className="text-decoration-none">
                 <div className="position-relative">
                   <div
-                    style={{
-                      position: "absolute",
-                      right: "10px",
-                      bottom: "10px",
-                      padding: "2px 8px",
-                      fontSize: "18px",
-                      background: "royalblue",
-                      color: "white",
-                    }}
+                    style={{ position: "absolute", top: "5px", left: "5px" }}
                   >
-                    <span>Oglas</span>
+                    <span
+                      style={{
+                        color: "white",
+                        background: "#362295",
+                        padding: "2px 15px 4px 15px",
+                        fontSize: "16px",
+                        fontWeight: "bold",
+                        borderRadius: "5px",
+                      }}
+                    >
+                      {index + 1}
+                    </span>
                   </div>
+                  {hasImages && (
+                    <div
+                      style={{
+                        fontSize: "16px",
+                        padding: "2px 8px",
+                        background: "#362295",
+                      }}
+                      className={desktopStyle.desktopImage}
+                    >
+                      <i className="bi bi-camera"></i>
+                    </div>
+                  )}
+
+                  {hasVideo && (
+                    <div
+                      className={desktopStyle.desktopVideo}
+                      style={
+                        hasImages
+                          ? {
+                              right: "50px",
+                              padding: "2px 8px",
+                              fontSize: "16px",
+                              background: "#362295",
+                            }
+                          : {
+                              right: "10px",
+                              padding: "2px 8px",
+                              fontSize: "16px",
+                              background: "#362295",
+                            }
+                      }
+                    >
+                      <i className="bi bi-youtube"></i>
+                    </div>
+                  )}
+
                   <Image
                     className={style.imageCover}
                     src={
@@ -115,4 +161,4 @@ const Promo = async () => {
   );
 };
 
-export default Promo;
+export default NajnovijeDesktop;

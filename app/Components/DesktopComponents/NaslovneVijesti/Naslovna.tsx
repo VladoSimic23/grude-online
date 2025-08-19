@@ -28,13 +28,18 @@ const Naslovna = async () => {
       >
         <div className="position-relative">
           <div className="position-relative">
-            {hasImages && <div className={desktopStyle.desktopImage}>Foto</div>}
+            {hasImages && (
+              <div className={desktopStyle.desktopImage}>
+                {" "}
+                <i className="bi bi-camera"></i>
+              </div>
+            )}
             {hasVideo && (
               <div
                 className={desktopStyle.desktopVideo}
                 style={hasImages ? { right: "100px" } : { right: "10px" }}
               >
-                Video
+                <i className="bi bi-youtube"></i>
               </div>
             )}
             <Image
